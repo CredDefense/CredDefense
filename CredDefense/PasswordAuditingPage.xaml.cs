@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CredDefense
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PasswordAuditingPage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class PasswordAuditingPage : Page
     {
-        public MainWindow()
+        public PasswordAuditingPage()
         {
             InitializeComponent();
         }
