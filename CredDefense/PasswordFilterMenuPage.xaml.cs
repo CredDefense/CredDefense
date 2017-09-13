@@ -33,6 +33,7 @@ namespace CredDefense
             if (selectedModule.Contains("Install"))
             {
                 PasswordFilterInstallPage passwordFilterInstallPage = new PasswordFilterInstallPage();
+              
                 this.NavigationService.Navigate(passwordFilterInstallPage);
             }
             else if (selectedModule.Contains("Update"))

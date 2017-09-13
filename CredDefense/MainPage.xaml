@@ -24,13 +24,13 @@
 
         <Label Grid.Column="1" VerticalAlignment="Center" FontFamily="Trebuchet MS" 
         FontWeight="Bold" FontSize="18" Foreground="#0066cc">
-            Select Module to Configure
+            <TextBlock TextWrapping="WrapWithOverflow">Select Module to Configure</TextBlock>
         </Label>
 
         <Border Grid.Column="1" Grid.Row="1" Height="35" Padding="5" Background="#4E87D4">
             <Label VerticalAlignment="Center" Foreground="White">Modules</Label>
         </Border>
-        <ListBox Name="moduleListBox" Grid.Column="1" Grid.Row="2">
+        <ListBox Name="moduleListBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0">
             <ListBoxItem>Event Monitoring</ListBoxItem>
             <ListBoxItem>Honey Tokens</ListBoxItem>
             <ListBoxItem>Password Auditing</ListBoxItem>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.DirectoryServices.ActiveDirectory;
 using System.IO;
 using System.Linq;
@@ -23,24 +24,24 @@ namespace CredDefense
             }
         }
 
-        private List<String> configuredDomainControllers;
-        public List<String> ConfiguredDomainControllersList
+        private ObservableCollection<String> configuredDomainControllers;
+        public ObservableCollection<String> ConfiguredDomainControllersList
         {
             get
             {
                 if (configuredDomainControllers == null)
-                    configuredDomainControllers = new List<string>();
+                    configuredDomainControllers = new ObservableCollection<String>();
                 return configuredDomainControllers;
             }
         }
 
-        private List<String> unconfiguredDomainControllers;
-        public List<String> UnconfiguredDomainControllersList
+        private ObservableCollection<String> unconfiguredDomainControllers;
+        public ObservableCollection<String> UnconfiguredDomainControllersList
         {
             get
             {
                 if (unconfiguredDomainControllers == null)
-                    unconfiguredDomainControllers = new List<string>();
+                    unconfiguredDomainControllers = new ObservableCollection<String>();
                 return unconfiguredDomainControllers;
             }
         }

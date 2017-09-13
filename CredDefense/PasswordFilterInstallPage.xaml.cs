@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.DirectoryServices.ActiveDirectory;
 using System.IO;
@@ -27,41 +28,54 @@ namespace CredDefense
     {
         public PasswordFilterInstallPage()
         {
-
             InitializeComponent();
             this.DataContext = this;
-            this.pfHelper = new PasswordFilterHelper();
-            this.pfHelper.updateDomainControllers();
-            this.configuredDomainControllers = pfHelper.ConfiguredDomainControllersList;
-            this.unconfiguredDomainControllers = pfHelper.UnconfiguredDomainControllersList;
+            reInit();
+
         }
 
         private void reInit()
         {
-
+            this.pfHelper = new PasswordFilterHelper();
+            this.pfHelper.updateDomainControllers();
+            this.ConfiguredDomainControllersList = pfHelper.ConfiguredDomainControllersList;
+            this.UnconfiguredDomainControllersList = pfHelper.UnconfiguredDomainControllersList;
+            FrameworkElement dataContext = (FrameworkElement)this.DataContext;
+            this.DataContext = null;
+            this.DataContext = dataContext;
         }
 
         private PasswordFilterHelper pfHelper;
 
-        private List<String> configuredDomainControllers;
-        public List<String> ConfiguredDomainControllersList
+        private ObservableCollection<String> configuredDomainControllers;
+        public ObservableCollection<String> ConfiguredDomainControllersList
         {
             get
             {
                 if (configuredDomainControllers == null)
-                    configuredDomainControllers = new List<string>();
+                    configuredDomainControllers = new ObservableCollection<string>();
                 return configuredDomainControllers;
+            }
+            set
+            {
+                configuredDomainControllers = null;
+                configuredDomainControllers = value;
             }
         }
 
-        private List<String> unconfiguredDomainControllers;
-        public List<String> UnconfiguredDomainControllersList
+        private ObservableCollection<string> unconfiguredDomainControllers;
+        public ObservableCollection<string> UnconfiguredDomainControllersList
         {
             get
             {
                 if (unconfiguredDomainControllers == null)
-                    unconfiguredDomainControllers = new List<string>();
+                    unconfiguredDomainControllers = new ObservableCollection<string>();
                 return unconfiguredDomainControllers;
+            }
+            set
+            {
+                unconfiguredDomainControllers = null;
+                unconfiguredDomainControllers = value;
             }
         }
 
@@ -73,6 +87,7 @@ namespace CredDefense
             bool is64bit = false;
             string sysPath = "";
             string dcName = "";
+
             foreach (DomainController dc in pfHelper.AllDomainControllers)
             {
                 if (dc.Name == selectedModule)
@@ -87,7 +102,11 @@ namespace CredDefense
                 }
             }
 
-            pfHelper.updateRegValue(dcIpAddress, false);
+            if( pfHelper.updateRegValue(dcIpAddress, false) )
+            {
+                reInit();
+            }
+
             string sysDrive = sysPath.Split(':')[0];
             string sysFolder = sysPath.Split(':')[1].Split('\\')[1] + @"\system32";
             string remoteRootFolder = @"\\" + dcIpAddress + @"\" + sysDrive + @"$\";
@@ -200,8 +219,11 @@ namespace CredDefense
 
             }
 
+
             if (updated)
             {
+                reInit();
+
                 MessageBoxResult msgBoxRes = MessageBox.Show("System Updated, Restart " + dcName + "?", "Confirm DC Restart", MessageBoxButton.YesNo);
 
                 if (msgBoxRes == MessageBoxResult.Yes)
@@ -221,6 +243,18 @@ namespace CredDefense
                     }
                 }
             }
+
+
+        }
+
+        private void installDomainControllers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Button_Click(sender, null);
+        }
+
+        private void uninstallDomainControllers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Button_Click_1(sender, null);
         }
     }
 }

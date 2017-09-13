@@ -33,11 +33,13 @@
 #include <fstream>
 #include <algorithm>
 #include <cctype>
+#include <locale>
 
 #pragma comment(lib, "Ws2_32.lib")
 const int INFO_BUFF_SIZE = 32767;
 char dictfname[] = "_:\\epf\\epfdict.txt";
 char upfname[] = "_:\\epf\\updated.txt";
+char logname[] = "_:\\epf\\log.txt";
 TCHAR infoBuf[INFO_BUFF_SIZE];
 DWORD bufCharCount = INFO_BUFF_SIZE;
 
@@ -86,7 +88,7 @@ PasswordChangeNotify(PUNICODE_STRING *UserName,
 //
 BOOLEAN checkPass(PUNICODE_STRING Password) {
 	static std::map<std::string, bool> banlist;
-	
+	std::locale loc;
 	//Check for updates
 	std::ifstream dictUpdate(upfname);
 	if (dictUpdate.is_open() || banlist.empty()) {
@@ -95,16 +97,23 @@ BOOLEAN checkPass(PUNICODE_STRING Password) {
 
 		//Make new banlist
 		std::ifstream banWords(dictfname);
-		while (!banWords.eof()) {
-			std::string line;
-			std::getline(banWords, line);
-			if (line != "" && line.length() > 0)
+		std::string line;
+		if (banWords)
+		{
+			while (std::getline(banWords, line))
 			{
-				banlist[line] = true;
+				if (line.length() > 2)
+				{
+					for (int i = 0; i < line.length(); ++i)
+					{
+						line[i] = std::toupper(line[i]);
+					}
+					banlist[line] = true;
+				}
 			}
+			//Cleanup
+			banWords.close();
 		}
-		//Cleanup
-		banWords.close();
 		dictUpdate.close();
 		remove(upfname);
 	}
@@ -115,7 +124,7 @@ BOOLEAN checkPass(PUNICODE_STRING Password) {
 	wcstombs(buff, Password->Buffer, length);
 	std::string currPass = "";
 	for (int i = 0; i < length; i++) {
-		currPass += buff[i];
+		currPass += std::toupper(buff[i]);
 	}
 
 	//Check if password is in the banlist, return FALSE if so
@@ -123,22 +132,23 @@ BOOLEAN checkPass(PUNICODE_STRING Password) {
 		return FALSE;
 	}
 
-	transform(currPass.begin(), currPass.end(), currPass.begin(), ::tolower);
-
-	//Check if password contains commonly-used words (Summer, Spring, etc.)
-	std::map<std::string, bool>::iterator iter;
-
-	for ( iter = banlist.begin(); iter != banlist.end(); iter++) 
+	//geeksforgeeks.org/program-print-substrings-given-string/
+	for (int len = 4; len <= currPass.length(); len++)
 	{
-		std::string currCheck = iter->first;
-		
-		transform(currCheck.begin(), currCheck.end(), currCheck.begin(), ::tolower);
+		for (int i = 0; i <= currPass.length() - len; i++)
+		{
+			std::string tempString = "";
+			int j = i + len - 1;
+			for (int k = i; k <= j; k++)
+			{
+				tempString += currPass[k];
+			}
 
-		if (currPass.find(currCheck) != std::string::npos) {
-			return FALSE;
+			if (banlist[tempString]) {
+				return FALSE;
+			}
 		}
 	}
-
 	return TRUE;
 }
 
