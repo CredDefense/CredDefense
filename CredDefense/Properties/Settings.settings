@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="EasyPasswordFilterDllLocationx86" Type="System.String" Scope="User">
-      <Value Profile="(Default)">..\..\builds\x86\EasyPasswordFilter.dll</Value>
+      <Value Profile="(Default)">..\..\..\builds\x86\EasyPasswordFilter.dll</Value>
     </Setting>
     <Setting Name="EasyPasswordFilterDllLocationx64" Type="System.String" Scope="User">
-      <Value Profile="(Default)">..\..\builds\x64\EasyPasswordFilter.dll</Value>
+      <Value Profile="(Default)">..\..\..\builds\x64\EasyPasswordFilter.dll</Value>
     </Setting>
     <Setting Name="EpfFilesPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">..\..\builds\epf</Value>
+      <Value Profile="(Default)">..\..\..\builds\epf</Value>
     </Setting>
   </Settings>
 </SettingsFile>

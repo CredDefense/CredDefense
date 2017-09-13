@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.DirectoryServices.ActiveDirectory;
 using System.IO;
 using System.Linq;
@@ -27,17 +28,17 @@ namespace CredDefense
         public PasswordFilterInstallPage()
         {
 
-            reInit();
-        }
-
-        private void reInit()
-        {
             InitializeComponent();
             this.DataContext = this;
             this.pfHelper = new PasswordFilterHelper();
             this.pfHelper.updateDomainControllers();
             this.configuredDomainControllers = pfHelper.ConfiguredDomainControllersList;
             this.unconfiguredDomainControllers = pfHelper.UnconfiguredDomainControllersList;
+        }
+
+        private void reInit()
+        {
+
         }
 
         private PasswordFilterHelper pfHelper;
@@ -68,30 +69,39 @@ namespace CredDefense
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string selectedModule = this.installDomainControllers.SelectedValue.ToString().Split(':')[0].Trim();
-            string ipAddress = "";
+            string dcIpAddress = "";
             bool is64bit = false;
             string sysPath = "";
+            string dcName = "";
             foreach (DomainController dc in pfHelper.AllDomainControllers)
             {
                 if (dc.Name == selectedModule)
                 {
-                    ipAddress = dc.IPAddress;
+                    dcName = dc.Name;
 
-                    is64bit = pfHelper.checkArch(ipAddress).Contains("64");
+                    dcIpAddress = dc.IPAddress;
 
-                    sysPath = pfHelper.getSysPath(ipAddress);
+                    is64bit = pfHelper.checkArch(dcIpAddress).Contains("64");
+
+                    sysPath = pfHelper.getSysPath(dcIpAddress);
                 }
             }
 
-            pfHelper.updateRegValue(ipAddress, false);
+            pfHelper.updateRegValue(dcIpAddress, false);
             string sysDrive = sysPath.Split(':')[0];
             string sysFolder = sysPath.Split(':')[1].Split('\\')[1] + @"\system32";
-            string remoteRootFolder = @"\\" + ipAddress + @"\" + sysDrive + @"$\";
+            string remoteRootFolder = @"\\" + dcIpAddress + @"\" + sysDrive + @"$\";
             string remoteEpfFolder = remoteRootFolder + @"epf";
             string remoteSysFolder = remoteRootFolder + sysFolder + @"\EasyPasswordFilter.dll";
 
             try
             {
+
+                if (!Directory.Exists(remoteEpfFolder))
+                {
+                    Directory.CreateDirectory(remoteEpfFolder);
+                }
+
                 foreach (string dirPath in Directory.GetDirectories(Properties.Settings.Default.EpfFilesPath, "*", SearchOption.AllDirectories))
                 {
                     Directory.CreateDirectory(dirPath.Replace(Properties.Settings.Default.EpfFilesPath, remoteEpfFolder));
@@ -102,9 +112,10 @@ namespace CredDefense
                     File.Copy(newPath, newPath.Replace(Properties.Settings.Default.EpfFilesPath, remoteEpfFolder), true);
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Error copying password list");
+                MessageBox.Show(ex.ToString());
             }
 
             if (File.Exists(remoteSysFolder))
@@ -143,28 +154,73 @@ namespace CredDefense
                 }
             }
 
-            MessageBox.Show("Updated!");
+            MessageBoxResult msgBoxRes = MessageBox.Show("System Updated, Restart " + dcName + "?", "Confirm DC Restart", MessageBoxButton.YesNo);
 
-            reInit();
+            if(msgBoxRes == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Process rstProc = new Process();
+                    rstProc.EnableRaisingEvents = false;
+                    rstProc.StartInfo.FileName = "cmd.exe";
+                    rstProc.StartInfo.Arguments = @"/c shutdown -r -t 0 -f -m \\" + dcIpAddress;
+                    rstProc.Start();
+                    MessageBox.Show(dcName + " Restarted");
+                }
+                catch
+                {
+                    MessageBox.Show("Error restarting " + dcName);
+                }
+            }
         }
 
         //Uninstall button
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string selectedModule = this.uninstallDomainControllers.SelectedValue.ToString().Split(':')[0].Trim();
-            string ipAddress = "";
+            string dcIpAddress = "";
+            string dcName = "";
+            bool updated = false;
 
             foreach (DomainController dc in pfHelper.AllDomainControllers)
             {
                 if (dc.Name == selectedModule)
                 {
-                    ipAddress = dc.IPAddress;
+                    dcIpAddress = dc.IPAddress;
+                    dcName = dc.Name;
                 }
             }
 
-            pfHelper.updateRegValue(ipAddress, true);
+            try
+            {
+                updated = pfHelper.updateRegValue(dcIpAddress, true);
+            }
+            catch
+            {
 
-            reInit();
+            }
+
+            if (updated)
+            {
+                MessageBoxResult msgBoxRes = MessageBox.Show("System Updated, Restart " + dcName + "?", "Confirm DC Restart", MessageBoxButton.YesNo);
+
+                if (msgBoxRes == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        Process rstProc = new Process();
+                        rstProc.EnableRaisingEvents = false;
+                        rstProc.StartInfo.FileName = "cmd.exe";
+                        rstProc.StartInfo.Arguments = @"/c shutdown -r -t 0 -f -m \\" + dcIpAddress;
+                        rstProc.Start();
+                        MessageBox.Show(dcName + " Restarted");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error restarting " + dcName);
+                    }
+                }
+            }
         }
     }
 }

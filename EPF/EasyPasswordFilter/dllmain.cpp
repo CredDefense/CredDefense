@@ -98,8 +98,10 @@ BOOLEAN checkPass(PUNICODE_STRING Password) {
 		while (!banWords.eof()) {
 			std::string line;
 			std::getline(banWords, line);
-
-			banlist[line] = true;
+			if (line != "" && line.length() > 0)
+			{
+				banlist[line] = true;
+			}
 		}
 		//Cleanup
 		banWords.close();
@@ -116,23 +118,21 @@ BOOLEAN checkPass(PUNICODE_STRING Password) {
 		currPass += buff[i];
 	}
 
-	//Check is password is in the banlist, return FALSE if so
+	//Check if password is in the banlist, return FALSE if so
 	if (banlist[currPass]) {
 		return FALSE;
 	}
-	
-	//Check if password contains commonly-used words (Summer, Spring, etc.)
-	for (auto const& imap : banlist) {
-		std::string currCheck = imap.first;
-		for (int i = 0; i < currCheck.length(); i++)
-		{
-			currCheck[i] = tolower(currCheck[i]);
-		}
 
-		for (int i = 0; i < currPass.length(); i++)
-		{
-			currPass[i] = tolower(currPass[i]);
-		}
+	transform(currPass.begin(), currPass.end(), currPass.begin(), ::tolower);
+
+	//Check if password contains commonly-used words (Summer, Spring, etc.)
+	std::map<std::string, bool>::iterator iter;
+
+	for ( iter = banlist.begin(); iter != banlist.end(); iter++) 
+	{
+		std::string currCheck = iter->first;
+		
+		transform(currCheck.begin(), currCheck.end(), currCheck.begin(), ::tolower);
 
 		if (currPass.find(currCheck) != std::string::npos) {
 			return FALSE;

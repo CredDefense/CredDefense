@@ -46,8 +46,8 @@ namespace CredDefense
             }
             else if (selectedModule.Contains("Password Filtering"))
             {
-                PasswordFilterInstallPage passwordFilterPage = new PasswordFilterInstallPage();
-                this.NavigationService.Navigate(passwordFilterPage);
+                PasswordFilterMenuPage passwordFilterMenuPage = new PasswordFilterMenuPage();
+                this.NavigationService.Navigate(passwordFilterMenuPage);
             }
         }
     }
