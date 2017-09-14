@@ -50,5 +50,10 @@ namespace CredDefense
                 this.NavigationService.Navigate(passwordFilterMenuPage);
             }
         }
+
+        private void moduleListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Button_Click(sender, null);
+        }
     }
 }

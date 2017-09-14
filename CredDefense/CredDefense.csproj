@@ -101,6 +101,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PasswordFilterUpdatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PasswordAuditingPage.xaml.cs">
@@ -112,6 +116,9 @@
     </Compile>
     <Compile Include="PasswordFilterMenuPage.xaml.cs">
       <DependentUpon>PasswordFilterMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordFilterUpdatePage.xaml.cs">
+      <DependentUpon>PasswordFilterUpdatePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

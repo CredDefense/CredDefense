@@ -38,9 +38,16 @@ namespace CredDefense
             }
             else if (selectedModule.Contains("Update"))
             {
+                PasswordFilterUpdatePage passwordFilterUpdatePage = new PasswordFilterUpdatePage();
 
+                this.NavigationService.Navigate(passwordFilterUpdatePage);
             }
 
+        }
+
+        private void moduleListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Button_Click(sender, null);
         }
     }
 

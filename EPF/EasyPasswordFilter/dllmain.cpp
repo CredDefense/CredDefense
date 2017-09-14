@@ -39,7 +39,8 @@
 const int INFO_BUFF_SIZE = 32767;
 char dictfname[] = "_:\\epf\\epfdict.txt";
 char upfname[] = "_:\\epf\\updated.txt";
-char logname[] = "_:\\epf\\log.txt";
+char exfname[] = "_:\\epf\\exclude.txt";
+char exupfname[] = "_:\\epf\\excludeupdated.txt";
 TCHAR infoBuf[INFO_BUFF_SIZE];
 DWORD bufCharCount = INFO_BUFF_SIZE;
 
@@ -51,6 +52,8 @@ BOOL __stdcall APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVO
 	GetWindowsDirectory(infoBuf, INFO_BUFF_SIZE);
 	dictfname[0] = (char)infoBuf[0];
 	upfname[0] = (char)infoBuf[0];
+	exfname[0] = (char)infoBuf[0];
+	exupfname[0] = (char)infoBuf[0];
 
 	switch (ul_reason_for_call) {
 	case DLL_PROCESS_ATTACH:
@@ -86,8 +89,9 @@ PasswordChangeNotify(PUNICODE_STRING *UserName,
 //
 // 
 //
-BOOLEAN checkPass(PUNICODE_STRING Password) {
+BOOLEAN checkPass(PUNICODE_STRING Password, PUNICODE_STRING AccountName, PUNICODE_STRING FullName) {
 	static std::map<std::string, bool> banlist;
+	static std::map<std::string, bool> exlist;
 	std::locale loc;
 	//Check for updates
 	std::ifstream dictUpdate(upfname);
@@ -117,7 +121,35 @@ BOOLEAN checkPass(PUNICODE_STRING Password) {
 		dictUpdate.close();
 		remove(upfname);
 	}
-	
+
+	std::ifstream exUpdate(exupfname);
+	if (exUpdate.is_open()) {
+		//Clear old list
+		exlist.erase(exlist.begin(), exlist.end());
+
+		//Make new banlist
+		std::ifstream exAcc(exfname);
+		std::string line;
+		if (exAcc)
+		{
+			while (std::getline(exAcc, line))
+			{
+				if (line.length() > 2)
+				{
+					for (int i = 0; i < line.length(); ++i)
+					{
+						line[i] = std::toupper(line[i]);
+					}
+					exlist[line] = true;
+				}
+			}
+			//Cleanup
+			exAcc.close();
+		}
+		exUpdate.close();
+		remove(exupfname);
+	}
+
 	//Copy password into a string format
 	int length = Password->Length / sizeof(WCHAR);
 	char buff[1024];
@@ -125,6 +157,28 @@ BOOLEAN checkPass(PUNICODE_STRING Password) {
 	std::string currPass = "";
 	for (int i = 0; i < length; i++) {
 		currPass += std::toupper(buff[i]);
+	}
+
+	int lengthAcc = AccountName->Length / sizeof(WCHAR);
+	char buffAcc[1024];
+	wcstombs(buffAcc, AccountName->Buffer, lengthAcc);
+	std::string currAcc = "";
+	for (int i = 0; i < lengthAcc; i++) {
+		currAcc += std::toupper(buffAcc[i]);
+	}
+
+	int lengthFN = FullName->Length / sizeof(WCHAR);
+	char buffFN[1024];
+	wcstombs(buffFN, FullName->Buffer, lengthFN);
+	std::string currFN = "";
+	for (int i = 0; i < lengthFN; i++) {
+		currFN += std::toupper(buffFN[i]);
+	}
+
+	//exceptions for accounts
+	if (exlist[currAcc] || exlist[currFN])
+	{
+		return TRUE;
 	}
 
 	//Check if password is in the banlist, return FALSE if so
@@ -161,7 +215,7 @@ extern "C" __declspec(dllexport) BOOLEAN __stdcall PasswordFilter(PUNICODE_STRIN
 																  PUNICODE_STRING Password, 
 																  BOOLEAN SetOperation) {
 	BOOLEAN retVal = TRUE;
-	retVal = checkPass(Password);
+	retVal = checkPass(Password, AccountName, FullName);
 	return retVal;
 }
 
