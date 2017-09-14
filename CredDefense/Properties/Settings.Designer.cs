@@ -25,7 +25,7 @@ namespace CredDefense.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\builds\\x86\\EasyPasswordFilter.dll")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\EPF\\builds\\x86\\EasyPasswordFilter.dll")]
         public string EasyPasswordFilterDllLocationx86 {
             get {
                 return ((string)(this["EasyPasswordFilterDllLocationx86"]));
@@ -37,7 +37,7 @@ namespace CredDefense.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\builds\\x64\\EasyPasswordFilter.dll")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\EPF\\builds\\x64\\EasyPasswordFilter.dll")]
         public string EasyPasswordFilterDllLocationx64 {
             get {
                 return ((string)(this["EasyPasswordFilterDllLocationx64"]));
@@ -49,7 +49,7 @@ namespace CredDefense.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\builds\\epf")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\EPF\\epf")]
         public string EpfFilesPath {
             get {
                 return ((string)(this["EpfFilesPath"]));

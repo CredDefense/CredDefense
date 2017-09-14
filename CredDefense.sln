@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredDefense", "CredDefense\CredDefense.csproj", "{A06EC81A-955C-4AC6-913B-88ACE6DB8915}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76836DB9-4753-413B-BD36-73E0C37795D5} = {76836DB9-4753-413B-BD36-73E0C37795D5}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EasyPasswordFilter", "EPF\EasyPasswordFilter\EasyPasswordFilter.vcxproj", "{76836DB9-4753-413B-BD36-73E0C37795D5}"
 EndProject

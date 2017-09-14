@@ -4,3 +4,14 @@
 
 /CredDefense/obj/
 /CredDefense/bin/Debug
+/ipch
+/temp
+*.opendb
+*.VC.db
+*.pdb
+*.vshost.*
+*.iobj
+*.exp
+*.ipdb
+*.lib
+/EPF/temp/
