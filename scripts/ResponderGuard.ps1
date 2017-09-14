@@ -132,10 +132,14 @@
         Write-Output ("[*] A list of " + $totaladdresses.count + " addresses was created.")
      }
 
-   
+
+     $count = $totaladdresses.count
+     $currentnumber = 1
      foreach($ip in $totaladdresses)
      {
-     Write-Output "Now testing $ip"
+          $percentcomplete = ($currentnumber / $count) * 100
+     Write-Progress -Activity "ResponderGuard Scan in Progress - Current IP: $ip" -Status "Scanned $currentnumber of $count hosts" -PercentComplete $percentcomplete
+     $currentnumber++
      #Create UDP socket
      $port = 137
      $ipEP = new-object System.Net.IPEndPoint ([system.net.IPAddress]::parse($ip),$port)
