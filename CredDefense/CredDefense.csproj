@@ -141,9 +141,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /S /I $(SolutionDir)EPF\builds $(SolutionDir)\bin\EPF\builds
-xcopy /S /I $(SolutionDir)EPF\epf $(SolutionDir)\bin\EPF\epf
-xcopy /S /I $(SolutionDir)CredDefense\bin\CredDefense $(SolutionDir)\bin\CredDefense</PostBuildEvent>
+    <PostBuildEvent>xcopy /S /I $(SolutionDir)EPF\builds $(SolutionDir)bin\EPF\builds;
+xcopy /S /I $(SolutionDir)EPF\epf $(SolutionDir)bin\EPF\epf;
+xcopy /S /I $(SolutionDir)CredDefense\bin\CredDefense $(SolutionDir)bin\CredDefense</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
