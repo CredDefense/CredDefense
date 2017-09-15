@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NDceRpc.ServiceModel.Core</name>
+    </assembly>
+    <members>
+        <member name="T:NDceRpc.ServiceModel.AttributesReader">
+            <summary>
+            Allows using <see cref="N:NDceRpc.ServiceModel"/> attributes, but fallback to <see cref="N:System.ServiceModel"/> when necessary.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.ServiceModel.DispatchTable.TokenToOperation">
+            <summary>
+            Maps runtime CLR reflection MetadataToken to operation which should put on the wire. 
+            </summary>
+        </member>
+        <member name="F:NDceRpc.ServiceModel.DispatchTable.IdToOperation">
+            <summary>
+            Maps identifier from the wire to operation.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.ExceptionHandler">
+            <summary>
+            Extend the <see cref="T:NDceRpc.ServiceModel.ExceptionHandler"/> class to create an exception handler for unhandled exceptions that occur within the NDceRpc runtime.
+            </summary>
+            <seealso cref="T:System.ServiceModel.Dispatcher.ExceptionHandler"/>
+        </member>
+        <member name="M:NDceRpc.ServiceModel.ExceptionHandler.HandleException(System.Exception)">
+            <summary>
+            When overridden in a derived class, returns true if the exception has been handled, or false if the exception should be rethrown and the application terminated.
+            </summary>
+            
+            <returns>
+            true if the exception has been handled; otherwise, false.
+            </returns>
+            <param name="exception">The exception the occurred within the NDceRpc runtime and which may terminate the application.</param>
+        </member>
+        <member name="P:NDceRpc.ServiceModel.ExceptionHandler.AlwaysHandle">
+            <summary>
+            Gets an instance of <see cref="T:NDceRpc.ServiceModel.ExceptionHandler"/> that handles all exceptions.
+            </summary>
+            
+            <returns>
+            An <see cref="T:NDceRpc.ServiceModel.ExceptionHandler"/> object that returns true for all exceptions.
+            </returns>
+        </member>
+        <member name="P:NDceRpc.ServiceModel.ExceptionHandler.AsynchronousThreadExceptionHandler">
+            <summary>
+            Gets or sets the current <see cref="T:NDceRpc.ServiceModel.ExceptionHandler"/> implementation for the application domain.
+            </summary>
+            
+            <returns>
+            Assign a custom <see cref="T:NDceRpc.ServiceModel.ExceptionHandler"/> object that receives unhandled exceptions that occur on asynchronous NDceRpc threads.
+            </returns>
+        </member>
+        <member name="P:NDceRpc.ServiceModel.ExceptionHandler.TransportExceptionHandler">
+            <summary>
+            Gets or sets the current transport <see cref="T:NDceRpc.ServiceModel.ExceptionHandler"/> implementation for the application domain.
+            </summary>
+            
+            <returns>
+            A custom <see cref="T:NDceRpc.ServiceModel.ExceptionHandler"/> object that receives unhandled exceptions that occur within the global NDceRpc transports.
+            </returns>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.LocalBinding">
+            <summary>
+            Uses http://en.wikipedia.org/wiki/Local_Procedure_Call on Windows
+            </summary>
+        </member>
+        <member name="F:NDceRpc.ServiceModel.DispatchTableFactory.DEFAULT_ID_SHIFT">
+            like http://msdn.microsoft.com/en-us/library/windows/desktop/aa367040.aspx
+        </member>
+        <member name="M:NDceRpc.ServiceModel.DispatchTableFactory.GetOperations(System.Type)">
+            <summary>
+            Gets table of operations for specific type.
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+            <remarks>
+            Considers reflection costly operation and caching is optimization.  Considers types unchangeable during runtime.
+            </remarks>
+        </member>
+        <member name="F:NDceRpc.ServiceModel.EndpointMapper.UriSchemeIpc">
+            <summary>
+            for ALPC on Windows and Domain sockets on Linux use ipc:///
+            </summary>
+        </member>
+        <member name="M:NDceRpc.ServiceModel.EndpointMapper.WcfToRpc(System.String)">
+            <summary>
+            Makes WCF adress to be RPC
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.GuidUtility">
+            <summary>
+            Helper methods for working with <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.ServiceModel.GuidUtility.Create(System.Guid,System.String)">
+            <summary>
+            Creates a name-based UUID using the algorithm from RFC 4122 §4.3.
+            </summary>
+            <param name="namespaceId">The ID of the namespace.</param>
+            <param name="name">The name (within that namespace).</param>
+            <returns>A UUID derived from the namespace and name.</returns>
+            <remarks>See <a href="http://code.logos.com/blog/2011/04/generating_a_deterministic_guid.html">Generating a deterministic GUID</a>.</remarks>
+        </member>
+        <member name="M:NDceRpc.ServiceModel.GuidUtility.Create(System.Guid,System.String,System.Int32)">
+            <summary>
+            Creates a name-based UUID using the algorithm from RFC 4122 §4.3.
+            </summary>
+            <param name="namespaceId">The ID of the namespace.</param>
+            <param name="name">The name (within that namespace).</param>
+            <param name="version">The version number of the UUID to create; this value must be either
+            3 (for MD5 hashing) or 5 (for SHA-1 hashing).</param>
+            <returns>A UUID derived from the namespace and name.</returns>
+            <remarks>See <a href="http://code.logos.com/blog/2011/04/generating_a_deterministic_guid.html">Generating a deterministic GUID</a>.</remarks>
+        </member>
+        <member name="F:NDceRpc.ServiceModel.GuidUtility.DnsNamespace">
+            <summary>
+            The namespace for fully-qualified domain names (from RFC 4122, Appendix C).
+            </summary>
+        </member>
+        <member name="F:NDceRpc.ServiceModel.GuidUtility.UrlNamespace">
+            <summary>
+            The namespace for URLs (from RFC 4122, Appendix C).
+            </summary>
+        </member>
+        <member name="F:NDceRpc.ServiceModel.GuidUtility.IsoOidNamespace">
+            <summary>
+            The namespace for ISO OIDs (from RFC 4122, Appendix C).
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.RpcServiceDefaults">
+            <seealso cref="T:System.ServiceModel.ServiceDefaults"/>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.OperationDispatch">
+            <summary>
+            Maps method binary identifiers into invocable entities.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.ServiceHostBase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NDceRpc.ServiceModel.ServiceHostBase.CloseTimeout">
+            <summary>
+            Gets or sets the interval of time allowed for the service host to close.
+            </summary>
+            
+            <returns>
+            The <see cref="T:System.Timespan"/> that specifies the interval of time allowed for the service host to close.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value, in milliseconds, is less than zero or is larger than <see cref="F:System.Int32.MaxValue"/> (2,147,483,647 or, in hexadecimal notation, 0X7FFFFFFF).</exception><exception cref="T:System.InvalidOperationException">The host is in an <see cref="F:System.ServiceModel.CommunicationState.Opening"/> or <see cref="F:System.ServiceModel.CommunicationState.Closing"/> state and cannot be modified.</exception><exception cref="T:System.ObjectDisposedException">The host is already in a <see cref="F:System.ServiceModel.CommunicationState.Closed"/> state and cannot be modified.</exception><exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">The host is in a <see cref="F:System.ServiceModel.CommunicationState.Faulted"/> state and cannot be modified.</exception>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.DuplexChannelFactory`1">
+            <summary>
+            Similar to WCF <seealso cref="T:System.ServiceModel.DuplexChannelFactory`1"/> and 
+            COM <seealso cref="T:System.Runtime.InteropServices.ComTypes.IConnectionPoint"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.NetNamedPipeBinding">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ServiceModel.ParameterDispatch">
+            <summary>
+            Maps parameters binary indentifiers into <see cref="T:System.Type"/>s.
+            </summary>
+        </member>
+    </members>
+</doc>

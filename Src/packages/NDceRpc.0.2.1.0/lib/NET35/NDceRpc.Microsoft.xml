@@ -1,0 +1,780 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NDceRpc.Microsoft</name>
+    </assembly>
+    <members>
+        <member name="T:NDceRpc.Client">
+            <summary>
+            Provides a connection-based wrapper around the RPC client
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Client.Dispose">
+            <summary>
+            Disconnects the client and frees any resources.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Client.connect">
+            <summary>
+            Connects the client; however, this is a soft-connection and validation of 
+            the connection will not take place until the first call is attempted.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Client.AuthenticateAs(System.Net.NetworkCredential)">
+            <summary>
+            Adds authentication information to the client, use the static Self to
+            authenticate as the currently logged on Windows user.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Client.AuthenticateAs(System.String,System.Net.NetworkCredential)">
+            <summary>
+            Adds authentication information to the client, use the static Self to
+            authenticate as the currently logged on Windows user.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Client.AuthenticateAs(System.String,System.Net.NetworkCredential,NDceRpc.Microsoft.Interop.RPC_C_AUTHN_LEVEL,NDceRpc.Microsoft.Interop.RPC_C_AUTHN[])">
+            <summary>
+            Adds authentication information to the client, use the static Self to
+            authenticate as the currently logged on Windows user.  This overload allows
+            you to specify the privacy level and authentication types to try. Normally
+            these default to RPC_C_PROTECT_LEVEL_PKT_PRIVACY, and both RPC_C_AUTHN_GSS_NEGOTIATE
+            or RPC_C_AUTHN_WINNT if that fails.  If credentials is null, or is the Anonymous
+            user, RPC_C_PROTECT_LEVEL_DEFAULT and RPC_C_AUTHN_NONE are used instead.
+            </summary>
+        </member>
+        <member name="P:NDceRpc.Client.Protocol">
+            <summary>
+            The protocol that was provided to the constructor
+            </summary>
+        </member>
+        <member name="P:NDceRpc.Client.Anonymous">
+            <summary>
+            Returns a constant NetworkCredential that represents the Anonymous user
+            </summary>
+        </member>
+        <member name="P:NDceRpc.Client.Self">
+            <summary>
+            Returns a constant NetworkCredential that represents the current Windows user
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RpcHandle">
+            <summary>
+            Is thread safe.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.EndpointBindingInfo">
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa378481.aspx"/>
+        </member>
+        <member name="T:NDceRpc.ErrorMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:NDceRpc.ErrorMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:NDceRpc.ErrorMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:NDceRpc.ErrorMessages.RpcDefaultError">
+            <summary>
+              Looks up a localized string similar to Unspecified rpc error.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Guard">
+            <summary>
+            provides a set of runtime validations for inputs
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Guard.Assert``1(System.Boolean)">
+            <summary>
+            Verifies that the condition is true and if it fails constructs the specified type of
+            exception and throws.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Guard.Assert``1(System.Boolean,System.String)">
+            <summary>
+            Verifies that the condition is true and if it fails constructs the specified type of
+            exception with any arguments provided and throws.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Guard.NotNull``1(``0)">
+            <summary>
+            Verifies that value is not null and returns the value or throws ArgumentNullException
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Guard.Assert(NDceRpc.Microsoft.Interop.RPC_STATUS)">
+            <summary>
+            Asserts that the argument is set to RPC_STATUS.RPC_S_OK or throws a new exception.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ExplicitBytes.IExplicitBytesClient">
+            <summary>
+            Client side transport interfaces
+            </summary>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.IExplicitBytesClient.Execute(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.IExplicitBytesClient.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NDceRpc.ExplicitBytes.ExplicitBytesClient.IID">
+            <summary> The interface Id the client is connected to </summary>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.ExplicitBytesClient.#ctor(System.Guid,NDceRpc.EndpointBindingInfo)">
+            <summary>
+            Connects to the provided server interface with the given protocol and server:endpoint
+            </summary>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.ExplicitBytesClient.Execute(System.Byte[])">
+            <summary>
+            Sends a message as an array of bytes and retrieves the response from the server, if
+            AuthenticateAs() has not been called, the client will authenticate as Anonymous.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ExplicitBytes.RpcExecuteHandler">
+            <summary>
+            The delegate format for the OnExecute event
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ExplicitBytes.ExplicitBytesServer">
+            <summary>
+            Provides server-side services for RPC
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Server.MAX_CALL_LIMIT">
+            <summary> The max limit of in-flight calls </summary>
+        </member>
+        <member name="M:NDceRpc.Server.Dispose">
+            <summary>
+            Disposes of the server and stops listening if the server is currently listening
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Server.AddProtocol(NDceRpc.Microsoft.Interop.RpcProtseq,System.String,System.UInt32)">
+            <summary>
+            Used to ensure that the server is listening with a specific protocol type.  
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Server.AddAuthentication(NDceRpc.Microsoft.Interop.RPC_C_AUTHN)">
+            <summary>
+            Adds a type of authentication sequence that will be allowed for RPC connections to this process.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Server.AddAuthentication(NDceRpc.Microsoft.Interop.RPC_C_AUTHN,System.String)">
+            <summary>
+            Adds a type of authentication sequence that will be allowed for RPC connections to this process.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Server.StartListening">
+            <summary>
+            Starts the RPC listener for this instance,
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Server.StopListening">
+            <summary>
+            Stops listening for this instance.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ExplicitBytes.IExplicitBytesServer">
+            <summary>
+            Server side transport interface.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.IExplicitBytesServer.StartListening">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.IExplicitBytesServer.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:NDceRpc.ExplicitBytes.IExplicitBytesServer.OnExecute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NDceRpc.ExplicitBytes.ExplicitBytesServer.IID">
+            <summary> The interface Id the service is using </summary>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.ExplicitBytesServer.#ctor(System.Guid)">
+            <summary>
+            Constructs an RPC server for the given interface guid, the guid is used to identify multiple rpc
+            servers/services within a single process.
+            </summary>
+        </member>
+        <member name="M:NDceRpc.ExplicitBytes.ExplicitBytesServer.Execute(NDceRpc.IRpcCallInfo,System.Byte[])">
+            <summary>
+            Can be over-ridden in a derived class to handle the incomming RPC request, or you can
+            subscribe to the OnExecute event.
+            </summary>
+        </member>
+        <member name="E:NDceRpc.ExplicitBytes.ExplicitBytesServer.OnExecute">
+            <summary>
+            Allows a single subscription to this event to handle incomming requests rather than 
+            deriving from and overriding the Execute call.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Native.NativeServer">
+            <summary>
+            Hosts native server interfaces provided by unmanaged code as pointer.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.ExplicitBytes.ServerInterfaceFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NDceRpc.IRpcCallInfo">
+            <summary>
+            An interface that provide contextual information about the client within an Rpc server call
+            </summary>
+        </member>
+        <member name="M:NDceRpc.IRpcCallInfo.Impersonate">
+            <summary>
+            Returns a disposable context that is used to impersonate the calling user
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.IsClientLocal">
+            <summary>
+            Returns true if the caller is using LRPC
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.ClientAddress">
+            <summary>
+            Returns a most random set of bytes, undocumented Win32 value.
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.ProtocolType">
+            <summary>
+            Defines the type of the procol being used in the communication, unavailable on Windows XP
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.ProtectionLevel">
+            <summary>
+            Returns the packet protection level of the communications
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.AuthenticationLevel">
+            <summary>
+            Returns the authentication level of the connection
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.ClientPid">
+            <summary>
+            Returns the ProcessId of the LRPC caller, may not be valid on all platforms
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.IsAuthenticated">
+            <summary>
+            Returns true if the caller has authenticated as a user
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.ClientPrincipalName">
+            <summary>
+            Returns the client user name if authenticated, not available on WinXP
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.ClientUser">
+            <summary>
+            Returns the identity of the client user or Anonymous if unauthenticated
+            </summary>
+        </member>
+        <member name="P:NDceRpc.IRpcCallInfo.IsImpersonating">
+            <summary>
+            Returns true if already impersonating the caller
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.CONSTANTS">
+            <summary>
+            
+            </summary>
+            <seealso cref="!:RpcDce.h"/>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.CONSTANTS.RPC_X_BAD_STUB_DATA">
+            <summary>
+            The stub received bad data.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.InterfacRegistrationFlags">
+            <summary>
+            http://msdn.microsoft.com/en-us/library/windows/desktop/aa373954.aspx
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.InterfacRegistrationFlags.Standard_interface_semantics">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.InterfacRegistrationFlags.RPC_IF_ALLOW_CALLBACKS_WITH_NO_AUTH">
+            <summary>
+            When this interface flag is registered, the RPC runtime invokes the registered security callback for all calls, regardless of identity, protocol sequence, or authentication level of the client. This flag is allowed only when a security callback is registered.
+            Note  This flag is available starting with Windows XP with SP2 and Windows Server 2003 with SP1. When this flag is not set, RPC automatically filters all unauthenticated calls before they reach the security callback.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.NativeMethods">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcMgmtSetCancelTimeout(System.Int32)">
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa375771.aspx"/>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcMgmtInqComTimeout(System.IntPtr,System.UInt32@)">
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa375746.aspx"/>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcMgmtSetComTimeout(System.IntPtr,System.UInt32)">
+            <summary>
+             This option is ignored for <seealso cref="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncalrpc"/>
+             </summary>
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa375779.aspx"/>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcObjectSetInqFn(NDceRpc.Microsoft.Interop.RPC_OBJECT_INQ_FN)">
+            <summary>
+            The function registers an object-inquiry function. A null value turns off a previously registered object-inquiry function.
+            </summary>
+            <param name="InquiryFn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcBindingSetObject(System.IntPtr,System.Guid@)">
+            <summary>
+             The function sets the object UUID value in a binding handle.
+             </summary>
+             <param name="Binding">Server binding into which the ObjectUuid is set.</param>
+             <param name="ObjectUuid">
+             Pointer to the UUID of the object serviced by the server specified in the Binding parameter. 
+             ObjectUuid is a unique identifier of an object to which a remote procedure call can be made.
+             </param>
+             <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa375609.aspx"/>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcObjectSetType(System.Guid@,System.Guid@)">
+            <summary>
+            The RpcObjectSetType function assigns the type of an object.
+            </summary>
+            <param name="ObjUuid">Pointer to an object UUID to associate with the type UUID in the TypeUuid parameter.</param>
+            <param name="TypeUuid">
+            Pointer to the type UUID of the ObjUuid parameter. 
+            Specify a parameter value of NULL or a nil UUID to reset the object type to the default association of object UUID/nil-type UUID.
+            </param>
+            <returns></returns>
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa378427.aspx"/>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcBindingReset(System.IntPtr)">
+             <summary>
+             The RpcBindingReset function resets a binding handle so that the host is specified but the server on that host is unspecified.
+             </summary>
+             <param name="Binding">Server binding handle to reset.</param>
+             <returns>
+                    <see cref="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_OK"/> The call succeeded.
+            <see cref="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_INVALID_BINDING"/>  The binding handle was invalid.
+            <see cref="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_WRONG_KIND_OF_BINDING"/> This was the wrong kind of binding for the operation.
+             </returns>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcBindingFromStringBinding(System.String,System.IntPtr@)">
+            <summary>
+             Validates the format of the string binding handle and converts
+             it to a binding handle.
+             Connection is not done here either.
+             </summary>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcBindingSetAuthInfo(System.IntPtr,System.String,NDceRpc.Microsoft.Interop.RPC_C_AUTHN_LEVEL,NDceRpc.Microsoft.Interop.RPC_C_AUTHN,NDceRpc.Microsoft.Interop.SEC_WINNT_AUTH_IDENTITY@,NDceRpc.Microsoft.Interop.RPC_C_AUTHZ)">
+            <summary>
+            The function sets a binding handle's authentication and authorization information.
+            </summary>
+            <param name="Binding"></param>
+            <param name="ServerPrincName"></param>
+            <param name="AuthnLevel"></param>
+            <param name="AuthnSvc">Authentication service to use. </param>
+            <param name="AuthIdentity"></param>
+            <param name="AuthzService">Authorization service implemented by the server for the interface of interest. </param>
+            <returns></returns>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcBindingInqAuthClient(System.IntPtr,System.IntPtr@,System.Text.StringBuilder,NDceRpc.Microsoft.Interop.RPC_C_AUTHN_LEVEL@,NDceRpc.Microsoft.Interop.RPC_C_AUTHN@,NDceRpc.Microsoft.Interop.RPC_C_AUTHZ@)">
+            <summary>
+            
+            </summary>
+            <param name="ClientBinding"></param>
+            <param name="Privs">Returns a pointer to a handle to the privileged information for the client application that made the remote procedure call on the ClientBinding binding handle. For ncalrpc calls, Privs contains a string with the client's principal name.</param>
+            <param name="ServerPrincName"></param>
+            <param name="AuthnLevel"></param>
+            <param name="AuthnSvc"></param>
+            <param name="AuthzSvc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcServerRegisterIfEx(System.IntPtr,System.IntPtr,System.IntPtr,NDceRpc.Microsoft.Interop.InterfacRegistrationFlags,System.UInt32,NDceRpc.Microsoft.Interop.RPC_IF_CALLBACK_FN@)">
+             Return Type: RPC_STATUS->int  
+            IfSpec: RPC_IF_HANDLE->void*  
+            MgrTypeUuid: UUID*  
+            MgrEpv: void*  
+            Flags: unsigned int  
+            MaxCalls: unsigned int  
+            IfCallback: RPC_IF_CALLBACK_FN*  
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcServerRegisterIf(System.IntPtr,System.IntPtr,System.IntPtr)">
+            <summary>
+            
+            </summary>
+            <param name="IfSpec"></param>
+            <param name="MgrTypeUuid"></param>
+            <param name="MgrEpv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcServerRegisterIf2(System.IntPtr,System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.UInt32,NDceRpc.Microsoft.Interop.RPC_IF_CALLBACK_FN@)">
+            IfSpec: RPC_IF_HANDLE->void*     
+            MgrTypeUuid: UUID*     
+            MgrEpv: void*     
+            Flags: unsigned int     
+            MaxCalls: unsigned int     
+            MaxRpcSize: unsigned int     
+            IfCallbackFn: RPC_IF_CALLBACK_FN*     
+        </member>
+        <member name="M:NDceRpc.Microsoft.Interop.NativeMethods.DceErrorInqText(System.UInt32,System.String@)">
+            <summary>
+             The  function returns the message text for a status code.
+             </summary>
+             <param name="ErrorText">Returns the text corresponding to the error code.</param>
+             <param name="StatusToConvert">Status code to convert to a text string.</param>
+             <seealso href="http://msdn.microsoft.com/en-us/library/aa373623.aspx"/>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RpcProtoseqType">
+            <summary>
+            Defines the type of protocol the client is connected with
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtoseqType.TCP">
+            <summary> TCP, UDP, IPX over TCP, etc </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtoseqType.NMP">
+            <summary> Named Pipes </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtoseqType.LRPC">
+            <summary> LPRC / Local RPC </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtoseqType.HTTP">
+            <summary> HTTP / IIS integrated </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RpcProtseq">
+            <summary>
+            Defines the various types of protocols that are supported by Win32 RPC. NCA stands for Network Computing Architecture
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_nb_tcp">
+            <summary>
+            Connection-oriented NetBIOS over Transmission Control Protocol (TCP) Client only: MS-DOS, Windows 3.x
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_nb_ipx">
+            <summary>
+            Connection-oriented NetBIOS over Internet Packet Exchange (IPX) Client only: MS-DOS, Windows 3.x
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_nb_nb">
+            <summary>
+            Connection-oriented NetBIOS Enhanced User Interface (NetBEUI) Client only: MS-DOS, Windows 3.x
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT, Windows Me, Windows 98, Windows 95
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_ip_tcp">
+            <summary>
+            Connection-oriented Transmission Control Protocol/Internet Protocol (TCP/IP) Client only: MS-DOS, Windows 3.x, and Apple Macintosh
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT, Windows Me, Windows 98, Windows 95
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_np">
+            <summary>
+            Connection-oriented named pipes Client only: MS-DOS, Windows 3.x, Windows 95
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_spx">
+            <summary>
+            Connection-oriented Sequenced Packet Exchange (SPX) Client only: MS-DOS, Windows 3.x
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT, Windows Me, Windows 98, Windows 95
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_dnet_nsp">
+            <summary>
+            Connection-oriented DECnet transport 
+            Client only: MS-DOS, Windows 3.x
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_at_dsp">
+            <summary>
+            Connection-oriented AppleTalk DSP Client: Apple Macintosh
+            Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_vns_spp">
+            <summary>
+            Connection-oriented Vines scalable parallel processing (SPP) transport Client only: MS-DOS, Windows 3.x
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncadg_ip_udp">
+            <summary>
+            Datagram (connectionless) User Datagram Protocol/Internet Protocol (UDP/IP) Client only: MS-DOS, Windows 3.x
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncadg_ipx">
+            <summary>
+            Datagram (connectionless) IPX Client only: MS-DOS, Windows 3.x
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncadg_mq">
+            <summary>
+            Datagram (connectionless) over the Microsoft Message Queue Server (MSMQ) Client only: Windows Me/98/95
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT Server 4.0 with SP3 and later
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncacn_http">
+            <summary>
+            Connection-oriented TCP/IP using Microsoft Internet Information Server as HTTP proxy Client only: Windows Me/98/95
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RpcProtseq.ncalrpc">
+            <summary>
+            Local procedure call 
+            Client and Server: Windows Server 2003, Windows XP, Windows 2000, Windows NT, Windows Me, Windows 98, Windows 95
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_EVENT">
+            <summary>
+            The enumerated type describes the asynchronous notification events that an RPC application can receive.
+            </summary>
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa378488.aspx"/>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_EVENT.RpcCallComplete">
+            <summary>
+            The remote procedure call has completely executed.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE">
+            <summary>
+            The structure holds the state of an asynchronous remote procedure call. Used to wait for, query, reply to, or cancel asynchronous calls.
+            </summary>
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa378490.aspx"/>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.Size">
+            <summary>
+            Size of this structure, in bytes. The environment sets this member when <see cref="M:NDceRpc.Microsoft.Interop.NativeMethods.RpcAsyncInitializeHandle(NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE@,System.UInt16)"/> is called. Do not modify this member.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.Signature">
+            <summary>
+            The run-time environment sets this member when <see cref="!:NDceRpc.NativeMethodscInitializeHandle"/> is called. Do not modify this member.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.Lock">
+            <summary>
+            The run-time environment sets this member when <see cref="!:NDceRpc.NativeMethodscInitializeHandle"/> is called. Do not modify this member.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.Flags">
+            <summary>
+            <seealso cref="F:NDceRpc.Microsoft.Interop.RpcAsync.RPC_C_NOTIFY_ON_SEND_COMPLETE"/>
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.StubInfo">
+            <summary>
+            Reserved for use by the stubs. Do not use this member.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.UserInfo">
+            <summary>
+            Use this member for any application-specific information that you want to keep track of in this structure.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.RuntimeInfo">
+            <summary>
+            Reserved for use by the RPC run-time environment. Do not use this member.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_STATE.Reserved">
+            <summary>
+            Reserved for compatibility with future versions, if any. Do not use this member.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RPC_C_AUTHN">
+             <summary>
+             The authentication service constants represent the authentication services passed to various run-time functions.
+            The following constants are valid values for the AuthnSvc parameter.
+             The authentication type to be used for connection, GSS_NEGOTIATE / WINNT
+             are the most common.  Be aware that GSS_NEGOTIATE is not available unless
+             the machine is a member of a domain that is not running WinNT (or in legacy 
+             mode).
+             </summary>
+             <remarks>
+             Specify RPC_C_AUTHN_NONE to turn off authentication for remote procedure calls made over a binding handle. When you specify RPC_C_AUTHN_DEFAULT, the RPC run-time library uses the RPC_C_AUTHN_WINNT authentication service for remote procedure calls made using the binding handle.
+             </remarks>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_C_AUTHN.RPC_C_AUTHN_NONE">
+            <summary>
+            No authentication.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RPC_C_AUTHN_LEVEL">
+            <summary>
+            The authentication-level constants represent authentication levels passed to various run-time functions. These levels are listed in order of increasing authentication. Each new level adds to the authentication provided by the previous level. If the RPC run-time library does not support the specified level, it automatically upgrades to the next higher supported level.
+            The protection level of the communications, <see cref="F:NDceRpc.Microsoft.Interop.RPC_C_AUTHN_LEVEL.RPC_C_AUTHN_LEVEL_PKT_PRIVACY"/> is the default for authenticated communications.
+            </summary>
+            <remarks>
+            Regardless of the value specified by the constant, ncalrpc always uses <see cref="F:NDceRpc.Microsoft.Interop.RPC_C_AUTHN_LEVEL.RPC_C_AUTHN_LEVEL_PKT_PRIVACY"/>.
+            </remarks>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_C_AUTHN_LEVEL.RPC_C_AUTHN_LEVEL_NONE">
+            <summary>
+            Performs no authentication
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RPC_C_AUTHZ">
+            <summary>
+            The authorization service constants represent the authorization services passed to various run-time functions.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_C_AUTHZ.RPC_C_AUTHZ_NONE">
+            <summary>
+            Server performs no authorization.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_DISPATCH_TABLE.DispatchTable">
+            <summary>
+            Pointer to first <see cref="T:NDceRpc.Microsoft.Interop.RPC_DISPATCH_FUNCTION"/>
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RPC_IF_CALLBACK_FN">
+             Return Type: RPC_STATUS->int  
+            InterfaceUuid: RPC_IF_HANDLE->void*  
+            Context: void*  
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_NOTIFICATION_TYPES.RpcNotificationTypeNone">
+            <summary>
+            No notification is specified; <see cref="T:NDceRpc.Microsoft.Interop.Async.RPC_ASYNC_NOTIFICATION_INFO"/> is not initialized.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_NOTIFICATION_TYPES.RpcNotificationTypeHwnd">
+            <summary>
+            The notification mechanism is a Windows system message.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.Async.RPC_NOTIFICATION_TYPES.RpcNotificationTypeCallback">
+            <summary>
+            The notification mechanism is a function callback.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RPC_OBJECT_INQ_FN">
+            <summary>
+            The function is a prototype for a function that facilitates replacement of the default object UUID to type UUID mapping.
+            </summary>
+            <param name="ObjectUuid"></param>
+            <param name="TypeUuid"></param>
+            <param name="Status"></param>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.RPC_STATUS">
+            <summary> WIN32 RPC Error Codes </summary>
+            <seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681386.aspx"/>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_WRONG_KIND_OF_BINDING">
+            <summary>
+            The binding handle is not the correct type.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_INVALID_BINDING">
+            <summary>
+            The binding handle is invalid.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_ALREADY_REGISTERED">
+            <summary>
+            The object universal unique identifier (UUID) has already been registered.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_STRING_TOO_LONG">
+            <summary>
+            The string is too long.
+            </summary>
+        </member>
+        <member name="F:NDceRpc.Microsoft.Interop.RPC_STATUS.RPC_S_INVALID_OBJECT">
+            <summary>
+            The object universal unique identifier (UUID) is the nil UUID.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.Microsoft.Interop.SEC_WINNT_AUTH_IDENTITY">
+            <summary>
+            Handle to the structure containing the client's authentication and authorization credentials appropriate for the selected authentication and authorization service.
+            </summary>
+        </member>
+        <member name="T:NDceRpc.RpcException">
+            <summary>
+            Exception class: RpcException : System.ComponentModel.Win32Exception
+            Unspecified rpc error
+            </summary>
+        </member>
+        <member name="M:NDceRpc.RpcException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Serialization constructor
+            </summary>
+        </member>
+        <member name="M:NDceRpc.RpcException.#ctor">
+            <summary>
+            Unspecified rpc error
+            </summary>
+        </member>
+        <member name="M:NDceRpc.RpcException.#ctor(System.Exception)">
+            <summary>
+            Unspecified rpc error
+            </summary>
+        </member>
+        <member name="M:NDceRpc.RpcException.Assert(System.Boolean)">
+            <summary>
+            if(condition == false) throws Unspecified rpc error
+            </summary>
+        </member>
+        <member name="M:NDceRpc.RpcException.#ctor(System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:NDceRpc.RpcException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NDceRpc.RpcException.#ctor(NDceRpc.Microsoft.Interop.RPC_STATUS)">
+            <summary>
+            Exception class: RpcException : System.ComponentModel.Win32Exception
+            Unspecified rpc error
+            </summary>
+        </member>
+        <member name="P:NDceRpc.RpcException.RpcStatus">
+            <summary>
+            Returns the RPC Error as an enumeration
+            </summary>
+        </member>
+        <member name="M:NDceRpc.UsageCounter.#ctor(System.String,System.Object[])">
+            <summary> Creates a composite name with the format and arguments specified </summary>
+        </member>
+        <member name="M:NDceRpc.UsageCounter.Increment``1(System.Action{``0},``0)">
+            <summary> Delegate fired inside lock if this is the first Increment() call on the name provided </summary>
+        </member>
+        <member name="M:NDceRpc.UsageCounter.Decrement(System.Threading.ThreadStart)">
+            <summary> Delegate fired inside lock if the Decrement() count reaches zero </summary>
+        </member>
+    </members>
+</doc>
