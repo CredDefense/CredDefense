@@ -29,7 +29,11 @@
     
   .PARAMETER LoggingEnabled
 
-    If the LoggingEnabled switch is set a Windows Event log will be created for each potential NBNS spoofer found. The default EventID is 54321.
+    If the LoggingEnabled option is set a Windows Event log will be created for each potential NBNS spoofer found. The default EventID is 8415.
+
+  .PARAMETER HoneyTokenSeed
+
+    If the HoneyTokenSeed option is set ResponderGuard will submit a set of honey token credentials to a detected NBNS spoofer over SMB. #### Be sure to set the user/pass combination in the "Honey Token Seed" section below. #####
 
   .EXAMPLE
 
@@ -46,6 +50,15 @@
     Description
     -----------
     This command will attempt to scan each host in the 10.0.0.0/16 subnet to determine if an NBNS spoofer is present and will log each event to the Windows Event Log.
+    
+
+  .EXAMPLE
+
+    C:\PS> Invoke-ResponderGuard -CidrRange 10.0.0.0/16 -LoggingEnabled -HoneyTokenSeed
+
+    Description
+    -----------
+    This command will attempt to scan each host in the 10.0.0.0/16 subnet to determine if an NBNS spoofer is present and will log each event to the Windows Event Log. Additionally, for each detected NBNS spoofer a set of honey credentials will be sent to the listener over SMB. #### Be sure to set the user/pass combination in the "Honey Token Seed" section below.####
     
     #>
 
@@ -66,7 +79,11 @@
 
  [Parameter(Position = 3, Mandatory = $false)]
  [switch]
- $LoggingEnabled = $false
+ $LoggingEnabled = $false,
+
+ [Parameter(Position = 4, Mandatory = $false)]
+ [switch]
+ $HoneyTokenSeed = $false
  )
 
  if(($SingleIP -eq "") -and ($CidrRange -eq "") -and ($CidrList -eq ""))
@@ -132,14 +149,30 @@
         Write-Output ("[*] A list of " + $totaladdresses.count + " addresses was created.")
      }
 
-
+     While($true)
+     {
      $count = $totaladdresses.count
      $currentnumber = 1
+         
      foreach($ip in $totaladdresses)
      {
-          $percentcomplete = ($currentnumber / $count) * 100
-     Write-Progress -Activity "ResponderGuard Scan in Progress - Current IP: $ip" -Status "Scanned $currentnumber of $count hosts" -PercentComplete $percentcomplete
+     #Quit the loop when the 'q' key is pressed
+     $keyOption = 'q', 'Q'
+
+     if($Host.UI.RawUI.KeyAvailable)
+     {
+     $keyPress = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown,IncludeKeyUp")
+     if($keyOption -contains $keyPress.Character )
+     {
+     return
+     }
+     }
+
+     #Progress Bar
+     $percentcomplete = ($currentnumber / $count) * 100
+     Write-Progress -Activity "ResponderGuard Scan in Progress - Current IP: $ip. (Press 'q' to quit)" -Status "Scanned $currentnumber of $count hosts" -PercentComplete $percentcomplete
      $currentnumber++
+
      #Create UDP socket
      $port = 137
      $ipEP = new-object System.Net.IPEndPoint ([system.net.IPAddress]::parse($ip),$port)
@@ -408,14 +441,29 @@
      }
  
      Write-Output "[*] ResponderGuard received an NBNS response from the host at $ip for the hostname $nbname!"
+     #Writing Windows Event log if enabled
      If ($LoggingEnabled)
      {
-        Write-EventLog -LogName Application -Source "ResponderGuard" -EntryType Information -EventID 54321 -Message "An NBNS spoofer was discovered at $ip."
-        Write-Output "An event was written to the event log."
+        Write-EventLog -LogName Application -Source "ResponderGuard" -EntryType Information -EventID 8415 -Message "An NBNS spoofer was discovered at $ip."
+        Write-Output "[*] An event was written to the Windows Event log."
+     }
+     #### Honey Token Seed Section ####
+     #### Set $Username and $Password to your own Honeytoken domain/user you want to alert on ####
+
+     #Submitting a honey token user credential to the listening Responder if enabled
+     If ($HoneyTokenSeed)
+     {
+        $Username = "HoneyDomain\HoneyUser"
+        $Password = "Summer2017"
+        $ResponderShare = "\\$ip\c$"
+        Write-Output "[*] Submitting Honey Token Creds $Username : $Password to $ResponderShare!"
+        $sharecmd = "net use r: $ResponderShare /User:$Username $Password 2>&1"
+        $cmdout = Invoke-Expression -Command $sharecmd -ErrorAction SilentlyContinue
+
      }
 
     }
-  
+  }
 }
 #Get-IPV4NetworkStartIP credit goes to https://blog.tyang.org/2011/05/01/powershell-functions-get-ipv4-network-start-and-end-address/
 Function Get-IPV4NetworkStartIP ($strNetwork)
