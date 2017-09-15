@@ -18,6 +18,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//using DSInternals.PowerShell.Commands;
+//using DSInternals.Replication;
+//using DSInternals.Common.Data;
+//using DSInternals.Replication.Model;
+using System.Net;
 
 namespace CredDefense
 {
@@ -31,7 +36,43 @@ namespace CredDefense
             InitializeComponent();
             this.DataContext = this;
             reInit();
+            //string fullPath = this.pfHelper.AllDomainControllers.First().GetDirectoryEntry().Path.ToString();
+            //string nameContext = "";
+            //string server = "isthisyourdc";
+            //foreach (string token in fullPath.Split(','))
+            //{
+            //    if(token.ToLower().Contains("dc="))
+            //    {
+            //        nameContext += token + ",";
+            //    }
+            //}
+            //nameContext = nameContext.Remove(nameContext.Length - 1);
+            //MessageBox.Show(nameContext + " " + server);
+            //NetworkCredential cred = CredentialCache.DefaultNetworkCredentials;
+            //try
+            //{
+            //    DirectoryReplicationClient dirRep = new DirectoryReplicationClient(server, RpcProtocol.SMB, cred);
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
 
+           // foreach (DSAccount dsAcc in dirRep.GetAccounts(nameContext))
+          //  {
+           //     MessageBox.Show(dsAcc.DisplayName + dsAcc.NTHash);
+           //     break;
+          //  }
+            //GetADReplAccountCommand getADRepl = new GetADReplAccountCommand();
+           // getADRepl.All = true;
+           // getADRepl.NamingContext = nameContext;
+           // getADRepl.Server = server;
+           // IEnumerable res = getADRepl.Invoke();
+
+           // foreach(var restext in res)
+            //{
+             //   MessageBox.Show(restext.ToString());
+            //}
         }
 
         private void reInit()

@@ -1,0 +1,6 @@
+C:\Users\fmc666666\Source\Repos\DSInternals\Build\bin\Release\DSInternals\DSInternals.Replication.Model.dll
+C:\Users\fmc666666\Source\Repos\DSInternals\Build\obj\Release\DSInternals.Replication.Model\DSInternals.Replication.Model.csprojResolveAssemblyReference.cache
+C:\Users\fmc666666\Source\Repos\DSInternals\Build\obj\Release\DSInternals.Replication.Model\DSInternals.Replication.Model.dll
+C:\Users\fmc666666\Source\Repos\creddefense\Build\bin\Release\DSInternals\DSInternals.Replication.Model.dll
+C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.Replication.Model\DSInternals.Replication.Model.csprojResolveAssemblyReference.cache
+C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.Replication.Model\DSInternals.Replication.Model.dll

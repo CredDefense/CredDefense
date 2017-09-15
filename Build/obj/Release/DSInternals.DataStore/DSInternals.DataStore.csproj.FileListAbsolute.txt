@@ -1,0 +1,3 @@
+C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.DataStore\DSInternals.DataStore.csprojResolveAssemblyReference.cache
+C:\Users\fmc666666\Source\Repos\creddefense\Build\bin\Release\DSInternals\DSInternals.DataStore.dll
+C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.DataStore\DSInternals.DataStore.dll

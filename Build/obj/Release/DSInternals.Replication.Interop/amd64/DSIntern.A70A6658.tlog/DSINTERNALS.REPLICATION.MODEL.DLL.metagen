@@ -1,0 +1,108 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly DSInternals.Replication.Model, Version=2.21.2.0, Culture=neutral, PublicKeyToken=af7e77ba04a3c166: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly DSInternals.Common, Version=2.21.2.0, Culture=neutral, PublicKeyToken=af7e77ba04a3c166: 
+	hash=None, flags=None
+Assembly System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class DSInternals.Replication.Model.PartialAttributeSet: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Collections.Generic.Dictionary`2[System.Int32,System.String]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AddAttribute(Int32, String): PrivateScope, Public, HideBySig
+Class DSInternals.Replication.Model.ReplicatedLinkedValueCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Collections.Generic.Dictionary`2[System.Guid,System.Collections.Generic.List`1[DSInternals.Replication.Model.ReplicaAttribute]]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Add(Guid, ReplicaAttribute): PrivateScope, Public, HideBySig
+    Get(Guid): PrivateScope, Public, HideBySig
+Class DSInternals.Replication.Model.ReplicaAttributeCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Collections.Generic.Dictionary`2[System.Int32,DSInternals.Replication.Model.ReplicaAttribute]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Add(ReplicaAttribute): PrivateScope, Public, HideBySig
+Class DSInternals.Replication.Model.ReplicaAttribute: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Byte[][]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Id   'get set' : 
+    Byte[][] Values 'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    get_Values(): PrivateScope, Public, HideBySig, SpecialName
+Class DSInternals.Replication.Model.ReplicaObject: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :DSInternals.Common.Data.DirectoryObject
+    Void .ctor(System.String, System.Guid, System.Security.Principal.SecurityIdentifier, DSInternals.Replication.Model.ReplicaAttributeCollection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    DSInternals.Common.Data.BasicSchema Schema 'get set' : 
+    System.String DistinguishedName 'get ' : 
+    System.Guid Guid 'get ' : 
+    System.Security.Principal.SecurityIdentifier Sid 'get ' : 
+    DSInternals.Replication.Model.ReplicaAttributeCollection Attributes 'get set' : 
+  Methods:
+    get_Schema(): PrivateScope, Public, HideBySig, SpecialName
+    set_Schema(BasicSchema): PrivateScope, Public, HideBySig, SpecialName
+    get_DistinguishedName(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Guid(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Sid(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Attributes(): PrivateScope, Public, HideBySig, SpecialName
+    LoadLinkedValues(ReplicatedLinkedValueCollection): PrivateScope, Public, HideBySig
+    HasAttribute(String): PrivateScope, Public, Virtual, HideBySig
+    ReadAttribute(String, Byte[]&(Out)): PrivateScope, Public, Virtual, HideBySig
+    ReadAttribute(String, Byte[][]&(Out)): PrivateScope, Public, Virtual, HideBySig
+    ReadAttribute(String, Nullable`1&(Out)): PrivateScope, Public, Virtual, HideBySig
+    ReadAttribute(String, Nullable`1&(Out)): PrivateScope, Public, Virtual, HideBySig
+    ReadAttribute(String, String&(Out)): PrivateScope, Public, Virtual, HideBySig
+    ReadAttribute(String, String[]&(Out)): PrivateScope, Public, Virtual, HideBySig
+    ReadAttribute(String, DistinguishedName&(Out)): PrivateScope, Public, Virtual, HideBySig
+    ReadLinkedValues(String, Byte[][]&(Out)): PrivateScope, Public, Virtual, HideBySig
+Class DSInternals.Replication.Model.ReplicaObjectCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Collections.Generic.List`1[DSInternals.Replication.Model.ReplicaObject]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class DSInternals.Replication.Model.ReplicationCookie: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Guid, Int64, Int64, Int64): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String NamingContext 'get set' : 
+    System.Guid InvocationId 'get set' : 
+    Int64 HighObjUpdate 'get set' : 
+    Int64 Reserved 'get set' : 
+    Int64 HighPropUpdate 'get set' : 
+  Methods:
+    get_NamingContext(): PrivateScope, Public, HideBySig, SpecialName
+    get_InvocationId(): PrivateScope, Public, HideBySig, SpecialName
+    get_HighObjUpdate(): PrivateScope, Public, HideBySig, SpecialName
+    get_Reserved(): PrivateScope, Public, HideBySig, SpecialName
+    get_HighPropUpdate(): PrivateScope, Public, HideBySig, SpecialName
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    Equals(ReplicationCookie): PrivateScope, Public, HideBySig
+    op_Equality(ReplicationCookie, ReplicationCookie): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(ReplicationCookie, ReplicationCookie): PrivateScope, Public, Static, HideBySig, SpecialName
+Class DSInternals.Replication.Model.ReplicationCursor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Guid, Int64): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Guid SourceInvocationId 'get set' : 
+    Int64 UpToDatenessUsn 'get set' : 
+  Methods:
+    get_SourceInvocationId(): PrivateScope, Public, HideBySig, SpecialName
+    get_UpToDatenessUsn(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class DSInternals.Replication.Model.ReplicationResult: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(DSInternals.Replication.Model.ReplicaObjectCollection, Boolean, DSInternals.Replication.Model.ReplicationCookie, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    DSInternals.Replication.Model.ReplicaObjectCollection Objects 'get set' : 
+    Boolean HasMoreData 'get set' : 
+    DSInternals.Replication.Model.ReplicationCookie Cookie 'get set' : 
+    Int32 TotalObjectCount 'get set' : 
+  Methods:
+    get_Objects(): PrivateScope, Public, HideBySig, SpecialName
+    get_HasMoreData(): PrivateScope, Public, HideBySig, SpecialName
+    get_Cookie(): PrivateScope, Public, HideBySig, SpecialName
+    get_TotalObjectCount(): PrivateScope, Public, HideBySig, SpecialName

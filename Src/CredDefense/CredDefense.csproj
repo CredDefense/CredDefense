@@ -150,16 +150,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DSInternals.PowerShell\DSInternals.PowerShell.csproj">
-      <Project>{c7eecc1f-1f9c-400b-a981-a8106e2a75f7}</Project>
-      <Name>DSInternals.PowerShell</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DSInternals.Replication\DSInternals.Replication.csproj">
-      <Project>{2ee0d48f-65ba-4d4f-a8e1-fc01349ba786}</Project>
-      <Name>DSInternals.Replication</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y /s /i /c $(SolutionDir)EPF\builds $(SolutionDir)..\bin\EPF\builds

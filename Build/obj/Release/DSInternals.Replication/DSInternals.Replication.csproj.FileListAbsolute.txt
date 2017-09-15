@@ -1,0 +1,3 @@
+C:\Users\fmc666666\Source\Repos\creddefense\Build\bin\Release\DSInternals\DSInternals.Replication.dll
+C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.Replication\DSInternals.Replication.csprojResolveAssemblyReference.cache
+C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.Replication\DSInternals.Replication.dll

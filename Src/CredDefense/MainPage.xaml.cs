@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DSInternals.PowerShell.Commands;
+//using DSInternals.PowerShell.Commands;
 using System.Management.Automation;
 using System.Net;
 
