@@ -10,6 +10,7 @@
 
     #Start loop to ingest logs
 
+    $allevents = @()
     #If a single event log is set process it. Otherwise process the forwarded events.
     if ($EventLog -ne "")
     {
@@ -49,9 +50,17 @@
 
     ### Section for detecting Responder activity
     Write-Output "[*] Now checking logs for Responder activity`n"
-    $responderevents = $events | Where-Object {$_.id -eq '8415'} | Select-Object Message -Unique
-    $responderevents
-
+    $responderevents = $events | Where-Object {$_.id -eq '8415'} | Select-Object TimeCreated,ID,Message
+    Foreach ($revent in $responderevents)
+    {
+        $time = $revent.TimeCreated
+        $timemod = $time.ToString("yyyyMMddHHmmssfffffff")
+        $uniqueid = "EventID:$($revent.ID)-$($timemod)"
+        $combinedevent = New-Object PSObject
+        $combinedevent | Add-Member -type NoteProperty -Name 'UniqueID' -Value "$uniqueid"
+        $combinedevent | Add-Member -type NoteProperty -Name 'Message' -Value "$($revent.Message)"
+        $allevents += $combinedevent
+    }
 
     ####### Logging and Alerting ######
    
@@ -65,12 +74,47 @@
     }
     else
     {
-        mkdir $CDLogPath
+        if (Test-Path $CDLogPath)
+        {
+          #directory already exists  
+        }
+        else
+        {
+            mkdir $CDLogPath
+        }
         echo $null > $CDLog
     }
 
     #checks CredDefense log file to see if an alert already existed
-
+    $currentlog = Get-Content $CDLog
+    $oldevents = @()
+    $newevents = @()
+    foreach ($eventline in $allevents)
+    {
+        if ($currentlog -notcontains $eventline.UniqueID)
+        {
+            $newevents += $eventline
+        }
+        elseif($currentlog -contains $eventline.UniqueID)
+        {
+            $oldevents += $eventline
+        }
+    }
+    
     #On screen alerting & email notification
+    
+    If ($newevents.count -eq 0)
+    {
+    Write-Output "[*] No new events were detected in the last hour.`n"
+    }
+    else
+    {
+    Write-Output "[*] A total of $($newevents.count) new events were detected in the last hour. They are listed below:`n"
+    Write-Output $newevents "`n"
+    $newevents.UniqueId | sort-object -Descending | Add-Content $CDLog
+    Write-Output "[*] New events have been written to $CDLog.`n"
+    }
+    
+    Write-Output "[*] $($oldevents.count) old events from the last hour were not written to the log file." 
 
 }
