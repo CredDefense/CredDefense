@@ -32,12 +32,25 @@
 
     ####### Start various alert triggers #######
     ### Section for detecting Password Spraying
+    Write-Output "[*] Now checking logs for password spraying activity`n"
+    $failedloginevents = $events | Where-Object {$_.id -eq '4625'} 
+    
+    $FailedLoginIPAddresses = @()
+    Foreach ($event in $failedloginevents)
+    {
+        $eventXml = [xml]$event.ToXml()  
+        $FailedLoginIPAddresses += $eventXml.Event.EventData.Data[19].'#text'
+    }
+    $FailedLoginIPAddresses | group | % { $h = @{} } { $h[$_.Name] = $_.Count } { $h }
 
 
     ### Section for detecting Honey Token Usage
 
 
     ### Section for detecting Responder activity
+    Write-Output "[*] Now checking logs for Responder activity`n"
+    $responderevents = $events | Where-Object {$_.id -eq '8415'} | Select-Object Message -Unique
+    $responderevents
 
 
     ####### Logging and Alerting ######
