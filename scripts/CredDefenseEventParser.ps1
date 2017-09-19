@@ -35,27 +35,54 @@
     ### Section for detecting Password Spraying
     Write-Output "[*] Now checking logs for password spraying activity`n"
     $failedloginevents = $events | Where-Object {$_.id -eq '4625'} 
-    
+
     $FailedLoginIPAddresses = @()
     Foreach ($event in $failedloginevents)
     {
         $eventXml = [xml]$event.ToXml()  
         $FailedLoginIPAddresses += $eventXml.Event.EventData.Data[19].'#text'
     }
-    $FailedLoginIPAddresses | group | % { $h = @{} } { $h[$_.Name] = $_.Count } { $h }
+    
+    $passwordsprayinghosts = @()
+    $FailedLoginIPAddresses = $FailedLoginIPAddresses | group
+    
+    foreach($ip in $FailedLoginIPAddresses)
+    {
+        if ($ip.count -ge 10)
+        {
+        Write-host -ForegroundColor yellow "[***] $($ip.Name) appears to be performing a password spraying attack. A total of $($ip.count) failed login attempts were detected."
+        $passwordsprayinghosts += $ip.Name
+        }
+    }
+        Foreach ($phost in $passwordsprayinghosts)
+    {
+        $psprayevents = $failedloginevents | Where-Object {$_.Message -match $phost}
+        $pstime = $psprayevents[0].TimeCreated
+        $passwordsprayevent = $psprayevents[0]
+        $pstimemod = $pstime.ToString("yyyyMMddHHmmssfffffff")
+        $psuniqueid = "PasswordSprayDetection:$($passwordsprayevent.ID)-$($pstimemod)"
+        $combinedevent = New-Object PSObject
+        $combinedevent | Add-Member -type NoteProperty -Name 'UniqueID' -Value "$psuniqueid"
+        $combinedevent | Add-Member -type NoteProperty -Name 'Message' -Value "$($psprayevents.Message)"
+        $allevents += $combinedevent
+    }
 
 
     ### Section for detecting Honey Token Usage
 
 
     ### Section for detecting Responder activity
-    Write-Output "[*] Now checking logs for Responder activity`n"
+    Write-Output "`n[*] Now checking logs for Responder activity`n"
     $responderevents = $events | Where-Object {$_.id -eq '8415'} | Select-Object TimeCreated,ID,Message
+    if ($responderevents -ne $null)
+    {
+    Write-host -foregroundcolor yellow "[***] Some possible Responder activity was detected.`n"
+    }
     Foreach ($revent in $responderevents)
     {
         $time = $revent.TimeCreated
         $timemod = $time.ToString("yyyyMMddHHmmssfffffff")
-        $uniqueid = "EventID:$($revent.ID)-$($timemod)"
+        $uniqueid = "ResponderDetection:$($revent.ID)-$($timemod)"
         $combinedevent = New-Object PSObject
         $combinedevent | Add-Member -type NoteProperty -Name 'UniqueID' -Value "$uniqueid"
         $combinedevent | Add-Member -type NoteProperty -Name 'Message' -Value "$($revent.Message)"
@@ -111,7 +138,7 @@
     {
     Write-Output "[*] A total of $($newevents.count) new events were detected in the last hour. They are listed below:`n"
     Write-Output $newevents "`n"
-    $newevents.UniqueId | sort-object -Descending | Add-Content $CDLog
+    $newevents.UniqueID | sort-object -Descending | Add-Content $CDLog
     Write-Output "[*] New events have been written to $CDLog.`n"
     }
     
