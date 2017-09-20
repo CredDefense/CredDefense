@@ -77,6 +77,14 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.6.1.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\TaskScheduler.2.6.1\lib\net40\Microsoft.Win32.TaskScheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NDceRpc.Microsoft, Version=0.2.1.0, Culture=neutral, PublicKeyToken=7ef76aa0ad6f5cef, processorArchitecture=MSIL">
       <HintPath>..\packages\NDceRpc.0.2.1.0\lib\NET40\NDceRpc.Microsoft.dll</HintPath>
       <Private>True</Private>
@@ -84,6 +92,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
@@ -147,6 +156,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResponderGuardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PasswordFilterInstallPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +186,9 @@
       <DependentUpon>PasswordAuditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PasswordFilterHelper.cs" />
+    <Compile Include="ResponderGuardPage.xaml.cs">
+      <DependentUpon>ResponderGuardPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PasswordFilterInstallPage.xaml.cs">
       <DependentUpon>PasswordFilterInstallPage.xaml</DependentUpon>
     </Compile>
@@ -231,7 +247,9 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
-xcopy /y /s /i /c $(SolutionDir)EPF\epf $(SolutionDir)..\Builds\epf</PostBuildEvent>
+xcopy /y /s /i /c $(SolutionDir)EPF\epf $(SolutionDir)..\Builds\epf
+
+xcopy /y /s /i /c $(SolutionDir)..\scripts $(SolutionDir)..\Builds\scripts</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

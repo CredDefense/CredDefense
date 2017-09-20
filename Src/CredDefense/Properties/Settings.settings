@@ -11,5 +11,8 @@
     <Setting Name="EpfFilesPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">epf</Value>
     </Setting>
+    <Setting Name="ResponderGuardTask" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rsguardcd</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

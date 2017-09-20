@@ -58,5 +58,17 @@ namespace CredDefense.Properties {
                 this["EpfFilesPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rsguardcd")]
+        public string ResponderGuardTask {
+            get {
+                return ((string)(this["ResponderGuardTask"]));
+            }
+            set {
+                this["ResponderGuardTask"] = value;
+            }
+        }
     }
 }

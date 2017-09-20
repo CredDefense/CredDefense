@@ -53,10 +53,10 @@ namespace CredDefense
                 EventMonitoringPage eventMonitoringPage = new EventMonitoringPage();
                 this.NavigationService.Navigate(eventMonitoringPage);
             }
-            else if (selectedModule.Contains("Honey Tokens"))
+            else if (selectedModule.Contains("ResponderGuard"))
             {
-                HoneyTokensPage honeyTokensPage = new HoneyTokensPage();
-                this.NavigationService.Navigate(honeyTokensPage);
+                ResponderGuardPage responderGuardPage = new ResponderGuardPage();
+                this.NavigationService.Navigate(responderGuardPage);
             }
             else if (selectedModule.Contains("Password Auditing"))
             {

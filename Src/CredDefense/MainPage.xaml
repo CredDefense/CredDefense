@@ -32,7 +32,7 @@
         </Border>
         <ListBox Name="moduleListBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0" MouseDoubleClick="moduleListBox_MouseDoubleClick">
             <ListBoxItem>Event Monitoring</ListBoxItem>
-            <ListBoxItem>Honey Tokens</ListBoxItem>
+            <ListBoxItem>ResponderGuard</ListBoxItem>
             <ListBoxItem>Password Auditing</ListBoxItem>
             <ListBoxItem>Password Filtering</ListBoxItem>
         </ListBox>
