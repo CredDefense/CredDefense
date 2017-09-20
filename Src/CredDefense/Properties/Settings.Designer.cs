@@ -70,5 +70,17 @@ namespace CredDefense.Properties {
                 this["ResponderGuardTask"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cdevtxparse")]
+        public string CDEventParseTask {
+            get {
+                return ((string)(this["CDEventParseTask"]));
+            }
+            set {
+                this["CDEventParseTask"] = value;
+            }
+        }
     }
 }

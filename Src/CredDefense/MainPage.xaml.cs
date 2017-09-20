@@ -50,8 +50,8 @@ namespace CredDefense
 
             if (selectedModule.Contains("Event Monitoring"))
             {
-                EventMonitoringPage eventMonitoringPage = new EventMonitoringPage();
-                this.NavigationService.Navigate(eventMonitoringPage);
+                CredDefenseEventParserPage credDefenseEventParserPage = new CredDefenseEventParserPage();
+                this.NavigationService.Navigate(credDefenseEventParserPage);
             }
             else if (selectedModule.Contains("ResponderGuard"))
             {

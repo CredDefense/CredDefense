@@ -115,14 +115,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="EventMonitoringPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HoneyTokensPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,12 +126,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EventMonitoringPage.xaml.cs">
-      <DependentUpon>EventMonitoringPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="HoneyTokensPage.xaml.cs">
-      <DependentUpon>HoneyTokensPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -155,6 +141,10 @@
     <Page Include="PasswordAuditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CredDefenseEventParserPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ResponderGuardPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -186,6 +176,9 @@
       <DependentUpon>PasswordAuditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PasswordFilterHelper.cs" />
+    <Compile Include="CredDefenseEventParserPage.xaml.cs">
+      <DependentUpon>CredDefenseEventParserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ResponderGuardPage.xaml.cs">
       <DependentUpon>ResponderGuardPage.xaml</DependentUpon>
     </Compile>

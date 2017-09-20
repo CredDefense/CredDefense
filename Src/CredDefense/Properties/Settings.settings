@@ -14,5 +14,8 @@
     <Setting Name="ResponderGuardTask" Type="System.String" Scope="User">
       <Value Profile="(Default)">rsguardcd</Value>
     </Setting>
+    <Setting Name="CDEventParseTask" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cdevtxparse</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
