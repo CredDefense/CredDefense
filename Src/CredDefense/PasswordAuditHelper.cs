@@ -9,11 +9,19 @@ using System.Management.Automation;
 using System.Windows;
 using DSInternals.Common;
 using System.IO;
+using System.Timers;
+using System.Diagnostics;
+using System.Linq;
 
 namespace CredDefense
 {
     class PasswordAuditHelper
     {
+        private static string fileHeader =  "****************************************\n" +
+                                            "*                                      *\n" +
+                                            "*      CredDefense AD PW Audit         *\n" +
+                                            "*                                      *\n" +
+                                            "****************************************\n\n\n";
         private string nameContext;
         private string saveFile;
         private string passwordList;
@@ -23,6 +31,9 @@ namespace CredDefense
         private Dictionary<string, List<DSAccount>> accFindings;
         private Dictionary<string, List<DSAccount>> hashDict;
         private Dictionary<string, List<DSAccount>> cracked;
+        Dictionary<string, int> passCount;
+        private int nDAsCracked;
+        private Stopwatch sw;
         private List<string> findingNames;
         private ProgressRecord progress;
         public ProgressRecord Progress
@@ -61,10 +72,13 @@ namespace CredDefense
 
         public bool RunAudit()
         {
+            passCount = new Dictionary<string, int>();
+            nDAsCracked = 0;
             hashDict = new Dictionary<string, List<DSAccount>>();
             cracked = new Dictionary<string, List<DSAccount>>();
             createFindingsDict();
             // MessageBox.Show("Ran!");
+            sw = Stopwatch.StartNew();
             if (createConnection())
             {
                 if( getAccounts() )
@@ -73,7 +87,9 @@ namespace CredDefense
                     {
                         crackPasses();
 
-                        MessageBox.Show("Done!");
+                        sw.Stop();
+                        writeResults();
+                        
                     }
                 }
             }
@@ -220,30 +236,145 @@ namespace CredDefense
                     continue;
                 }
                 string currHash = NTHash.ComputeHash(currPass).ToHex();
-                MessageBox.Show(currHash);
+
                 if (currHash != null && currHash.Length > 0 && hashDict.ContainsKey(currHash))
                 {
-                    MessageBox.Show(currPass);
                     cracked.Add(currPass, new List<DSAccount>(hashDict[currHash]));
                 }
             }
-            if (cracked.Count > 0)
+            
+        }
+
+        private void writeResults()
+        {
+            FileStream saveFileObj = new FileStream(saveFile, FileMode.Append);
+            StreamWriter saveStream = new StreamWriter(saveFileObj);
+
+            saveStream.WriteLine(fileHeader);
+            saveStream.WriteLine("\n" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString() + "\n");
+            foreach (string key in accFindings.Keys)
             {
-                FileStream saveFileObj = new FileStream(saveFile, FileMode.Append);
-                StreamWriter saveStream = new StreamWriter(saveFileObj);
-                foreach (string key in cracked.Keys)
+                if(accFindings[key].Count > 0)
                 {
-                    saveStream.Write(key + " : ");
-                    foreach(DSAccount crackedAcc in cracked[key])
+                    int idx = 0;
+                    saveStream.WriteLine("\n\n" + key + "\n----------------------------\n");
+                    foreach(DSAccount acc in accFindings[key])
                     {
-                        saveStream.Write(crackedAcc.SamAccountName + " ");
+                        saveStream.Write(acc.SamAccountName);
+                        if (acc.AdminCount)
+                        {
+                            saveStream.Write(" (AD)");
+                        }
+                        idx++;
+                        if(idx < 3)
+                        {
+                            saveStream.Write("\t");
+                        }
+                        else
+                        {
+                            idx = 0;
+                            saveStream.WriteLine("");
+                        }
                     }
 
-                    saveStream.WriteLine();
+                    saveStream.WriteLine("");
+                }
+            }
+
+            foreach(string key in hashDict.Keys)
+            {
+
+                if(hashDict[key].Count > 1)
+                {
+                    passCount.Add(key, hashDict[key].Count);
+                    saveStream.WriteLine("\n\nUsers with  " + key + " for NTHash" + "\n----------------------------\n");
+                    int idx = 0;
+                    foreach (DSAccount acc in hashDict[key])
+                    {
+                        saveStream.Write(acc.SamAccountName);
+                        if(acc.AdminCount)
+                        {
+                            saveStream.Write(" (AD)");
+                        }
+                        idx++;
+                        if (idx < 3)
+                        {
+                            saveStream.Write("\t");
+                        }
+                        else
+                        {
+                            idx = 0;
+                            saveStream.WriteLine("");
+                        }
+                    }
+
+                    saveStream.WriteLine("");
+                }
+            }
+
+            if (cracked.Count > 0)
+            {
+
+                int idx = 0;
+
+                foreach (string key in cracked.Keys)
+                {
+                    saveStream.WriteLine("\n\nUsers with  " + key + " for Password" + "\n----------------------------\n");
+                    foreach (DSAccount crackedAcc in cracked[key])
+                    {
+                        saveStream.Write(crackedAcc.SamAccountName);
+                        if (crackedAcc.AdminCount)
+                        {
+                            nDAsCracked++;
+                            saveStream.Write(" (AD)");
+                        }
+                        idx++;
+                        if (idx < 3)
+                        {
+                            saveStream.Write("\t");
+                        }
+                        else
+                        {
+                            idx = 0;
+                            saveStream.WriteLine("");
+                        }
+                    }
+
+                    saveStream.WriteLine("");
+
                 }
 
-                saveStream.Close();
             }
+
+            List<KeyValuePair<string, int>> sortedPass = passCount.ToList();
+            sortedPass.Sort(
+                delegate (KeyValuePair<string, int> pair1,
+                KeyValuePair<string, int> pair2)
+                {
+                    return pair1.Value.CompareTo(pair2.Value);
+                }
+            );
+            double totalSec = (double)sw.ElapsedMilliseconds / 1000.0;
+            saveStream.WriteLine("\n\nPassword Stats" + "\n----------------------------\n");
+            saveStream.WriteLine("Password File:\t\t" + passwordList);
+            saveStream.WriteLine("Total Time:\t\t" + totalSec.ToString());
+            saveStream.WriteLine("Total Unique:\t\t" + hashDict.Count);
+            saveStream.WriteLine("Total Cracked:\t\t" + cracked.Count);
+            saveStream.WriteLine("DA's Cracked:\t\t" + nDAsCracked);
+            saveStream.WriteLine("Top Re-Used Passwords (NTHash : nUsers):");
+
+            int currKvp = 0;
+            foreach(KeyValuePair<string, int> kvp in sortedPass)
+            {
+                saveStream.WriteLine(kvp.Key + " : " + kvp.Value);
+                currKvp++;
+                if(currKvp > 20)
+                {
+                    break;
+                }
+            }
+
+            saveStream.Close();
         }
 
         private void createFindingsDict()

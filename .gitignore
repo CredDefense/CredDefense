@@ -15,3 +15,6 @@
 *.ipdb
 *.lib
 /EPF/temp/
+/Builds/obj
+/Src/Builds/obj
+/Src/CredDefense/obj/x64/Release
