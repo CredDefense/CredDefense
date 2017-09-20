@@ -1,2 +1,0 @@
-C:\Users\fmc666666\Source\Repos\creddefense\Build\bin\Release\DSInternals\Esent.Interop.dll
-C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\Microsoft.Isam.Esent.Interop\Esent.Interop.dll

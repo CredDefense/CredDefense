@@ -28,7 +28,17 @@ namespace CredDefense
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string selectedModule = this.moduleListBox.SelectedValue.ToString();
+            string selectedModule = "";
+
+            try
+            {
+                selectedModule = this.moduleListBox.SelectedValue.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Selection");
+                return;
+            }
 
             if (selectedModule.Contains("Install"))
             {

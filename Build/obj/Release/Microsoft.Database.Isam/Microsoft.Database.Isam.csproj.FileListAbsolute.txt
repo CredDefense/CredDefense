@@ -1,3 +1,0 @@
-C:\Users\fmc666666\Source\Repos\creddefense\Build\bin\Release\DSInternals\Esent.Isam.dll
-C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\Microsoft.Database.Isam\Microsoft.Database.Isam.csprojResolveAssemblyReference.cache
-C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\Microsoft.Database.Isam\Esent.Isam.dll

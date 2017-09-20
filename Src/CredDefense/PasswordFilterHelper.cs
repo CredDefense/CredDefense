@@ -13,6 +13,21 @@ namespace CredDefense
 {
     class PasswordFilterHelper
     {
+        private Forest currForest;
+        private DomainCollection currDomains;
+
+        public DomainCollection CurrDomains
+        {
+            get;
+            private set;
+        }
+
+        public Forest CurrForest
+        {
+            get;
+            private set;
+        }
+
         private List<DomainController> allDomainControllers;
         public List<DomainController> AllDomainControllers
         {
@@ -43,6 +58,17 @@ namespace CredDefense
                 if (unconfiguredDomainControllers == null)
                     unconfiguredDomainControllers = new ObservableCollection<String>();
                 return unconfiguredDomainControllers;
+            }
+        }
+
+        private ObservableCollection<String> unreachabledDomainControllers;
+        public ObservableCollection<String> UnreachableDomainControllersList
+        {
+            get
+            {
+                if (unreachabledDomainControllers == null)
+                    unreachabledDomainControllers = new ObservableCollection<String>();
+                return unreachabledDomainControllers;
             }
         }
 
@@ -144,20 +170,70 @@ namespace CredDefense
 
         public bool checkSystemReachable(string dcName)
         {
-            return (Directory.Exists(@"\\" + dcName + @"\C$"));
+            try
+            {
+                return (Directory.Exists(@"\\" + dcName + @"\C$"));
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public void updateDomainControllers()
+        public bool updateDomainData()
+        {
+            bool retVal = true;
+            if (updateForest())
+            {
+                if( updateDomains(this.CurrForest) )
+                {
+                    retVal = updateDomainControllers(this.CurrDomains);
+                }
+            }
+            else
+            {
+                retVal = false;
+            }
+
+            return retVal;
+        }
+
+        private bool updateForest()
+        {
+            try
+            {
+                this.CurrForest = Forest.GetCurrentForest();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool updateDomains(Forest forest)
+        {
+            try
+            {
+                this.CurrDomains = forest.Domains;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool updateDomainControllers(DomainCollection domains)
         {
             ConfiguredDomainControllersList.Clear();
             UnconfiguredDomainControllersList.Clear();
-
+            UnreachableDomainControllersList.Clear();
+            AllDomainControllers.Clear();
+            bool retVal = true;
             try
             {
-                Forest forest = Forest.GetCurrentForest();
-                DomainCollection domCollection = forest.Domains;
-
-                foreach (Domain domain in domCollection)
+                foreach (Domain domain in domains)
                 {
                     DomainControllerCollection dcCollection = domain.FindAllDiscoverableDomainControllers();
 
@@ -165,10 +241,10 @@ namespace CredDefense
                     {
                         try
                         {
+                            AllDomainControllers.Add(dc);
+
                             if (checkSystemReachable(dc.IPAddress))
                             {
-                                AllDomainControllers.Add(dc);
-
                                 if (checkRegKey(dc.IPAddress))
                                 {
                                     ConfiguredDomainControllersList.Add(dc.Name);
@@ -177,6 +253,10 @@ namespace CredDefense
                                 {
                                     UnconfiguredDomainControllersList.Add(dc.Name);
                                 }
+                            }
+                            else
+                            {
+                                UnreachableDomainControllersList.Add(dc.Name);
                             }
                         }
                         catch (Exception e)
@@ -191,7 +271,10 @@ namespace CredDefense
             {
                 UnconfiguredDomainControllersList.Add("Error Retrieving Domain Controllers");
                 ConfiguredDomainControllersList.Add("Error Retrieving Domain Controllers");
+                retVal = false;
             }
+
+            return retVal;
         }
     }
 }

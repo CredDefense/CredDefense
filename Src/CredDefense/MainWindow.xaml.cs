@@ -23,6 +23,7 @@ namespace CredDefense
         public MainWindow()
         {
             InitializeComponent();
+            this.SizeToContent = SizeToContent.Height;
         }
     }
 }

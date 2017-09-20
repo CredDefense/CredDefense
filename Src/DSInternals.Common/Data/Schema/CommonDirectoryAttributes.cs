@@ -58,6 +58,8 @@
         public const int LMHashId = 589879;
         public const string MasterNamingContexts = "msDS-hasMasterNCs";
         public const string Member = "member";
+        public const string MemberOf = "memberOf";
+        public const int MemberOfID = 600000;
         public const string Name = "name";
         public const int NameId = 589825;
         public const string NTHash = "unicodePwd";

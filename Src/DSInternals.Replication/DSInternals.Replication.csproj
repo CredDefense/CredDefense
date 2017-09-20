@@ -33,10 +33,17 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>..\..\Builds\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DSInternals.Private.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NDceRpc.Microsoft">
@@ -44,6 +51,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Configuration\CommonAssemblyInfo.cs">
@@ -59,24 +67,21 @@
     <ProjectReference Include="..\DSInternals.Common\DSInternals.Common.csproj">
       <Project>{7d47f040-d3a9-43ca-9f69-ef91faf2c23a}</Project>
       <Name>DSInternals.Common</Name>
-      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DSInternals.Replication.Interop\DSInternals.Replication.Interop.vcxproj">
       <Project>{a70a6658-dd67-4c73-ab9a-581465137c6b}</Project>
       <Name>DSInternals.Replication.Interop</Name>
-      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DSInternals.Replication.Model\DSInternals.Replication.Model.csproj">
       <Project>{0bca513c-5f12-48b6-8288-d3a95ec2994a}</Project>
       <Name>DSInternals.Replication.Model</Name>
-      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DSInternals.Private.snk" />
     <None Include="DSInternals.Replication.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
     <None Include="package\install.ps1" />
   </ItemGroup>
   <ItemGroup />

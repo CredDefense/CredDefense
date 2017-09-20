@@ -18,6 +18,7 @@
         private string[] spn;
         private bool isDeleted;
         private bool adminCount;
+        private string member;
         private SecurityIdentifier[] sidHistory;
         private RawSecurityDescriptor securityDescriptor;
         private DateTime? lastLogon;
@@ -312,6 +313,12 @@
             private set;
         }
 
+        public string Member
+        {
+            get;
+            private set;
+        }
+
         protected void LoadAccountInfo(DirectoryObject dsObject)
         {
 
@@ -374,6 +381,9 @@
             int? groupId;
             dsObject.ReadAttribute(CommonDirectoryAttributes.PrimaryGroupId, out groupId);
             this.PrimaryGroupId = groupId.Value;
+
+            //memberOf
+           // dsObject.ReadAttribute(CommonDirectoryAttributes.Member, out this.member);
         }
 
         protected void LoadHashes(DirectoryObject dsObject, DirectorySecretDecryptor pek)

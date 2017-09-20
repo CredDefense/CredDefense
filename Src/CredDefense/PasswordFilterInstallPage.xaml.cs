@@ -1,28 +1,19 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.DirectoryServices.ActiveDirectory;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 //using DSInternals.PowerShell.Commands;
-//using DSInternals.Replication;
+using DSInternals.Replication;
+using System.Linq;
+using DSInternals.Common;
+using System.Collections.Generic;
+using DSInternals.Common.Cryptography;
+using DSInternals.Common.Data;
 //using DSInternals.Common.Data;
-//using DSInternals.Replication.Model;
-using System.Net;
 
 namespace CredDefense
 {
@@ -35,55 +26,29 @@ namespace CredDefense
         {
             InitializeComponent();
             this.DataContext = this;
-            reInit();
-            //string fullPath = this.pfHelper.AllDomainControllers.First().GetDirectoryEntry().Path.ToString();
-            //string nameContext = "";
-            //string server = "isthisyourdc";
-            //foreach (string token in fullPath.Split(','))
-            //{
-            //    if(token.ToLower().Contains("dc="))
-            //    {
-            //        nameContext += token + ",";
-            //    }
-            //}
-            //nameContext = nameContext.Remove(nameContext.Length - 1);
-            //MessageBox.Show(nameContext + " " + server);
-            //NetworkCredential cred = CredentialCache.DefaultNetworkCredentials;
-            //try
-            //{
-            //    DirectoryReplicationClient dirRep = new DirectoryReplicationClient(server, RpcProtocol.SMB, cred);
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
 
-           // foreach (DSAccount dsAcc in dirRep.GetAccounts(nameContext))
-          //  {
-           //     MessageBox.Show(dsAcc.DisplayName + dsAcc.NTHash);
-           //     break;
-          //  }
-            //GetADReplAccountCommand getADRepl = new GetADReplAccountCommand();
-           // getADRepl.All = true;
-           // getADRepl.NamingContext = nameContext;
-           // getADRepl.Server = server;
-           // IEnumerable res = getADRepl.Invoke();
-
-           // foreach(var restext in res)
-            //{
-             //   MessageBox.Show(restext.ToString());
-            //}
+            if (!reInit())
+            {
+                return;
+            }
         }
 
-        private void reInit()
+        private bool reInit()
         {
             this.pfHelper = new PasswordFilterHelper();
-            this.pfHelper.updateDomainControllers();
-            this.ConfiguredDomainControllersList = pfHelper.ConfiguredDomainControllersList;
-            this.UnconfiguredDomainControllersList = pfHelper.UnconfiguredDomainControllersList;
-            FrameworkElement dataContext = (FrameworkElement)this.DataContext;
-            this.DataContext = null;
-            this.DataContext = dataContext;
+            if (this.pfHelper.updateDomainData())
+            {
+                this.ConfiguredDomainControllersList = pfHelper.ConfiguredDomainControllersList;
+                this.UnconfiguredDomainControllersList = pfHelper.UnconfiguredDomainControllersList;
+                FrameworkElement dataContext = (FrameworkElement)this.DataContext;
+                this.DataContext = null;
+                this.DataContext = dataContext;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private PasswordFilterHelper pfHelper;
@@ -123,7 +88,18 @@ namespace CredDefense
         //Install Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string selectedModule = this.installDomainControllers.SelectedValue.ToString().Split(':')[0].Trim();
+            string selectedModule = "";
+
+            try
+            {
+                selectedModule = this.installDomainControllers.SelectedValue.ToString().Split(':')[0].Trim();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Selection");
+                return;
+            }
+
             string dcIpAddress = "";
             bool is64bit = false;
             string sysPath = "";
@@ -237,7 +213,18 @@ namespace CredDefense
         //Uninstall button
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string selectedModule = this.uninstallDomainControllers.SelectedValue.ToString().Split(':')[0].Trim();
+            string selectedModule = "";
+
+            try
+            {
+                selectedModule = this.uninstallDomainControllers.SelectedValue.ToString().Split(':')[0].Trim();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Selection");
+                return;
+            }
+
             string dcIpAddress = "";
             string dcName = "";
             bool updated = false;

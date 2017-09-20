@@ -35,11 +35,14 @@ namespace CredDefense
         private void reInit()
         {
             this.pfHelper = new PasswordFilterHelper();
-            this.pfHelper.updateDomainControllers();
-            this.ConfiguredDomainControllersList = pfHelper.ConfiguredDomainControllersList;
-            FrameworkElement dataContext = (FrameworkElement)this.DataContext;
-            this.DataContext = null;
-            this.DataContext = dataContext;
+
+            if (this.pfHelper.updateDomainData())
+            {
+                this.ConfiguredDomainControllersList = pfHelper.ConfiguredDomainControllersList;
+                FrameworkElement dataContext = (FrameworkElement)this.DataContext;
+                this.DataContext = null;
+                this.DataContext = dataContext;
+            }
         }
 
         private PasswordFilterHelper pfHelper;

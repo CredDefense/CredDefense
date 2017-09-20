@@ -2,7 +2,6 @@
 {
     using DSInternals.Common.Data;
     using DSInternals.Replication.Model;
-    using DSInternals.Replication.Interop;
     using NDceRpc;
     using NDceRpc.Microsoft.Interop;
     using NDceRpc.Native;
@@ -13,6 +12,8 @@
     using DSInternals.Common.Interop;
     using DSInternals.Common.Cryptography;
     using DSInternals.Common;
+    using DSInternals.Replication;
+    using DSInternals.Replication.Interop;
 
     public class DirectoryReplicationClient : IDisposable
     {

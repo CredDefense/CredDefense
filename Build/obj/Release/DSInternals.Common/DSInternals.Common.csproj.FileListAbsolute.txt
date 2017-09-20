@@ -1,8 +1,0 @@
-C:\Users\fmc666666\Source\Repos\DSInternals\Build\bin\Release\DSInternals\DSInternals.Common.dll
-C:\Users\fmc666666\Source\Repos\DSInternals\Build\obj\Release\DSInternals.Common\DSInternals.Common.Properties.Resources.resources
-C:\Users\fmc666666\Source\Repos\DSInternals\Build\obj\Release\DSInternals.Common\DSInternals.Common.csproj.GenerateResource.Cache
-C:\Users\fmc666666\Source\Repos\DSInternals\Build\obj\Release\DSInternals.Common\DSInternals.Common.dll
-C:\Users\fmc666666\Source\Repos\creddefense\Build\bin\Release\DSInternals\DSInternals.Common.dll
-C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.Common\DSInternals.Common.Properties.Resources.resources
-C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.Common\DSInternals.Common.csproj.GenerateResource.Cache
-C:\Users\fmc666666\Source\Repos\creddefense\Build\obj\Release\DSInternals.Common\DSInternals.Common.dll

@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\Builds\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DSInternals.Private.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -126,6 +134,7 @@
     <None Include="DSInternals.Common.nuspec">
       <SubType>Designer</SubType>
     </None>
+    <None Include="DSInternals.Private.snk" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -36,7 +36,17 @@ namespace CredDefense
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string selectedModule = this.moduleListBox.SelectedValue.ToString();
+            string selectedModule = "";
+
+            try
+            {
+                selectedModule = this.moduleListBox.SelectedValue.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Selection");
+                return;
+            }
 
             if (selectedModule.Contains("Event Monitoring"))
             {
@@ -50,8 +60,8 @@ namespace CredDefense
             }
             else if (selectedModule.Contains("Password Auditing"))
             {
-                PasswordAuditingPage passwordAuditingPage = new PasswordAuditingPage();
-                this.NavigationService.Navigate(passwordAuditingPage);
+                PasswordAuditPage passwordAuditPage = new PasswordAuditPage();
+                this.NavigationService.Navigate(passwordAuditPage);
             }
             else if (selectedModule.Contains("Password Filtering"))
             {
