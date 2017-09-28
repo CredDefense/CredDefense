@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Wed Sep 20 13:06:19 2017
+/* at Thu Sep 28 10:07:19 2017
  */
 /* Compiler settings for drsr.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 

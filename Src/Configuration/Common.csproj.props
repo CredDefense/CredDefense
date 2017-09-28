@@ -4,14 +4,8 @@
   <Import Project="Common.props" />
   <!-- Output Directory Paths -->
   <PropertyGroup>
-    <OutputPath>$(BinPath)</OutputPath>
-    <IntermediateOutputPath>$(ObjPath)</IntermediateOutputPath>
-  </PropertyGroup>
-  <!-- Strong Name Signing -->
-  <PropertyGroup>
-    <SignAssembly>$(DoSign)</SignAssembly>
-    <DelaySign>$(PerformDelaySign)</DelaySign>
-    <AssemblyOriginatorKeyFile>$(SigningKeyPath)</AssemblyOriginatorKeyFile>
+    <OutPath>$(BuildPath)</OutPath>
+    <IntPath>$(ObjPath)</IntPath>
   </PropertyGroup>
   <!-- Only add the PDB files in Debug Configuration -->
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
