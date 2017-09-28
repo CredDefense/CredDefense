@@ -96,7 +96,7 @@ namespace CredDefense
 
                             foreach (string newPath in Directory.GetFiles(Properties.Settings.Default.EpfFilesPath, "*.*", SearchOption.AllDirectories))
                             {
-                                File.Copy(newPath, remoteEpfFolder.Replace(Properties.Settings.Default.EpfFilesPath, newPath), true);
+                                File.Copy(newPath, newPath.Replace(Properties.Settings.Default.EpfFilesPath, remoteEpfFolder), true);
                             }
                         }
                         catch

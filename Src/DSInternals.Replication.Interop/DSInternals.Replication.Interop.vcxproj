@@ -23,10 +23,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-	    <ProjectConfiguration Include="Release|AnyCPU">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A70A6658-DD67-4C73-AB9A-581465137C6B}</ProjectGuid>
@@ -48,13 +44,6 @@
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>$(DefaultPlatformToolSet)</PlatformToolset>
-    <CLRSupport>true</CLRSupport>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
@@ -63,13 +52,6 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>$(DefaultPlatformToolSet)</PlatformToolset>
-    <CLRSupport>true</CLRSupport>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>$(DefaultPlatformToolSet)</PlatformToolset>
@@ -89,16 +71,10 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-    <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-    <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
@@ -106,10 +82,6 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
-  </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
@@ -121,44 +93,11 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <ExceptionHandling>false</ExceptionHandling>
-      <CompileAsManaged>true</CompileAsManaged>
-      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>RpcRT4.lib;Secur32.lib</AdditionalDependencies>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-    </Link>
-    <Midl>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-    </Midl>
-    <Midl>
-      <GenerateClientFiles>Stub</GenerateClientFiles>
-    </Midl>
-    <Midl>
-      <GenerateServerFiles>None</GenerateServerFiles>
-      <ClientStubFile>%(Filename).cpp</ClientStubFile>
-      <GenerateTypeLibrary>false</GenerateTypeLibrary>
-      <EnableErrorChecks>All</EnableErrorChecks>
-    </Midl>
-  </ItemDefinitionGroup>
-   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -241,31 +180,6 @@
       <ClientStubFile>%(Filename).cpp</ClientStubFile>
     </Midl>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <ExceptionHandling>Async</ExceptionHandling>
-      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>Rpcrt4.lib;Secur32.lib</AdditionalDependencies>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-    </Link>
-    <Midl>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-    </Midl>
-    <Midl>
-      <GenerateClientFiles>Stub</GenerateClientFiles>
-    </Midl>
-    <Midl>
-      <GenerateServerFiles>None</GenerateServerFiles>
-      <ClientStubFile>%(Filename).cpp</ClientStubFile>
-    </Midl>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -314,8 +228,6 @@
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h;unmanaged.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdafx.h;unmanaged.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdafx.h;unmanaged.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-	  <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">stdafx.h;unmanaged.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">stdafx.h;unmanaged.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <ClCompile Include="drsr_addons.cpp" />
     <ClCompile Include="drsr_alloc.cpp" />
@@ -326,7 +238,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)DSInternals.Common\DSInternals.Common.csproj">
+    <ProjectReference Include="..\DSInternals.Common\DSInternals.Common.csproj">
       <Project>{7d47f040-d3a9-43ca-9f69-ef91faf2c23a}</Project>
       <CopyLocal>false</CopyLocal>
       <Private>false</Private>
@@ -335,7 +247,7 @@
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
-    <ProjectReference Include="$(SolutionDir)DSInternals.Replication.Model\DSInternals.Replication.Model.csproj">
+    <ProjectReference Include="..\DSInternals.Replication.Model\DSInternals.Replication.Model.csproj">
       <Project>{0bca513c-5f12-48b6-8288-d3a95ec2994a}</Project>
       <CopyLocal>false</CopyLocal>
       <Private>false</Private>
@@ -352,30 +264,22 @@
     <Midl Include="drsr.idl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">false</ExcludedFromBuild>
-
-	  </Midl>
+    </Midl>
     <Midl Include="drsr_imports.idl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">true</ExcludedFromBuild>
-
-	  <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">true</ExcludedFromBuild>
-
-	</Midl>
+    </Midl>
   </ItemGroup>
   <!-- Visual C++ Runtime Redistribution -->
   <PropertyGroup Condition=" '$(PlatformToolsetVersion)' &lt; 141 ">
     <!-- Definitions for Visual Studio 2013 and 2015 -->
-	<VCRuntimePath Condition=" '$(Platform)'=='AnyCPU' ">$(VCInstallDir)\redist\x64\Microsoft.VC$(PlatformToolsetVersion).CRT</VCRuntimePath>
     <VCRuntimePath Condition=" '$(Platform)'=='x64' ">$(VCInstallDir)\redist\x64\Microsoft.VC$(PlatformToolsetVersion).CRT</VCRuntimePath>
     <VCRuntimePath Condition=" '$(Platform)'=='Win32' ">$(VCInstallDir)\redist\x86\Microsoft.VC$(PlatformToolsetVersion).CRT</VCRuntimePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(PlatformToolsetVersion)' &gt;= 141 ">
     <!-- Definitions for Visual Studio 2017 -->
-    <VCRuntimePath Condition=" '$(Platform)'=='AnyCPU' ">$(VCInstallDir)\Redist\MSVC\$(VCToolsVersion)\onecore\x64\Microsoft.VC150.CRT</VCRuntimePath>
     <VCRuntimePath Condition=" '$(Platform)'=='x64' ">$(VCInstallDir)\Redist\MSVC\$(VCToolsVersion)\onecore\x64\Microsoft.VC150.CRT</VCRuntimePath>
     <VCRuntimePath Condition=" '$(Platform)'=='Win32' ">$(VCInstallDir)\Redist\MSVC\$(VCToolsVersion)\onecore\x86\Microsoft.VC150.CRT</VCRuntimePath>
   </PropertyGroup>
