@@ -243,20 +243,13 @@ namespace CredDefense
                         {
                             AllDomainControllers.Add(dc);
 
-                            if (checkSystemReachable(dc.IPAddress))
+                            if (checkRegKey(dc.IPAddress))
                             {
-                                if (checkRegKey(dc.IPAddress))
-                                {
-                                    ConfiguredDomainControllersList.Add(dc.Name);
-                                }
-                                else
-                                {
-                                    UnconfiguredDomainControllersList.Add(dc.Name);
-                                }
+                                ConfiguredDomainControllersList.Add(dc.Name);
                             }
                             else
                             {
-                                UnreachableDomainControllersList.Add(dc.Name);
+                                UnconfiguredDomainControllersList.Add(dc.Name);
                             }
                         }
                         catch (Exception e)
