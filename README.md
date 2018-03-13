@@ -1,6 +1,10 @@
 # CredDefense
 Credential and Red Teaming Defense for Windows Environments
 
+For an overview on features and useage, please see:
+
+https://www.blackhillsinfosec.com/the-creddefense-toolkit/
+
 Hey Everyone,
 
 I apologize for the lack of movement on this project. I also apologize for lack of responses. 2017-Q4 and 2018-Q1 were slammed for us and we are just now getting caught back up.
