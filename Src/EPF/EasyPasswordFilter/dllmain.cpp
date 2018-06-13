@@ -18,6 +18,12 @@
 // Author: Brian Fehrman (@fullmetalcache)
 // Based on the work by: https://github.com/jephthai/OpenPasswordFilter
 //
+// Author: Kevin White (kwhite@cbuscollaboratory.com)
+// Changed to not use C++ strings/hashes when handling password, so that 
+// SecureZeroMemory can be used once the temporary copies are finished.
+// Add Unicode support.  Currently, assumes the input files contain
+// UTF-8.  The password handed to the DLL from Windows is UTF-16.
+// 
 
 #include "stdafx.h"
 #include "uthash.h"
