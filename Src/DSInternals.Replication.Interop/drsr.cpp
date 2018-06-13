@@ -3,12 +3,12 @@
 /* this ALWAYS GENERATED file contains the RPC client stubs */
 
 
- /* File created by MIDL compiler version 8.00.0603 */
-/* at Thu Sep 28 10:44:13 2017
+ /* File created by MIDL compiler version 8.01.0622 */
+/* at Mon Jan 18 22:14:07 2038
  */
 /* Compiler settings for drsr.idl:
-    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
-    protocol : dce , ms_ext, c_ext, robust
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
+    protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
@@ -19,7 +19,6 @@
 #if defined(_M_AMD64)
 
 
-#pragma warning( disable: 4049 )  /* more than 64k source lines */
 #if _MSC_VER >= 1200
 #pragma warning(push)
 #endif
@@ -60,6 +59,10 @@ typedef struct _drsr_MIDL_EXPR_FORMAT_STRING
 static const RPC_SYNTAX_IDENTIFIER  _RpcTransferSyntax = 
 {{0x8A885D04,0x1CEB,0x11C9,{0x9F,0xE8,0x08,0x00,0x2B,0x10,0x48,0x60}},{2,0}};
 
+static const RPC_SYNTAX_IDENTIFIER  _NDR64_RpcTransferSyntax = 
+{{0x71710533,0xbeba,0x4937,{0x83,0x19,0xb5,0xdb,0xef,0x9c,0xcc,0x36}},{1,0}};
+
+
 
 extern const drsr_MIDL_TYPE_FORMAT_STRING drsr__MIDL_TypeFormatString;
 extern const drsr_MIDL_PROC_FORMAT_STRING drsr__MIDL_ProcFormatString;
@@ -71,6 +74,7 @@ extern const drsr_MIDL_EXPR_FORMAT_STRING drsr__MIDL_ExprFormatString;
 /* Standard interface: drsuapi, ver. 4.0,
    GUID={0xe3514235,0x4b06,0x11d1,{0xab,0x04,0x00,0xc0,0x4f,0xc2,0xdc,0xd2}} */
 
+ extern const MIDL_STUBLESS_PROXY_INFO drsuapi_ProxyInfo;
 
 
 static const RPC_CLIENT_INTERFACE drsuapi___RpcClientInterface =
@@ -82,8 +86,8 @@ static const RPC_CLIENT_INTERFACE drsuapi___RpcClientInterface =
     0,
     0,
     0,
-    0,
-    0x00000000
+    &drsuapi_ProxyInfo,
+    0x02000000
     };
 RPC_IF_HANDLE drsuapi_v4_0_c_ifspec = (RPC_IF_HANDLE)& drsuapi___RpcClientInterface;
 
@@ -102,9 +106,10 @@ ULONG IDL_DRSBind(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[0],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  0,
+                  0,
                   rpc_handle,
                   puuidClientDsa,
                   pextClient,
@@ -121,9 +126,10 @@ ULONG IDL_DRSUnbind(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[60],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  1,
+                  0,
                   phDrs);
     return ( ULONG  )_RetVal.Simple;
     
@@ -138,9 +144,10 @@ ULONG IDL_DRSReplicaSync(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[104],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  2,
+                  0,
                   hDrs,
                   dwVersion,
                   pmsgSync);
@@ -159,9 +166,10 @@ ULONG IDL_DRSGetNCChanges(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[160],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  3,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -180,9 +188,10 @@ ULONG IDL_DRSUpdateRefs(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[228],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  4,
+                  0,
                   hDrs,
                   dwVersion,
                   pmsgUpdRefs);
@@ -199,9 +208,10 @@ ULONG IDL_DRSReplicaAdd(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[284],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  5,
+                  0,
                   hDrs,
                   dwVersion,
                   pmsgAdd);
@@ -218,9 +228,10 @@ ULONG IDL_DRSReplicaDel(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[340],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  6,
+                  0,
                   hDrs,
                   dwVersion,
                   pmsgDel);
@@ -237,9 +248,10 @@ ULONG IDL_DRSReplicaModify(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[396],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  7,
+                  0,
                   hDrs,
                   dwVersion,
                   pmsgMod);
@@ -258,9 +270,10 @@ ULONG IDL_DRSVerifyNames(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[452],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  8,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -281,9 +294,10 @@ ULONG IDL_DRSGetMemberships(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[520],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  9,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -304,9 +318,10 @@ ULONG IDL_DRSInterDomainMove(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[588],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  10,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -327,9 +342,10 @@ ULONG IDL_DRSGetNT4ChangeLog(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[656],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  11,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -350,9 +366,10 @@ ULONG IDL_DRSCrackNames(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[724],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  12,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -373,9 +390,10 @@ ULONG IDL_DRSWriteSPN(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[792],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  13,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -396,9 +414,10 @@ ULONG IDL_DRSRemoveDsServer(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[860],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  14,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -419,9 +438,10 @@ ULONG IDL_DRSRemoveDsDomain(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[928],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  15,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -442,9 +462,10 @@ ULONG IDL_DRSDomainControllerInfo(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[996],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  16,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -465,9 +486,10 @@ ULONG IDL_DRSAddEntry(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1064],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  17,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -486,9 +508,10 @@ ULONG IDL_DRSExecuteKCC(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1132],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  18,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn);
@@ -507,9 +530,10 @@ ULONG IDL_DRSGetReplInfo(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1188],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  19,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -530,9 +554,10 @@ ULONG IDL_DRSAddSidHistory(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1256],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  20,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -553,9 +578,10 @@ ULONG IDL_DRSGetMemberships2(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1324],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  21,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -574,9 +600,10 @@ ULONG IDL_DRSReplicaVerifyObjects(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1392],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  22,
+                  0,
                   hDrs,
                   dwVersion,
                   pmsgVerify);
@@ -595,9 +622,10 @@ ULONG IDL_DRSGetObjectExistence(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1448],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  23,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -618,9 +646,10 @@ ULONG IDL_DRSQuerySitesByCost(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1516],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  24,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -641,9 +670,10 @@ ULONG IDL_DRSInitDemotion(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1584],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  25,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -664,9 +694,10 @@ ULONG IDL_DRSReplicaDemotion(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1652],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  26,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -687,9 +718,10 @@ ULONG IDL_DRSFinishDemotion(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1720],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  27,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -710,9 +742,10 @@ ULONG IDL_DRSAddCloneDC(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1788],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  28,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -733,9 +766,10 @@ ULONG IDL_DRSWriteNgcKey(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1856],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  29,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -756,9 +790,10 @@ ULONG IDL_DRSReadNgcKey(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&drsuapi_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1924],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&drsuapi_ProxyInfo,
+                  30,
+                  0,
                   hDrs,
                   dwInVersion,
                   pmsgIn,
@@ -772,6 +807,7 @@ ULONG IDL_DRSReadNgcKey(
 /* Standard interface: dsaop, ver. 1.0,
    GUID={0x7c44d7d4,0x31d5,0x424c,{0xbd,0x5e,0x2b,0x3e,0x1f,0x32,0x3d,0x22}} */
 
+ extern const MIDL_STUBLESS_PROXY_INFO dsaop_ProxyInfo;
 
 
 static const RPC_CLIENT_INTERFACE dsaop___RpcClientInterface =
@@ -783,8 +819,8 @@ static const RPC_CLIENT_INTERFACE dsaop___RpcClientInterface =
     0,
     0,
     0,
-    0,
-    0x00000000
+    &dsaop_ProxyInfo,
+    0x02000000
     };
 RPC_IF_HANDLE dsaop_v1_0_c_ifspec = (RPC_IF_HANDLE)& dsaop___RpcClientInterface;
 
@@ -803,9 +839,10 @@ ULONG IDL_DSAPrepareScript(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&dsaop_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[1992],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&dsaop_ProxyInfo,
+                  0,
+                  0,
                   hRpc,
                   dwInVersion,
                   pmsgIn,
@@ -826,9 +863,10 @@ ULONG IDL_DSAExecuteScript(
 
     CLIENT_CALL_RETURN _RetVal;
 
-    _RetVal = NdrClientCall2(
-                  ( PMIDL_STUB_DESC  )&dsaop_StubDesc,
-                  (PFORMAT_STRING) &drsr__MIDL_ProcFormatString.Format[2052],
+    _RetVal = NdrClientCall3(
+                  ( PMIDL_STUBLESS_PROXY_INFO  )&dsaop_ProxyInfo,
+                  1,
+                  0,
                   hRpc,
                   dwInVersion,
                   pmsgIn,
@@ -869,31 +907,31 @@ static const drsr_MIDL_PROC_FORMAT_STRING drsr__MIDL_ProcFormatString =
 /* 26 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 28 */	NdrFcShort( 0x0 ),	/* 0 */
 
-	/* Parameter rpc_handle */
+	/* Parameter puuidClientDsa */
 
 /* 30 */	NdrFcShort( 0xa ),	/* Flags:  must free, in, */
 /* 32 */	NdrFcShort( 0x8 ),	/* X64 Stack size/offset = 8 */
 /* 34 */	NdrFcShort( 0x2 ),	/* Type Offset=2 */
 
-	/* Parameter puuidClientDsa */
+	/* Parameter pextClient */
 
 /* 36 */	NdrFcShort( 0xb ),	/* Flags:  must size, must free, in, */
 /* 38 */	NdrFcShort( 0x10 ),	/* X64 Stack size/offset = 16 */
 /* 40 */	NdrFcShort( 0x18 ),	/* Type Offset=24 */
 
-	/* Parameter pextClient */
+	/* Parameter ppextServer */
 
 /* 42 */	NdrFcShort( 0x2013 ),	/* Flags:  must size, must free, out, srv alloc size=8 */
 /* 44 */	NdrFcShort( 0x18 ),	/* X64 Stack size/offset = 24 */
 /* 46 */	NdrFcShort( 0x3a ),	/* Type Offset=58 */
 
-	/* Parameter ppextServer */
+	/* Parameter phDrs */
 
 /* 48 */	NdrFcShort( 0x110 ),	/* Flags:  out, simple ref, */
 /* 50 */	NdrFcShort( 0x20 ),	/* X64 Stack size/offset = 32 */
 /* 52 */	NdrFcShort( 0x42 ),	/* Type Offset=66 */
 
-	/* Parameter phDrs */
+	/* Return value */
 
 /* 54 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
 /* 56 */	NdrFcShort( 0x28 ),	/* X64 Stack size/offset = 40 */
@@ -901,9 +939,6 @@ static const drsr_MIDL_PROC_FORMAT_STRING drsr__MIDL_ProcFormatString =
 			0x0,		/* 0 */
 
 	/* Procedure IDL_DRSUnbind */
-
-
-	/* Return value */
 
 /* 60 */	0x0,		/* 0 */
 			0x48,		/* Old Flags:  */
@@ -2667,33 +2702,33 @@ static const drsr_MIDL_PROC_FORMAT_STRING drsr__MIDL_ProcFormatString =
 /* 2018 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 2020 */	NdrFcShort( 0x0 ),	/* 0 */
 
-	/* Parameter hRpc */
+	/* Parameter dwInVersion */
 
 /* 2022 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
 /* 2024 */	NdrFcShort( 0x8 ),	/* X64 Stack size/offset = 8 */
 /* 2026 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Parameter dwInVersion */
+	/* Parameter pmsgIn */
 
 /* 2028 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 2030 */	NdrFcShort( 0x10 ),	/* X64 Stack size/offset = 16 */
 /* 2032 */	NdrFcShort( 0x1ca8 ),	/* Type Offset=7336 */
 
-	/* Parameter pmsgIn */
+	/* Parameter pdwOutVersion */
 
 /* 2034 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
 /* 2036 */	NdrFcShort( 0x18 ),	/* X64 Stack size/offset = 24 */
 /* 2038 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Parameter pdwOutVersion */
+	/* Parameter pmsgOut */
 
 /* 2040 */	NdrFcShort( 0x113 ),	/* Flags:  must size, must free, out, simple ref, */
 /* 2042 */	NdrFcShort( 0x20 ),	/* X64 Stack size/offset = 32 */
 /* 2044 */	NdrFcShort( 0x1ccc ),	/* Type Offset=7372 */
 
-	/* Parameter pmsgOut */
+	/* Return value */
 
 /* 2046 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
 /* 2048 */	NdrFcShort( 0x28 ),	/* X64 Stack size/offset = 40 */
@@ -2701,9 +2736,6 @@ static const drsr_MIDL_PROC_FORMAT_STRING drsr__MIDL_ProcFormatString =
 			0x0,		/* 0 */
 
 	/* Procedure IDL_DSAExecuteScript */
-
-
-	/* Return value */
 
 /* 2052 */	0x0,		/* 0 */
 			0x48,		/* Old Flags:  */
@@ -2724,33 +2756,33 @@ static const drsr_MIDL_PROC_FORMAT_STRING drsr__MIDL_ProcFormatString =
 /* 2078 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 2080 */	NdrFcShort( 0x0 ),	/* 0 */
 
-	/* Parameter hRpc */
+	/* Parameter dwInVersion */
 
 /* 2082 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
 /* 2084 */	NdrFcShort( 0x8 ),	/* X64 Stack size/offset = 8 */
 /* 2086 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Parameter dwInVersion */
+	/* Parameter pmsgIn */
 
 /* 2088 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 2090 */	NdrFcShort( 0x10 ),	/* X64 Stack size/offset = 16 */
 /* 2092 */	NdrFcShort( 0x1d58 ),	/* Type Offset=7512 */
 
-	/* Parameter pmsgIn */
+	/* Parameter pdwOutVersion */
 
 /* 2094 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
 /* 2096 */	NdrFcShort( 0x18 ),	/* X64 Stack size/offset = 24 */
 /* 2098 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Parameter pdwOutVersion */
+	/* Parameter pmsgOut */
 
 /* 2100 */	NdrFcShort( 0x4113 ),	/* Flags:  must size, must free, out, simple ref, srv alloc size=16 */
 /* 2102 */	NdrFcShort( 0x20 ),	/* X64 Stack size/offset = 32 */
 /* 2104 */	NdrFcShort( 0x1da2 ),	/* Type Offset=7586 */
 
-	/* Parameter pmsgOut */
+	/* Return value */
 
 /* 2106 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
 /* 2108 */	NdrFcShort( 0x28 ),	/* X64 Stack size/offset = 40 */
@@ -8027,6 +8059,28024 @@ static const unsigned short drsuapi_FormatStringOffsetTable[] =
     };
 
 
+static const unsigned short dsaop_FormatStringOffsetTable[] =
+    {
+    1992,
+    2052
+    };
+
+
+
+#endif /* defined(_M_AMD64)*/
+
+
+
+/* this ALWAYS GENERATED file contains the RPC client stubs */
+
+
+ /* File created by MIDL compiler version 8.01.0622 */
+/* at Mon Jan 18 22:14:07 2038
+ */
+/* Compiler settings for drsr.idl:
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
+    protocol : all , ms_ext, c_ext, robust
+    error checks: allocation ref bounds_check enum stub_data 
+    VC __declspec() decoration level: 
+         __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+         DECLSPEC_UUID(), MIDL_INTERFACE()
+*/
+/* @@MIDL_FILE_HEADING(  ) */
+
+#if defined(_M_AMD64)
+
+
+
+
+#if !defined(__RPC_WIN64__)
+#error  Invalid build platform for this stub.
+#endif
+
+
+#include "ndr64types.h"
+#include "pshpack8.h"
+
+
+typedef 
+NDR64_FORMAT_CHAR
+__midl_frag907_t;
+extern const __midl_frag907_t __midl_frag907;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag906_t;
+extern const __midl_frag906_t __midl_frag906;
+
+typedef 
+struct _NDR64_CONFORMANT_STRING_FORMAT
+__midl_frag905_t;
+extern const __midl_frag905_t __midl_frag905;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag904_t;
+extern const __midl_frag904_t __midl_frag904;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_OPERATOR frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag903_t;
+extern const __midl_frag903_t __midl_frag903;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag902_t;
+extern const __midl_frag902_t __midl_frag902;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag901_t;
+extern const __midl_frag901_t __midl_frag901;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag899_t;
+extern const __midl_frag899_t __midl_frag899;
+
+typedef 
+NDR64_FORMAT_CHAR
+__midl_frag898_t;
+extern const __midl_frag898_t __midl_frag898;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag897_t;
+extern const __midl_frag897_t __midl_frag897;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag896_t;
+extern const __midl_frag896_t __midl_frag896;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag895_t;
+extern const __midl_frag895_t __midl_frag895;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_VAR frag2;
+}
+__midl_frag894_t;
+extern const __midl_frag894_t __midl_frag894;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag893_t;
+extern const __midl_frag893_t __midl_frag893;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag892_t;
+extern const __midl_frag892_t __midl_frag892;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+}
+__midl_frag890_t;
+extern const __midl_frag890_t __midl_frag890;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+    struct _NDR64_POINTER_FORMAT frag4;
+}
+__midl_frag888_t;
+extern const __midl_frag888_t __midl_frag888;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag886_t;
+extern const __midl_frag886_t __midl_frag886;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag885_t;
+extern const __midl_frag885_t __midl_frag885;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag883_t;
+extern const __midl_frag883_t __midl_frag883;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag882_t;
+extern const __midl_frag882_t __midl_frag882;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag880_t;
+extern const __midl_frag880_t __midl_frag880;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag879_t;
+extern const __midl_frag879_t __midl_frag879;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_MEMPAD_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_MEMPAD_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_MEMPAD_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+    } frag2;
+}
+__midl_frag877_t;
+extern const __midl_frag877_t __midl_frag877;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag875_t;
+extern const __midl_frag875_t __midl_frag875;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag874_t;
+extern const __midl_frag874_t __midl_frag874;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag871_t;
+extern const __midl_frag871_t __midl_frag871;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag869_t;
+extern const __midl_frag869_t __midl_frag869;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag868_t;
+extern const __midl_frag868_t __midl_frag868;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+}
+__midl_frag866_t;
+extern const __midl_frag866_t __midl_frag866;
+
+typedef 
+NDR64_FORMAT_CHAR
+__midl_frag864_t;
+extern const __midl_frag864_t __midl_frag864;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag863_t;
+extern const __midl_frag863_t __midl_frag863;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag862_t;
+extern const __midl_frag862_t __midl_frag862;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag861_t;
+extern const __midl_frag861_t __midl_frag861;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag859_t;
+extern const __midl_frag859_t __midl_frag859;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag858_t;
+extern const __midl_frag858_t __midl_frag858;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag854_t;
+extern const __midl_frag854_t __midl_frag854;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag852_t;
+extern const __midl_frag852_t __midl_frag852;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag851_t;
+extern const __midl_frag851_t __midl_frag851;
+
+typedef 
+struct _NDR64_CONTEXT_HANDLE_FORMAT
+__midl_frag849_t;
+extern const __midl_frag849_t __midl_frag849;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag848_t;
+extern const __midl_frag848_t __midl_frag848;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag844_t;
+extern const __midl_frag844_t __midl_frag844;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag843_t;
+extern const __midl_frag843_t __midl_frag843;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag840_t;
+extern const __midl_frag840_t __midl_frag840;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag838_t;
+extern const __midl_frag838_t __midl_frag838;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag837_t;
+extern const __midl_frag837_t __midl_frag837;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+    } frag2;
+}
+__midl_frag835_t;
+extern const __midl_frag835_t __midl_frag835;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag833_t;
+extern const __midl_frag833_t __midl_frag833;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag832_t;
+extern const __midl_frag832_t __midl_frag832;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag829_t;
+extern const __midl_frag829_t __midl_frag829;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+}
+__midl_frag827_t;
+extern const __midl_frag827_t __midl_frag827;
+
+typedef 
+NDR64_FORMAT_CHAR
+__midl_frag826_t;
+extern const __midl_frag826_t __midl_frag826;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag824_t;
+extern const __midl_frag824_t __midl_frag824;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+    } frag2;
+}
+__midl_frag821_t;
+extern const __midl_frag821_t __midl_frag821;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag819_t;
+extern const __midl_frag819_t __midl_frag819;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag818_t;
+extern const __midl_frag818_t __midl_frag818;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag813_t;
+extern const __midl_frag813_t __midl_frag813;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag811_t;
+extern const __midl_frag811_t __midl_frag811;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag810_t;
+extern const __midl_frag810_t __midl_frag810;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag807_t;
+extern const __midl_frag807_t __midl_frag807;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag805_t;
+extern const __midl_frag805_t __midl_frag805;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag803_t;
+extern const __midl_frag803_t __midl_frag803;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag802_t;
+extern const __midl_frag802_t __midl_frag802;
+
+typedef 
+struct 
+{
+    struct _NDR64_FIX_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag799_t;
+extern const __midl_frag799_t __midl_frag799;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+    } frag2;
+}
+__midl_frag796_t;
+extern const __midl_frag796_t __midl_frag796;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag794_t;
+extern const __midl_frag794_t __midl_frag794;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag793_t;
+extern const __midl_frag793_t __midl_frag793;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag790_t;
+extern const __midl_frag790_t __midl_frag790;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag781_t;
+extern const __midl_frag781_t __midl_frag781;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+    } frag2;
+}
+__midl_frag780_t;
+extern const __midl_frag780_t __midl_frag780;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag778_t;
+extern const __midl_frag778_t __midl_frag778;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag777_t;
+extern const __midl_frag777_t __midl_frag777;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag774_t;
+extern const __midl_frag774_t __midl_frag774;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag760_t;
+extern const __midl_frag760_t __midl_frag760;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag758_t;
+extern const __midl_frag758_t __midl_frag758;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag757_t;
+extern const __midl_frag757_t __midl_frag757;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag756_t;
+extern const __midl_frag756_t __midl_frag756;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag755_t;
+extern const __midl_frag755_t __midl_frag755;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_MEMPAD_FORMAT frag5;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+    } frag2;
+}
+__midl_frag754_t;
+extern const __midl_frag754_t __midl_frag754;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag752_t;
+extern const __midl_frag752_t __midl_frag752;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag751_t;
+extern const __midl_frag751_t __midl_frag751;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag748_t;
+extern const __midl_frag748_t __midl_frag748;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag746_t;
+extern const __midl_frag746_t __midl_frag746;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag745_t;
+extern const __midl_frag745_t __midl_frag745;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+    } frag2;
+}
+__midl_frag743_t;
+extern const __midl_frag743_t __midl_frag743;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag741_t;
+extern const __midl_frag741_t __midl_frag741;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag740_t;
+extern const __midl_frag740_t __midl_frag740;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag737_t;
+extern const __midl_frag737_t __midl_frag737;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag735_t;
+extern const __midl_frag735_t __midl_frag735;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag734_t;
+extern const __midl_frag734_t __midl_frag734;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag733_t;
+extern const __midl_frag733_t __midl_frag733;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag731_t;
+extern const __midl_frag731_t __midl_frag731;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag730_t;
+extern const __midl_frag730_t __midl_frag730;
+
+typedef 
+struct 
+{
+    struct _NDR64_FIX_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag727_t;
+extern const __midl_frag727_t __midl_frag727;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag725_t;
+extern const __midl_frag725_t __midl_frag725;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+    } frag2;
+}
+__midl_frag724_t;
+extern const __midl_frag724_t __midl_frag724;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag722_t;
+extern const __midl_frag722_t __midl_frag722;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag721_t;
+extern const __midl_frag721_t __midl_frag721;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag718_t;
+extern const __midl_frag718_t __midl_frag718;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag716_t;
+extern const __midl_frag716_t __midl_frag716;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag714_t;
+extern const __midl_frag714_t __midl_frag714;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag713_t;
+extern const __midl_frag713_t __midl_frag713;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+}
+__midl_frag710_t;
+extern const __midl_frag710_t __midl_frag710;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag708_t;
+extern const __midl_frag708_t __midl_frag708;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag706_t;
+extern const __midl_frag706_t __midl_frag706;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag705_t;
+extern const __midl_frag705_t __midl_frag705;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag703_t;
+extern const __midl_frag703_t __midl_frag703;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag702_t;
+extern const __midl_frag702_t __midl_frag702;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag699_t;
+extern const __midl_frag699_t __midl_frag699;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag698_t;
+extern const __midl_frag698_t __midl_frag698;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag697_t;
+extern const __midl_frag697_t __midl_frag697;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag696_t;
+extern const __midl_frag696_t __midl_frag696;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag694_t;
+extern const __midl_frag694_t __midl_frag694;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag693_t;
+extern const __midl_frag693_t __midl_frag693;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag690_t;
+extern const __midl_frag690_t __midl_frag690;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+    struct _NDR64_POINTER_FORMAT frag4;
+    struct _NDR64_POINTER_FORMAT frag5;
+    struct _NDR64_POINTER_FORMAT frag6;
+    struct _NDR64_POINTER_FORMAT frag7;
+    struct _NDR64_POINTER_FORMAT frag8;
+}
+__midl_frag682_t;
+extern const __midl_frag682_t __midl_frag682;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag678_t;
+extern const __midl_frag678_t __midl_frag678;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag677_t;
+extern const __midl_frag677_t __midl_frag677;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag675_t;
+extern const __midl_frag675_t __midl_frag675;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag674_t;
+extern const __midl_frag674_t __midl_frag674;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag672_t;
+extern const __midl_frag672_t __midl_frag672;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag671_t;
+extern const __midl_frag671_t __midl_frag671;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_MEMPAD_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_MEMPAD_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_MEMPAD_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag17;
+    } frag2;
+}
+__midl_frag667_t;
+extern const __midl_frag667_t __midl_frag667;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag665_t;
+extern const __midl_frag665_t __midl_frag665;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag664_t;
+extern const __midl_frag664_t __midl_frag664;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag661_t;
+extern const __midl_frag661_t __midl_frag661;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag659_t;
+extern const __midl_frag659_t __midl_frag659;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag658_t;
+extern const __midl_frag658_t __midl_frag658;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag656_t;
+extern const __midl_frag656_t __midl_frag656;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag655_t;
+extern const __midl_frag655_t __midl_frag655;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag654_t;
+extern const __midl_frag654_t __midl_frag654;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag653_t;
+extern const __midl_frag653_t __midl_frag653;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_MEMPAD_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_MEMPAD_FORMAT frag10;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+    } frag2;
+}
+__midl_frag650_t;
+extern const __midl_frag650_t __midl_frag650;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag649_t;
+extern const __midl_frag649_t __midl_frag649;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag648_t;
+extern const __midl_frag648_t __midl_frag648;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+    } frag2;
+}
+__midl_frag647_t;
+extern const __midl_frag647_t __midl_frag647;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag646_t;
+extern const __midl_frag646_t __midl_frag646;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+    struct _NDR64_POINTER_FORMAT frag4;
+}
+__midl_frag644_t;
+extern const __midl_frag644_t __midl_frag644;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_VAR frag2;
+}
+__midl_frag641_t;
+extern const __midl_frag641_t __midl_frag641;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag640_t;
+extern const __midl_frag640_t __midl_frag640;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag16;
+        struct _NDR64_MEMPAD_FORMAT frag17;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag18;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag19;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag20;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag21;
+    } frag2;
+}
+__midl_frag637_t;
+extern const __midl_frag637_t __midl_frag637;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_VAR frag2;
+}
+__midl_frag636_t;
+extern const __midl_frag636_t __midl_frag636;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag635_t;
+extern const __midl_frag635_t __midl_frag635;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+    } frag2;
+}
+__midl_frag634_t;
+extern const __midl_frag634_t __midl_frag634;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag633_t;
+extern const __midl_frag633_t __midl_frag633;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag631_t;
+extern const __midl_frag631_t __midl_frag631;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag8;
+        struct _NDR64_MEMPAD_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+    } frag2;
+}
+__midl_frag628_t;
+extern const __midl_frag628_t __midl_frag628;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag626_t;
+extern const __midl_frag626_t __midl_frag626;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+    } frag2;
+}
+__midl_frag625_t;
+extern const __midl_frag625_t __midl_frag625;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag624_t;
+extern const __midl_frag624_t __midl_frag624;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag622_t;
+extern const __midl_frag622_t __midl_frag622;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag619_t;
+extern const __midl_frag619_t __midl_frag619;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct 
+        {
+            struct _NDR64_REPEAT_FORMAT frag1;
+            struct 
+            {
+                struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+                struct _NDR64_POINTER_FORMAT frag2;
+            } frag2;
+        } frag1;
+        NDR64_FORMAT_CHAR frag2;
+    } frag2;
+}
+__midl_frag617_t;
+extern const __midl_frag617_t __midl_frag617;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag616_t;
+extern const __midl_frag616_t __midl_frag616;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag615_t;
+extern const __midl_frag615_t __midl_frag615;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag613_t;
+extern const __midl_frag613_t __midl_frag613;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag612_t;
+extern const __midl_frag612_t __midl_frag612;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag611_t;
+extern const __midl_frag611_t __midl_frag611;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+}
+__midl_frag609_t;
+extern const __midl_frag609_t __midl_frag609;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag16;
+        struct _NDR64_MEMPAD_FORMAT frag17;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag18;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag19;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag20;
+    } frag2;
+}
+__midl_frag603_t;
+extern const __midl_frag603_t __midl_frag603;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag601_t;
+extern const __midl_frag601_t __midl_frag601;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+    } frag2;
+}
+__midl_frag600_t;
+extern const __midl_frag600_t __midl_frag600;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag599_t;
+extern const __midl_frag599_t __midl_frag599;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        NDR64_FORMAT_CHAR frag10;
+    } frag2;
+}
+__midl_frag595_t;
+extern const __midl_frag595_t __midl_frag595;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_VAR frag2;
+}
+__midl_frag591_t;
+extern const __midl_frag591_t __midl_frag591;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag3;
+            struct _NDR64_POINTER_FORMAT frag4;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+            struct _NDR64_POINTER_FORMAT frag6;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag590_t;
+extern const __midl_frag590_t __midl_frag590;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+    } frag2;
+}
+__midl_frag589_t;
+extern const __midl_frag589_t __midl_frag589;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag588_t;
+extern const __midl_frag588_t __midl_frag588;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag587_t;
+extern const __midl_frag587_t __midl_frag587;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag585_t;
+extern const __midl_frag585_t __midl_frag585;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag582_t;
+extern const __midl_frag582_t __midl_frag582;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct 
+        {
+            struct _NDR64_REPEAT_FORMAT frag1;
+            struct 
+            {
+                struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+                struct _NDR64_POINTER_FORMAT frag2;
+            } frag2;
+        } frag1;
+        NDR64_FORMAT_CHAR frag2;
+    } frag2;
+}
+__midl_frag580_t;
+extern const __midl_frag580_t __midl_frag580;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag8;
+        struct _NDR64_MEMPAD_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+    } frag2;
+}
+__midl_frag575_t;
+extern const __midl_frag575_t __midl_frag575;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag573_t;
+extern const __midl_frag573_t __midl_frag573;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+    } frag2;
+}
+__midl_frag572_t;
+extern const __midl_frag572_t __midl_frag572;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag571_t;
+extern const __midl_frag571_t __midl_frag571;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag570_t;
+extern const __midl_frag570_t __midl_frag570;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag568_t;
+extern const __midl_frag568_t __midl_frag568;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag567_t;
+extern const __midl_frag567_t __midl_frag567;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag566_t;
+extern const __midl_frag566_t __midl_frag566;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        NDR64_FORMAT_CHAR frag13;
+    } frag2;
+}
+__midl_frag561_t;
+extern const __midl_frag561_t __midl_frag561;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag3;
+            struct _NDR64_POINTER_FORMAT frag4;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+            struct _NDR64_POINTER_FORMAT frag6;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag7;
+            struct _NDR64_POINTER_FORMAT frag8;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag555_t;
+extern const __midl_frag555_t __midl_frag555;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct 
+        {
+            struct _NDR64_REPEAT_FORMAT frag1;
+            struct 
+            {
+                struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+                struct _NDR64_POINTER_FORMAT frag2;
+                struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag3;
+                struct _NDR64_POINTER_FORMAT frag4;
+                struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+                struct _NDR64_POINTER_FORMAT frag6;
+                struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag7;
+                struct _NDR64_POINTER_FORMAT frag8;
+            } frag2;
+        } frag1;
+        NDR64_FORMAT_CHAR frag2;
+    } frag2;
+}
+__midl_frag550_t;
+extern const __midl_frag550_t __midl_frag550;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    struct _NDR64_UNION_ARM frag5;
+    struct _NDR64_UNION_ARM frag6;
+    struct _NDR64_UNION_ARM frag7;
+    struct _NDR64_UNION_ARM frag8;
+    struct _NDR64_UNION_ARM frag9;
+    struct _NDR64_UNION_ARM frag10;
+    struct _NDR64_UNION_ARM frag11;
+    struct _NDR64_UNION_ARM frag12;
+    struct _NDR64_UNION_ARM frag13;
+    struct _NDR64_UNION_ARM frag14;
+    struct _NDR64_UNION_ARM frag15;
+    struct _NDR64_UNION_ARM frag16;
+    struct _NDR64_UNION_ARM frag17;
+    NDR64_UINT32 frag18;
+}
+__midl_frag547_t;
+extern const __midl_frag547_t __midl_frag547;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag546_t;
+extern const __midl_frag546_t __midl_frag546;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+}
+__midl_frag542_t;
+extern const __midl_frag542_t __midl_frag542;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_MEMPAD_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_MEMPAD_FORMAT frag13;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+    } frag2;
+}
+__midl_frag538_t;
+extern const __midl_frag538_t __midl_frag538;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+    } frag2;
+}
+__midl_frag534_t;
+extern const __midl_frag534_t __midl_frag534;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    NDR64_UINT32 frag5;
+}
+__midl_frag532_t;
+extern const __midl_frag532_t __midl_frag532;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag531_t;
+extern const __midl_frag531_t __midl_frag531;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag528_t;
+extern const __midl_frag528_t __midl_frag528;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag524_t;
+extern const __midl_frag524_t __midl_frag524;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag523_t;
+extern const __midl_frag523_t __midl_frag523;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+}
+__midl_frag520_t;
+extern const __midl_frag520_t __midl_frag520;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+}
+__midl_frag518_t;
+extern const __midl_frag518_t __midl_frag518;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag517_t;
+extern const __midl_frag517_t __midl_frag517;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag516_t;
+extern const __midl_frag516_t __midl_frag516;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag515_t;
+extern const __midl_frag515_t __midl_frag515;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+}
+__midl_frag511_t;
+extern const __midl_frag511_t __midl_frag511;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_MEMPAD_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_MEMPAD_FORMAT frag15;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag16;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag17;
+    } frag2;
+}
+__midl_frag509_t;
+extern const __midl_frag509_t __midl_frag509;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag508_t;
+extern const __midl_frag508_t __midl_frag508;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_NOOP frag2;
+    struct _NDR64_EXPR_CONST64 frag3;
+}
+__midl_frag507_t;
+extern const __midl_frag507_t __midl_frag507;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_OPERATOR frag2;
+    struct _NDR64_EXPR_VAR frag3;
+    struct _NDR64_EXPR_CONST64 frag4;
+}
+__midl_frag506_t;
+extern const __midl_frag506_t __midl_frag506;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_OPERATOR frag2;
+    struct _NDR64_EXPR_VAR frag3;
+    struct _NDR64_EXPR_CONST64 frag4;
+}
+__midl_frag505_t;
+extern const __midl_frag505_t __midl_frag505;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag504_t;
+extern const __midl_frag504_t __midl_frag504;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+    } frag2;
+}
+__midl_frag503_t;
+extern const __midl_frag503_t __midl_frag503;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag502_t;
+extern const __midl_frag502_t __midl_frag502;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+        struct _NDR64_MEMPAD_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag17;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag18;
+        struct _NDR64_MEMPAD_FORMAT frag19;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag20;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag21;
+    } frag2;
+}
+__midl_frag501_t;
+extern const __midl_frag501_t __midl_frag501;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag500_t;
+extern const __midl_frag500_t __midl_frag500;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_MEMPAD_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+    } frag2;
+}
+__midl_frag499_t;
+extern const __midl_frag499_t __midl_frag499;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+}
+__midl_frag498_t;
+extern const __midl_frag498_t __midl_frag498;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag497_t;
+extern const __midl_frag497_t __midl_frag497;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag496_t;
+extern const __midl_frag496_t __midl_frag496;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag495_t;
+extern const __midl_frag495_t __midl_frag495;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag494_t;
+extern const __midl_frag494_t __midl_frag494;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag493_t;
+extern const __midl_frag493_t __midl_frag493;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag492_t;
+extern const __midl_frag492_t __midl_frag492;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_MEMPAD_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_MEMPAD_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag17;
+    } frag2;
+}
+__midl_frag491_t;
+extern const __midl_frag491_t __midl_frag491;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_VAR frag2;
+}
+__midl_frag490_t;
+extern const __midl_frag490_t __midl_frag490;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    struct _NDR64_UNION_ARM frag5;
+    struct _NDR64_UNION_ARM frag6;
+    struct _NDR64_UNION_ARM frag7;
+    struct _NDR64_UNION_ARM frag8;
+    struct _NDR64_UNION_ARM frag9;
+    NDR64_UINT32 frag10;
+}
+__midl_frag489_t;
+extern const __midl_frag489_t __midl_frag489;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag488_t;
+extern const __midl_frag488_t __midl_frag488;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag486_t;
+extern const __midl_frag486_t __midl_frag486;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+    } frag2;
+}
+__midl_frag485_t;
+extern const __midl_frag485_t __midl_frag485;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag484_t;
+extern const __midl_frag484_t __midl_frag484;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag483_t;
+extern const __midl_frag483_t __midl_frag483;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag482_t;
+extern const __midl_frag482_t __midl_frag482;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag481_t;
+extern const __midl_frag481_t __midl_frag481;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_MEMPAD_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+    } frag2;
+}
+__midl_frag480_t;
+extern const __midl_frag480_t __midl_frag480;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag479_t;
+extern const __midl_frag479_t __midl_frag479;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    struct _NDR64_UNION_ARM frag5;
+    NDR64_UINT32 frag6;
+}
+__midl_frag477_t;
+extern const __midl_frag477_t __midl_frag477;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag476_t;
+extern const __midl_frag476_t __midl_frag476;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag473_t;
+extern const __midl_frag473_t __midl_frag473;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag472_t;
+extern const __midl_frag472_t __midl_frag472;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        NDR64_FORMAT_CHAR frag13;
+    } frag2;
+}
+__midl_frag471_t;
+extern const __midl_frag471_t __midl_frag471;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag470_t;
+extern const __midl_frag470_t __midl_frag470;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        NDR64_FORMAT_CHAR frag10;
+    } frag2;
+}
+__midl_frag465_t;
+extern const __midl_frag465_t __midl_frag465;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag464_t;
+extern const __midl_frag464_t __midl_frag464;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag461_t;
+extern const __midl_frag461_t __midl_frag461;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag460_t;
+extern const __midl_frag460_t __midl_frag460;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag459_t;
+extern const __midl_frag459_t __midl_frag459;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag458_t;
+extern const __midl_frag458_t __midl_frag458;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    struct _NDR64_UNION_ARM frag5;
+    NDR64_UINT32 frag6;
+}
+__midl_frag456_t;
+extern const __midl_frag456_t __midl_frag456;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag455_t;
+extern const __midl_frag455_t __midl_frag455;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag452_t;
+extern const __midl_frag452_t __midl_frag452;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag450_t;
+extern const __midl_frag450_t __midl_frag450;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag448_t;
+extern const __midl_frag448_t __midl_frag448;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag445_t;
+extern const __midl_frag445_t __midl_frag445;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag444_t;
+extern const __midl_frag444_t __midl_frag444;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag443_t;
+extern const __midl_frag443_t __midl_frag443;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        struct _NDR64_NO_REPEAT_FORMAT frag13;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag14;
+        struct _NDR64_POINTER_FORMAT frag15;
+        struct _NDR64_NO_REPEAT_FORMAT frag16;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag17;
+        struct _NDR64_POINTER_FORMAT frag18;
+        struct _NDR64_NO_REPEAT_FORMAT frag19;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag20;
+        struct _NDR64_POINTER_FORMAT frag21;
+        NDR64_FORMAT_CHAR frag22;
+    } frag2;
+}
+__midl_frag435_t;
+extern const __midl_frag435_t __midl_frag435;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag3;
+            struct _NDR64_POINTER_FORMAT frag4;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+            struct _NDR64_POINTER_FORMAT frag6;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag7;
+            struct _NDR64_POINTER_FORMAT frag8;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag9;
+            struct _NDR64_POINTER_FORMAT frag10;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+            struct _NDR64_POINTER_FORMAT frag12;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag13;
+            struct _NDR64_POINTER_FORMAT frag14;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag426_t;
+extern const __midl_frag426_t __midl_frag426;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag425_t;
+extern const __midl_frag425_t __midl_frag425;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag405_t;
+extern const __midl_frag405_t __midl_frag405;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        struct _NDR64_NO_REPEAT_FORMAT frag13;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag14;
+        struct _NDR64_POINTER_FORMAT frag15;
+        NDR64_FORMAT_CHAR frag16;
+    } frag2;
+}
+__midl_frag399_t;
+extern const __midl_frag399_t __midl_frag399;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag3;
+            struct _NDR64_POINTER_FORMAT frag4;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+            struct _NDR64_POINTER_FORMAT frag6;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag7;
+            struct _NDR64_POINTER_FORMAT frag8;
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag9;
+            struct _NDR64_POINTER_FORMAT frag10;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag392_t;
+extern const __midl_frag392_t __midl_frag392;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag391_t;
+extern const __midl_frag391_t __midl_frag391;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    struct _NDR64_UNION_ARM frag5;
+    struct _NDR64_UNION_ARM frag6;
+    NDR64_UINT32 frag7;
+}
+__midl_frag389_t;
+extern const __midl_frag389_t __midl_frag389;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag388_t;
+extern const __midl_frag388_t __midl_frag388;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag384_t;
+extern const __midl_frag384_t __midl_frag384;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag382_t;
+extern const __midl_frag382_t __midl_frag382;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag381_t;
+extern const __midl_frag381_t __midl_frag381;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag378_t;
+extern const __midl_frag378_t __midl_frag378;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag363_t;
+extern const __midl_frag363_t __midl_frag363;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag353_t;
+extern const __midl_frag353_t __midl_frag353;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag351_t;
+extern const __midl_frag351_t __midl_frag351;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag350_t;
+extern const __midl_frag350_t __midl_frag350;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag347_t;
+extern const __midl_frag347_t __midl_frag347;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag339_t;
+extern const __midl_frag339_t __midl_frag339;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag337_t;
+extern const __midl_frag337_t __midl_frag337;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag336_t;
+extern const __midl_frag336_t __midl_frag336;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_MEMPAD_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+    } frag2;
+}
+__midl_frag334_t;
+extern const __midl_frag334_t __midl_frag334;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag332_t;
+extern const __midl_frag332_t __midl_frag332;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag331_t;
+extern const __midl_frag331_t __midl_frag331;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag328_t;
+extern const __midl_frag328_t __midl_frag328;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag326_t;
+extern const __midl_frag326_t __midl_frag326;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+    } frag2;
+}
+__midl_frag322_t;
+extern const __midl_frag322_t __midl_frag322;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag320_t;
+extern const __midl_frag320_t __midl_frag320;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag319_t;
+extern const __midl_frag319_t __midl_frag319;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag318_t;
+extern const __midl_frag318_t __midl_frag318;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag316_t;
+extern const __midl_frag316_t __midl_frag316;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag315_t;
+extern const __midl_frag315_t __midl_frag315;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag311_t;
+extern const __midl_frag311_t __midl_frag311;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag310_t;
+extern const __midl_frag310_t __midl_frag310;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag309_t;
+extern const __midl_frag309_t __midl_frag309;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag307_t;
+extern const __midl_frag307_t __midl_frag307;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag306_t;
+extern const __midl_frag306_t __midl_frag306;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag303_t;
+extern const __midl_frag303_t __midl_frag303;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag301_t;
+extern const __midl_frag301_t __midl_frag301;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag298_t;
+extern const __midl_frag298_t __midl_frag298;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag296_t;
+extern const __midl_frag296_t __midl_frag296;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag295_t;
+extern const __midl_frag295_t __midl_frag295;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_MEMPAD_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+    } frag2;
+}
+__midl_frag294_t;
+extern const __midl_frag294_t __midl_frag294;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag292_t;
+extern const __midl_frag292_t __midl_frag292;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag291_t;
+extern const __midl_frag291_t __midl_frag291;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag288_t;
+extern const __midl_frag288_t __midl_frag288;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag286_t;
+extern const __midl_frag286_t __midl_frag286;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag285_t;
+extern const __midl_frag285_t __midl_frag285;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+    } frag2;
+}
+__midl_frag284_t;
+extern const __midl_frag284_t __midl_frag284;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag282_t;
+extern const __midl_frag282_t __midl_frag282;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag281_t;
+extern const __midl_frag281_t __midl_frag281;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag278_t;
+extern const __midl_frag278_t __midl_frag278;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag275_t;
+extern const __midl_frag275_t __midl_frag275;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag272_t;
+extern const __midl_frag272_t __midl_frag272;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag271_t;
+extern const __midl_frag271_t __midl_frag271;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        NDR64_FORMAT_CHAR frag10;
+    } frag2;
+}
+__midl_frag270_t;
+extern const __midl_frag270_t __midl_frag270;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag269_t;
+extern const __midl_frag269_t __midl_frag269;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    NDR64_UINT32 frag5;
+}
+__midl_frag267_t;
+extern const __midl_frag267_t __midl_frag267;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag266_t;
+extern const __midl_frag266_t __midl_frag266;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag263_t;
+extern const __midl_frag263_t __midl_frag263;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag262_t;
+extern const __midl_frag262_t __midl_frag262;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag260_t;
+extern const __midl_frag260_t __midl_frag260;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag259_t;
+extern const __midl_frag259_t __midl_frag259;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag255_t;
+extern const __midl_frag255_t __midl_frag255;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag254_t;
+extern const __midl_frag254_t __midl_frag254;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag253_t;
+extern const __midl_frag253_t __midl_frag253;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        struct _NDR64_NO_REPEAT_FORMAT frag13;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag14;
+        struct _NDR64_POINTER_FORMAT frag15;
+        struct _NDR64_NO_REPEAT_FORMAT frag16;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag17;
+        struct _NDR64_POINTER_FORMAT frag18;
+        NDR64_FORMAT_CHAR frag19;
+    } frag2;
+}
+__midl_frag252_t;
+extern const __midl_frag252_t __midl_frag252;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag251_t;
+extern const __midl_frag251_t __midl_frag251;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag249_t;
+extern const __midl_frag249_t __midl_frag249;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        NDR64_FORMAT_CHAR frag13;
+    } frag2;
+}
+__midl_frag247_t;
+extern const __midl_frag247_t __midl_frag247;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag246_t;
+extern const __midl_frag246_t __midl_frag246;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    NDR64_UINT32 frag5;
+}
+__midl_frag244_t;
+extern const __midl_frag244_t __midl_frag244;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag243_t;
+extern const __midl_frag243_t __midl_frag243;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag240_t;
+extern const __midl_frag240_t __midl_frag240;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+}
+__midl_frag238_t;
+extern const __midl_frag238_t __midl_frag238;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag237_t;
+extern const __midl_frag237_t __midl_frag237;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag236_t;
+extern const __midl_frag236_t __midl_frag236;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag235_t;
+extern const __midl_frag235_t __midl_frag235;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag234_t;
+extern const __midl_frag234_t __midl_frag234;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag231_t;
+extern const __midl_frag231_t __midl_frag231;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag230_t;
+extern const __midl_frag230_t __midl_frag230;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag228_t;
+extern const __midl_frag228_t __midl_frag228;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+    } frag2;
+}
+__midl_frag227_t;
+extern const __midl_frag227_t __midl_frag227;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag225_t;
+extern const __midl_frag225_t __midl_frag225;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag224_t;
+extern const __midl_frag224_t __midl_frag224;
+
+typedef 
+struct _NDR64_RANGE_FORMAT
+__midl_frag221_t;
+extern const __midl_frag221_t __midl_frag221;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag220_t;
+extern const __midl_frag220_t __midl_frag220;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag217_t;
+extern const __midl_frag217_t __midl_frag217;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+    } frag2;
+}
+__midl_frag216_t;
+extern const __midl_frag216_t __midl_frag216;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag214_t;
+extern const __midl_frag214_t __midl_frag214;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag213_t;
+extern const __midl_frag213_t __midl_frag213;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag210_t;
+extern const __midl_frag210_t __midl_frag210;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag208_t;
+extern const __midl_frag208_t __midl_frag208;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag207_t;
+extern const __midl_frag207_t __midl_frag207;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag206_t;
+extern const __midl_frag206_t __midl_frag206;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag204_t;
+extern const __midl_frag204_t __midl_frag204;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+    } frag2;
+}
+__midl_frag203_t;
+extern const __midl_frag203_t __midl_frag203;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag201_t;
+extern const __midl_frag201_t __midl_frag201;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag200_t;
+extern const __midl_frag200_t __midl_frag200;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag199_t;
+extern const __midl_frag199_t __midl_frag199;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag197_t;
+extern const __midl_frag197_t __midl_frag197;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag196_t;
+extern const __midl_frag196_t __midl_frag196;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag193_t;
+extern const __midl_frag193_t __midl_frag193;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag192_t;
+extern const __midl_frag192_t __midl_frag192;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag188_t;
+extern const __midl_frag188_t __midl_frag188;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_REPEAT_FORMAT frag1;
+        struct 
+        {
+            struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag1;
+            struct _NDR64_POINTER_FORMAT frag2;
+        } frag2;
+        NDR64_FORMAT_CHAR frag3;
+    } frag2;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag3;
+}
+__midl_frag187_t;
+extern const __midl_frag187_t __midl_frag187;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        NDR64_FORMAT_CHAR frag10;
+    } frag2;
+}
+__midl_frag186_t;
+extern const __midl_frag186_t __midl_frag186;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag185_t;
+extern const __midl_frag185_t __midl_frag185;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag183_t;
+extern const __midl_frag183_t __midl_frag183;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag182_t;
+extern const __midl_frag182_t __midl_frag182;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag179_t;
+extern const __midl_frag179_t __midl_frag179;
+
+typedef 
+struct _NDR64_CONFORMANT_STRING_FORMAT
+__midl_frag177_t;
+extern const __midl_frag177_t __midl_frag177;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag176_t;
+extern const __midl_frag176_t __midl_frag176;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag174_t;
+extern const __midl_frag174_t __midl_frag174;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag173_t;
+extern const __midl_frag173_t __midl_frag173;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+}
+__midl_frag170_t;
+extern const __midl_frag170_t __midl_frag170;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag167_t;
+extern const __midl_frag167_t __midl_frag167;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag165_t;
+extern const __midl_frag165_t __midl_frag165;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag164_t;
+extern const __midl_frag164_t __midl_frag164;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+}
+__midl_frag161_t;
+extern const __midl_frag161_t __midl_frag161;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        NDR64_FORMAT_CHAR frag13;
+    } frag2;
+}
+__midl_frag158_t;
+extern const __midl_frag158_t __midl_frag158;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag156_t;
+extern const __midl_frag156_t __midl_frag156;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    NDR64_UINT32 frag5;
+}
+__midl_frag154_t;
+extern const __midl_frag154_t __midl_frag154;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag153_t;
+extern const __midl_frag153_t __midl_frag153;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+}
+__midl_frag150_t;
+extern const __midl_frag150_t __midl_frag150;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag147_t;
+extern const __midl_frag147_t __midl_frag147;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag145_t;
+extern const __midl_frag145_t __midl_frag145;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag144_t;
+extern const __midl_frag144_t __midl_frag144;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+}
+__midl_frag141_t;
+extern const __midl_frag141_t __midl_frag141;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+    struct _NDR64_POINTER_FORMAT frag4;
+    struct _NDR64_POINTER_FORMAT frag5;
+}
+__midl_frag137_t;
+extern const __midl_frag137_t __midl_frag137;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+}
+__midl_frag135_t;
+extern const __midl_frag135_t __midl_frag135;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag134_t;
+extern const __midl_frag134_t __midl_frag134;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag133_t;
+extern const __midl_frag133_t __midl_frag133;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_MEMPAD_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_MEMPAD_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag17;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag18;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag19;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag20;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag21;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag22;
+        struct _NDR64_MEMPAD_FORMAT frag23;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag24;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag25;
+    } frag2;
+}
+__midl_frag132_t;
+extern const __midl_frag132_t __midl_frag132;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag131_t;
+extern const __midl_frag131_t __midl_frag131;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag130_t;
+extern const __midl_frag130_t __midl_frag130;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag129_t;
+extern const __midl_frag129_t __midl_frag129;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag128_t;
+extern const __midl_frag128_t __midl_frag128;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag17;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag18;
+        struct _NDR64_MEMPAD_FORMAT frag19;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag20;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag21;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag22;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag23;
+        struct _NDR64_MEMPAD_FORMAT frag24;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag25;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag26;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag27;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag28;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag29;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag30;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag31;
+        struct _NDR64_MEMPAD_FORMAT frag32;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag33;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag34;
+    } frag2;
+}
+__midl_frag127_t;
+extern const __midl_frag127_t __midl_frag127;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_EXPR_VAR frag2;
+}
+__midl_frag126_t;
+extern const __midl_frag126_t __midl_frag126;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag125_t;
+extern const __midl_frag125_t __midl_frag125;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag124_t;
+extern const __midl_frag124_t __midl_frag124;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+    struct _NDR64_POINTER_FORMAT frag4;
+    struct _NDR64_POINTER_FORMAT frag5;
+}
+__midl_frag121_t;
+extern const __midl_frag121_t __midl_frag121;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_MEMPAD_FORMAT frag3;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_MEMPAD_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_MEMPAD_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_MEMPAD_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag17;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag18;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag19;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag20;
+    } frag2;
+}
+__midl_frag116_t;
+extern const __midl_frag116_t __midl_frag116;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag114_t;
+extern const __midl_frag114_t __midl_frag114;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag109_t;
+extern const __midl_frag109_t __midl_frag109;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag108_t;
+extern const __midl_frag108_t __midl_frag108;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag17;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag18;
+        struct _NDR64_MEMPAD_FORMAT frag19;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag20;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag21;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag22;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag23;
+        struct _NDR64_MEMPAD_FORMAT frag24;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag25;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag26;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag27;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag28;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag29;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag30;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag31;
+        struct _NDR64_MEMPAD_FORMAT frag32;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag33;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag34;
+    } frag2;
+}
+__midl_frag107_t;
+extern const __midl_frag107_t __midl_frag107;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag104_t;
+extern const __midl_frag104_t __midl_frag104;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        NDR64_FORMAT_CHAR frag4;
+    } frag2;
+}
+__midl_frag103_t;
+extern const __midl_frag103_t __midl_frag103;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+    struct _NDR64_POINTER_FORMAT frag4;
+}
+__midl_frag100_t;
+extern const __midl_frag100_t __midl_frag100;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+    struct _NDR64_POINTER_FORMAT frag2;
+    struct _NDR64_POINTER_FORMAT frag3;
+    struct _NDR64_POINTER_FORMAT frag4;
+    struct _NDR64_POINTER_FORMAT frag5;
+}
+__midl_frag99_t;
+extern const __midl_frag99_t __midl_frag99;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+    } frag2;
+}
+__midl_frag97_t;
+extern const __midl_frag97_t __midl_frag97;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag96_t;
+extern const __midl_frag96_t __midl_frag96;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag95_t;
+extern const __midl_frag95_t __midl_frag95;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+    } frag2;
+}
+__midl_frag94_t;
+extern const __midl_frag94_t __midl_frag94;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag93_t;
+extern const __midl_frag93_t __midl_frag93;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag92_t;
+extern const __midl_frag92_t __midl_frag92;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag90_t;
+extern const __midl_frag90_t __midl_frag90;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag89_t;
+extern const __midl_frag89_t __midl_frag89;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+    } frag2;
+}
+__midl_frag88_t;
+extern const __midl_frag88_t __midl_frag88;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag86_t;
+extern const __midl_frag86_t __midl_frag86;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_MEMPAD_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+    } frag2;
+}
+__midl_frag85_t;
+extern const __midl_frag85_t __midl_frag85;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_MEMPAD_FORMAT frag4;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_MEMPAD_FORMAT frag7;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_MEMPAD_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+    } frag2;
+}
+__midl_frag82_t;
+extern const __midl_frag82_t __midl_frag82;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag3;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag4;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag8;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag9;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag10;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag11;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag12;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag13;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag14;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag15;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag16;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag17;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag18;
+        struct _NDR64_MEMPAD_FORMAT frag19;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag20;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag21;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag22;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag23;
+        struct _NDR64_MEMPAD_FORMAT frag24;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag25;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag26;
+        struct _NDR64_MEMPAD_FORMAT frag27;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag28;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag29;
+    } frag2;
+}
+__midl_frag79_t;
+extern const __midl_frag79_t __midl_frag79;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    struct _NDR64_UNION_ARM frag5;
+    struct _NDR64_UNION_ARM frag6;
+    struct _NDR64_UNION_ARM frag7;
+    NDR64_UINT32 frag8;
+}
+__midl_frag77_t;
+extern const __midl_frag77_t __midl_frag77;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag76_t;
+extern const __midl_frag76_t __midl_frag76;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag73_t;
+extern const __midl_frag73_t __midl_frag73;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag72_t;
+extern const __midl_frag72_t __midl_frag72;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        struct _NDR64_NO_REPEAT_FORMAT frag13;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag14;
+        struct _NDR64_POINTER_FORMAT frag15;
+        NDR64_FORMAT_CHAR frag16;
+    } frag2;
+}
+__midl_frag71_t;
+extern const __midl_frag71_t __midl_frag71;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag70_t;
+extern const __midl_frag70_t __midl_frag70;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        struct _NDR64_NO_REPEAT_FORMAT frag13;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag14;
+        struct _NDR64_POINTER_FORMAT frag15;
+        NDR64_FORMAT_CHAR frag16;
+    } frag2;
+}
+__midl_frag67_t;
+extern const __midl_frag67_t __midl_frag67;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag66_t;
+extern const __midl_frag66_t __midl_frag66;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag65_t;
+extern const __midl_frag65_t __midl_frag65;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag64_t;
+extern const __midl_frag64_t __midl_frag64;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag63_t;
+extern const __midl_frag63_t __midl_frag63;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT frag1;
+}
+__midl_frag62_t;
+extern const __midl_frag62_t __midl_frag62;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        struct _NDR64_NO_REPEAT_FORMAT frag13;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag14;
+        struct _NDR64_POINTER_FORMAT frag15;
+        struct _NDR64_NO_REPEAT_FORMAT frag16;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag17;
+        struct _NDR64_POINTER_FORMAT frag18;
+        struct _NDR64_NO_REPEAT_FORMAT frag19;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag20;
+        struct _NDR64_POINTER_FORMAT frag21;
+        struct _NDR64_NO_REPEAT_FORMAT frag22;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag23;
+        struct _NDR64_POINTER_FORMAT frag24;
+        NDR64_FORMAT_CHAR frag25;
+    } frag2;
+}
+__midl_frag61_t;
+extern const __midl_frag61_t __midl_frag61;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag60_t;
+extern const __midl_frag60_t __midl_frag60;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag59_t;
+extern const __midl_frag59_t __midl_frag59;
+
+typedef 
+struct 
+{
+    struct _NDR64_POINTER_FORMAT frag1;
+}
+__midl_frag58_t;
+extern const __midl_frag58_t __midl_frag58;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag55_t;
+extern const __midl_frag55_t __midl_frag55;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag1;
+        struct _NDR64_MEMPAD_FORMAT frag2;
+        struct _NDR64_BUFFER_ALIGN_FORMAT frag3;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag4;
+        struct _NDR64_MEMPAD_FORMAT frag5;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag6;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag7;
+    } frag2;
+}
+__midl_frag54_t;
+extern const __midl_frag54_t __midl_frag54;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag50_t;
+extern const __midl_frag50_t __midl_frag50;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag49_t;
+extern const __midl_frag49_t __midl_frag49;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag48_t;
+extern const __midl_frag48_t __midl_frag48;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag45_t;
+extern const __midl_frag45_t __midl_frag45;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag44_t;
+extern const __midl_frag44_t __midl_frag44;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_VAR frag3;
+}
+__midl_frag42_t;
+extern const __midl_frag42_t __midl_frag42;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag41_t;
+extern const __midl_frag41_t __midl_frag41;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag40_t;
+extern const __midl_frag40_t __midl_frag40;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        struct _NDR64_NO_REPEAT_FORMAT frag7;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag8;
+        struct _NDR64_POINTER_FORMAT frag9;
+        struct _NDR64_NO_REPEAT_FORMAT frag10;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag11;
+        struct _NDR64_POINTER_FORMAT frag12;
+        struct _NDR64_NO_REPEAT_FORMAT frag13;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag14;
+        struct _NDR64_POINTER_FORMAT frag15;
+        NDR64_FORMAT_CHAR frag16;
+    } frag2;
+}
+__midl_frag39_t;
+extern const __midl_frag39_t __midl_frag39;
+
+typedef 
+struct 
+{
+    struct _NDR64_BOGUS_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_EMBEDDED_COMPLEX_FORMAT frag1;
+        struct _NDR64_SIMPLE_MEMBER_FORMAT frag2;
+    } frag2;
+}
+__midl_frag38_t;
+extern const __midl_frag38_t __midl_frag38;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    struct _NDR64_UNION_ARM frag4;
+    struct _NDR64_UNION_ARM frag5;
+    struct _NDR64_UNION_ARM frag6;
+    struct _NDR64_UNION_ARM frag7;
+    NDR64_UINT32 frag8;
+}
+__midl_frag36_t;
+extern const __midl_frag36_t __midl_frag36;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag35_t;
+extern const __midl_frag35_t __midl_frag35;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+    struct _NDR64_PARAM_FORMAT frag8;
+}
+__midl_frag32_t;
+extern const __midl_frag32_t __midl_frag32;
+
+typedef 
+struct 
+{
+    NDR64_FORMAT_UINT32 frag1;
+    struct _NDR64_RANGE_FORMAT frag2;
+    struct _NDR64_EXPR_OPERATOR frag3;
+    struct _NDR64_EXPR_VAR frag4;
+    struct _NDR64_EXPR_NOOP frag5;
+    struct _NDR64_EXPR_CONST64 frag6;
+}
+__midl_frag28_t;
+extern const __midl_frag28_t __midl_frag28;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag27_t;
+extern const __midl_frag27_t __midl_frag27;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag26_t;
+extern const __midl_frag26_t __midl_frag26;
+
+typedef 
+struct 
+{
+    struct _NDR64_STRUCTURE_HEADER_FORMAT frag1;
+    struct 
+    {
+        struct _NDR64_NO_REPEAT_FORMAT frag1;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag2;
+        struct _NDR64_POINTER_FORMAT frag3;
+        struct _NDR64_NO_REPEAT_FORMAT frag4;
+        struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT frag5;
+        struct _NDR64_POINTER_FORMAT frag6;
+        NDR64_FORMAT_CHAR frag7;
+    } frag2;
+}
+__midl_frag25_t;
+extern const __midl_frag25_t __midl_frag25;
+
+typedef 
+struct 
+{
+    struct _NDR64_NON_ENCAPSULATED_UNION frag1;
+    struct _NDR64_UNION_ARM_SELECTOR frag2;
+    struct _NDR64_UNION_ARM frag3;
+    NDR64_UINT32 frag4;
+}
+__midl_frag23_t;
+extern const __midl_frag23_t __midl_frag23;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag22_t;
+extern const __midl_frag22_t __midl_frag22;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+}
+__midl_frag19_t;
+extern const __midl_frag19_t __midl_frag19;
+
+typedef 
+struct _NDR64_CONTEXT_HANDLE_FORMAT
+__midl_frag17_t;
+extern const __midl_frag17_t __midl_frag17;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag16_t;
+extern const __midl_frag16_t __midl_frag16;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+}
+__midl_frag15_t;
+extern const __midl_frag15_t __midl_frag15;
+
+typedef 
+struct _NDR64_CONTEXT_HANDLE_FORMAT
+__midl_frag13_t;
+extern const __midl_frag13_t __midl_frag13;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag12_t;
+extern const __midl_frag12_t __midl_frag12;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag11_t;
+extern const __midl_frag11_t __midl_frag11;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag10_t;
+extern const __midl_frag10_t __midl_frag10;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_ARRAY_HEADER_FORMAT frag1;
+    struct _NDR64_ARRAY_ELEMENT_INFO frag2;
+}
+__midl_frag7_t;
+extern const __midl_frag7_t __midl_frag7;
+
+typedef 
+struct 
+{
+    struct _NDR64_CONF_STRUCTURE_HEADER_FORMAT frag1;
+}
+__midl_frag6_t;
+extern const __midl_frag6_t __midl_frag6;
+
+typedef 
+struct _NDR64_POINTER_FORMAT
+__midl_frag3_t;
+extern const __midl_frag3_t __midl_frag3;
+
+typedef 
+struct 
+{
+    struct _NDR64_PROC_FORMAT frag1;
+    struct _NDR64_BIND_AND_NOTIFY_EXTENSION frag2;
+    struct _NDR64_PARAM_FORMAT frag3;
+    struct _NDR64_PARAM_FORMAT frag4;
+    struct _NDR64_PARAM_FORMAT frag5;
+    struct _NDR64_PARAM_FORMAT frag6;
+    struct _NDR64_PARAM_FORMAT frag7;
+}
+__midl_frag2_t;
+extern const __midl_frag2_t __midl_frag2;
+
+typedef 
+NDR64_FORMAT_UINT32
+__midl_frag1_t;
+extern const __midl_frag1_t __midl_frag1;
+
+static const __midl_frag907_t __midl_frag907 =
+0x5    /* FC64_INT32 */;
+
+static const __midl_frag906_t __midl_frag906 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag905_t __midl_frag905 =
+{ 
+/* *WCHAR */
+    { 
+    /* *WCHAR */
+        0x64,    /* FC64_CONF_WCHAR_STRING */
+        { 
+        /* *WCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT16) 2 /* 0x2 */
+    }
+};
+
+static const __midl_frag904_t __midl_frag904 =
+{ 
+/* DSA_MSG_EXECUTE_SCRIPT_REPLY_V1 */
+    { 
+    /* DSA_MSG_EXECUTE_SCRIPT_REPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DSA_MSG_EXECUTE_SCRIPT_REPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag906,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag903_t __midl_frag903 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_OPERATOR */
+        0x4,    /* FC_EXPR_OPER */
+        0x5,    /* OP_UNARY_INDIRECTION */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT8) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x8,    /* FC64_UINT64 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */  /* Offset */
+    }
+};
+
+static const __midl_frag902_t __midl_frag902 =
+{ 
+/* DSA_MSG_EXECUTE_SCRIPT_REPLY */
+    { 
+    /* DSA_MSG_EXECUTE_SCRIPT_REPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag904,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag901_t __midl_frag901 =
+{ 
+/* *DSA_MSG_EXECUTE_SCRIPT_REPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag902
+};
+
+static const __midl_frag899_t __midl_frag899 =
+{ 
+/* *DWORD */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 12 /* 0xc */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag907
+};
+
+static const __midl_frag898_t __midl_frag898 =
+0x2    /* FC64_INT8 */;
+
+static const __midl_frag897_t __midl_frag897 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 1 /* 0x1 */,
+        (NDR64_INT64) 1024 /* 0x400 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    }
+};
+
+static const __midl_frag896_t __midl_frag896 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag897
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag895_t __midl_frag895 =
+{ 
+/* DSA_MSG_EXECUTE_SCRIPT_REQ_V1 */
+    { 
+    /* DSA_MSG_EXECUTE_SCRIPT_REQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DSA_MSG_EXECUTE_SCRIPT_REQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *BYTE */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag896
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag894_t __midl_frag894 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */  /* Offset */
+    }
+};
+
+static const __midl_frag893_t __midl_frag893 =
+{ 
+/* DSA_MSG_EXECUTE_SCRIPT_REQ */
+    { 
+    /* DSA_MSG_EXECUTE_SCRIPT_REQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag895,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag892_t __midl_frag892 =
+{ 
+/* *DSA_MSG_EXECUTE_SCRIPT_REQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag893
+};
+
+static const __midl_frag890_t __midl_frag890 =
+{ 
+/* IDL_DSAExecuteScript */
+    { 
+    /* IDL_DSAExecuteScript */      /* procedure IDL_DSAExecuteScript */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 5 /* 0x5 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x72,    /* FC64_BIND_PRIMITIVE */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag893,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag902,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag888_t __midl_frag888 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *BYTE */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag879
+    },
+    { 
+    /* *BYTE */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag882
+    },
+    { 
+    /* *BYTE */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag885
+    }
+};
+
+static const __midl_frag886_t __midl_frag886 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10485760 /* 0xa00000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    }
+};
+
+static const __midl_frag885_t __midl_frag885 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag886
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag883_t __midl_frag883 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10485760 /* 0xa00000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    }
+};
+
+static const __midl_frag882_t __midl_frag882 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag883
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag880_t __midl_frag880 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1024 /* 0x400 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    }
+};
+
+static const __midl_frag879_t __midl_frag879 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag880
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag877_t __midl_frag877 =
+{ 
+/* DSA_MSG_PREPARE_SCRIPT_REPLY_V1 */
+    { 
+    /* DSA_MSG_PREPARE_SCRIPT_REPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DSA_MSG_PREPARE_SCRIPT_REPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */,
+        0,
+        0,
+        &__midl_frag888,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag875_t __midl_frag875 =
+{ 
+/* DSA_MSG_PREPARE_SCRIPT_REPLY */
+    { 
+    /* DSA_MSG_PREPARE_SCRIPT_REPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 64 /* 0x40 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag877,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag874_t __midl_frag874 =
+{ 
+/* *DSA_MSG_PREPARE_SCRIPT_REPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag875
+};
+
+static const __midl_frag871_t __midl_frag871 =
+{ 
+/* DSA_MSG_PREPARE_SCRIPT_REQ_V1 */
+    { 
+    /* DSA_MSG_PREPARE_SCRIPT_REQ_V1 */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DSA_MSG_PREPARE_SCRIPT_REQ_V1 */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    }
+};
+
+static const __midl_frag869_t __midl_frag869 =
+{ 
+/* DSA_MSG_PREPARE_SCRIPT_REQ */
+    { 
+    /* DSA_MSG_PREPARE_SCRIPT_REQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag871,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag868_t __midl_frag868 =
+{ 
+/* *DSA_MSG_PREPARE_SCRIPT_REQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag869
+};
+
+static const __midl_frag866_t __midl_frag866 =
+{ 
+/* IDL_DSAPrepareScript */
+    { 
+    /* IDL_DSAPrepareScript */      /* procedure IDL_DSAPrepareScript */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 5 /* 0x5 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x72,    /* FC64_BIND_PRIMITIVE */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag869,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag875,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [out], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag864_t __midl_frag864 =
+0x10    /* FC64_CHAR */;
+
+static const __midl_frag863_t __midl_frag863 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 65535 /* 0xffff */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    }
+};
+
+static const __midl_frag862_t __midl_frag862 =
+{ 
+/* *UCHAR */
+    { 
+    /* *UCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *UCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag863
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag864
+    }
+};
+
+static const __midl_frag861_t __midl_frag861 =
+{ 
+/* DRS_MSG_READNGCKEYREPLY_V1 */
+    { 
+    /* DRS_MSG_READNGCKEYREPLY_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_READNGCKEYREPLY_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag862
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag859_t __midl_frag859 =
+{ 
+/* DRS_MSG_READNGCKEYREPLY */
+    { 
+    /* DRS_MSG_READNGCKEYREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag861,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag858_t __midl_frag858 =
+{ 
+/* *DRS_MSG_READNGCKEYREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag859
+};
+
+static const __midl_frag854_t __midl_frag854 =
+{ 
+/* DRS_MSG_READNGCKEYREQ_V1 */
+    { 
+    /* DRS_MSG_READNGCKEYREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_READNGCKEYREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag852_t __midl_frag852 =
+{ 
+/* DRS_MSG_READNGCKEYREQ */
+    { 
+    /* DRS_MSG_READNGCKEYREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag854,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag851_t __midl_frag851 =
+{ 
+/* *DRS_MSG_READNGCKEYREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag852
+};
+
+static const __midl_frag849_t __midl_frag849 =
+{ 
+/* struct _NDR64_CONTEXT_HANDLE_FORMAT */
+    0x70,    /* FC64_BIND_CONTEXT */
+    (NDR64_UINT8) 65 /* 0x41 */,
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT8) 0 /* 0x0 */
+};
+
+static const __midl_frag848_t __midl_frag848 =
+{ 
+/* IDL_DRSReadNgcKey */
+    { 
+    /* IDL_DRSReadNgcKey */      /* procedure IDL_DRSReadNgcKey */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag852,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag859,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag844_t __midl_frag844 =
+{ 
+/* DRS_MSG_WRITENGCKEYREPLY */
+    { 
+    /* DRS_MSG_WRITENGCKEYREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag871,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag843_t __midl_frag843 =
+{ 
+/* *DRS_MSG_WRITENGCKEYREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag844
+};
+
+static const __midl_frag840_t __midl_frag840 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *UCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag837
+    }
+};
+
+static const __midl_frag838_t __midl_frag838 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 65535 /* 0xffff */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag837_t __midl_frag837 =
+{ 
+/* *UCHAR */
+    { 
+    /* *UCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *UCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag838
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag864
+    }
+};
+
+static const __midl_frag835_t __midl_frag835 =
+{ 
+/* DRS_MSG_WRITENGCKEYREQ_V1 */
+    { 
+    /* DRS_MSG_WRITENGCKEYREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_WRITENGCKEYREQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        &__midl_frag840,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag833_t __midl_frag833 =
+{ 
+/* DRS_MSG_WRITENGCKEYREQ */
+    { 
+    /* DRS_MSG_WRITENGCKEYREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag835,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag832_t __midl_frag832 =
+{ 
+/* *DRS_MSG_WRITENGCKEYREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag833
+};
+
+static const __midl_frag829_t __midl_frag829 =
+{ 
+/* IDL_DRSWriteNgcKey */
+    { 
+    /* IDL_DRSWriteNgcKey */      /* procedure IDL_DRSWriteNgcKey */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag833,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag844,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag827_t __midl_frag827 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag824
+    }
+};
+
+static const __midl_frag826_t __midl_frag826 =
+0x11    /* FC64_WCHAR */;
+
+static const __midl_frag824_t __midl_frag824 =
+{ 
+/* *WCHAR */
+    { 
+    /* *WCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 1 /* 0x1 */,
+        { 
+        /* *WCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag880
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag826
+    }
+};
+
+static const __midl_frag821_t __midl_frag821 =
+{ 
+/* DRS_MSG_ADDCLONEDCREPLY_V1 */
+    { 
+    /* DRS_MSG_ADDCLONEDCREPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDCLONEDCREPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag827,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag819_t __midl_frag819 =
+{ 
+/* DRS_MSG_ADDCLONEDCREPLY */
+    { 
+    /* DRS_MSG_ADDCLONEDCREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag821,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag818_t __midl_frag818 =
+{ 
+/* *DRS_MSG_ADDCLONEDCREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag819
+};
+
+static const __midl_frag813_t __midl_frag813 =
+{ 
+/* DRS_MSG_ADDCLONEDCREQ_V1 */
+    { 
+    /* DRS_MSG_ADDCLONEDCREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDCLONEDCREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag811_t __midl_frag811 =
+{ 
+/* DRS_MSG_ADDCLONEDCREQ */
+    { 
+    /* DRS_MSG_ADDCLONEDCREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag813,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag810_t __midl_frag810 =
+{ 
+/* *DRS_MSG_ADDCLONEDCREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag811
+};
+
+static const __midl_frag807_t __midl_frag807 =
+{ 
+/* IDL_DRSAddCloneDC */
+    { 
+    /* IDL_DRSAddCloneDC */      /* procedure IDL_DRSAddCloneDC */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag811,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag819,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag805_t __midl_frag805 =
+{ 
+/* DRS_MSG_FINISH_DEMOTIONREPLY_V1 */
+    { 
+    /* DRS_MSG_FINISH_DEMOTIONREPLY_V1 */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_FINISH_DEMOTIONREPLY_V1 */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 12 /* 0xc */
+    }
+};
+
+static const __midl_frag803_t __midl_frag803 =
+{ 
+/* DRS_MSG_FINISH_DEMOTIONREPLY */
+    { 
+    /* DRS_MSG_FINISH_DEMOTIONREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 12 /* 0xc */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag805,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag802_t __midl_frag802 =
+{ 
+/* *DRS_MSG_FINISH_DEMOTIONREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag803
+};
+
+static const __midl_frag799_t __midl_frag799 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_FIX_ARRAY_HEADER_FORMAT */
+        0x40,    /* FC64_FIX_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* struct _NDR64_FIX_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag796_t __midl_frag796 =
+{ 
+/* DRS_MSG_FINISH_DEMOTIONREQ_V1 */
+    { 
+    /* DRS_MSG_FINISH_DEMOTIONREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_FINISH_DEMOTIONREQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag906,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag794_t __midl_frag794 =
+{ 
+/* DRS_MSG_FINISH_DEMOTIONREQ */
+    { 
+    /* DRS_MSG_FINISH_DEMOTIONREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag796,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag793_t __midl_frag793 =
+{ 
+/* *DRS_MSG_FINISH_DEMOTIONREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag794
+};
+
+static const __midl_frag790_t __midl_frag790 =
+{ 
+/* IDL_DRSFinishDemotion */
+    { 
+    /* IDL_DRSFinishDemotion */      /* procedure IDL_DRSFinishDemotion */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag794,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag803,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag781_t __midl_frag781 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x20,    /* FC64_RP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    }
+};
+
+static const __midl_frag780_t __midl_frag780 =
+{ 
+/* DRS_MSG_REPLICA_DEMOTIONREQ_V1 */
+    { 
+    /* DRS_MSG_REPLICA_DEMOTIONREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REPLICA_DEMOTIONREQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag781,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag778_t __midl_frag778 =
+{ 
+/* DRS_MSG_REPLICA_DEMOTIONREQ */
+    { 
+    /* DRS_MSG_REPLICA_DEMOTIONREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag780,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag777_t __midl_frag777 =
+{ 
+/* *DRS_MSG_REPLICA_DEMOTIONREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag778
+};
+
+static const __midl_frag774_t __midl_frag774 =
+{ 
+/* IDL_DRSReplicaDemotion */
+    { 
+    /* IDL_DRSReplicaDemotion */      /* procedure IDL_DRSReplicaDemotion */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag778,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag844,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag760_t __midl_frag760 =
+{ 
+/* IDL_DRSInitDemotion */
+    { 
+    /* IDL_DRSInitDemotion */      /* procedure IDL_DRSInitDemotion */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag869,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag844,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag758_t __midl_frag758 =
+{ 
+/*  */
+    { 
+    /* *DRS_MSG_QUERYSITESREPLYELEMENT_V1 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag755
+    }
+};
+
+static const __midl_frag757_t __midl_frag757 =
+{ 
+/* DRS_MSG_QUERYSITESREPLYELEMENT_V1 */
+    { 
+    /* DRS_MSG_QUERYSITESREPLYELEMENT_V1 */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_QUERYSITESREPLYELEMENT_V1 */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag756_t __midl_frag756 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag755_t __midl_frag755 =
+{ 
+/* *DRS_MSG_QUERYSITESREPLYELEMENT_V1 */
+    { 
+    /* *DRS_MSG_QUERYSITESREPLYELEMENT_V1 */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* *DRS_MSG_QUERYSITESREPLYELEMENT_V1 */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag756
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag757
+    }
+};
+
+static const __midl_frag754_t __midl_frag754 =
+{ 
+/* DRS_MSG_QUERYSITESREPLY_V1 */
+    { 
+    /* DRS_MSG_QUERYSITESREPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_QUERYSITESREPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        &__midl_frag758,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* DRS_MSG_QUERYSITESREPLY_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag752_t __midl_frag752 =
+{ 
+/* DRS_MSG_QUERYSITESREPLY */
+    { 
+    /* DRS_MSG_QUERYSITESREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag754,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag751_t __midl_frag751 =
+{ 
+/* *DRS_MSG_QUERYSITESREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag752
+};
+
+static const __midl_frag748_t __midl_frag748 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* **WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag745
+    }
+};
+
+static const __midl_frag746_t __midl_frag746 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 1 /* 0x1 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag745_t __midl_frag745 =
+{ 
+/* **WCHAR */
+    { 
+    /* **WCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* **WCHAR */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag746
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag743_t __midl_frag743 =
+{ 
+/* DRS_MSG_QUERYSITESREQ_V1 */
+    { 
+    /* DRS_MSG_QUERYSITESREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_QUERYSITESREQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag748,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* DRS_MSG_QUERYSITESREQ_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag741_t __midl_frag741 =
+{ 
+/* DRS_MSG_QUERYSITESREQ */
+    { 
+    /* DRS_MSG_QUERYSITESREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag743,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag740_t __midl_frag740 =
+{ 
+/* *DRS_MSG_QUERYSITESREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag741
+};
+
+static const __midl_frag737_t __midl_frag737 =
+{ 
+/* IDL_DRSQuerySitesByCost */
+    { 
+    /* IDL_DRSQuerySitesByCost */      /* procedure IDL_DRSQuerySitesByCost */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag741,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag752,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag735_t __midl_frag735 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10485760 /* 0xa00000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    }
+};
+
+static const __midl_frag734_t __midl_frag734 =
+{ 
+/* *UUID */
+    { 
+    /* *UUID */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* *UUID */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag735
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag515
+    }
+};
+
+static const __midl_frag733_t __midl_frag733 =
+{ 
+/* DRS_MSG_EXISTREPLY_V1 */
+    { 
+    /* DRS_MSG_EXISTREPLY_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_EXISTREPLY_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UUID */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag734
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag731_t __midl_frag731 =
+{ 
+/* DRS_MSG_EXISTREPLY */
+    { 
+    /* DRS_MSG_EXISTREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag733,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag730_t __midl_frag730 =
+{ 
+/* *DRS_MSG_EXISTREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag731
+};
+
+static const __midl_frag727_t __midl_frag727 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_FIX_ARRAY_HEADER_FORMAT */
+        0x40,    /* FC64_FIX_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* struct _NDR64_FIX_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    }
+};
+
+static const __midl_frag725_t __midl_frag725 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *UPTODATE_VECTOR_V1_EXT */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag44
+    }
+};
+
+static const __midl_frag724_t __midl_frag724 =
+{ 
+/* DRS_MSG_EXISTREQ_V1 */
+    { 
+    /* DRS_MSG_EXISTREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_EXISTREQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 56 /* 0x38 */,
+        0,
+        0,
+        &__midl_frag725,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag727
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag722_t __midl_frag722 =
+{ 
+/* DRS_MSG_EXISTREQ */
+    { 
+    /* DRS_MSG_EXISTREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 56 /* 0x38 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag724,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag721_t __midl_frag721 =
+{ 
+/* *DRS_MSG_EXISTREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag722
+};
+
+static const __midl_frag718_t __midl_frag718 =
+{ 
+/* IDL_DRSGetObjectExistence */
+    { 
+    /* IDL_DRSGetObjectExistence */      /* procedure IDL_DRSGetObjectExistence */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag722,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag731,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag716_t __midl_frag716 =
+{ 
+/* DRS_MSG_REPVERIFYOBJ_V1 */
+    { 
+    /* DRS_MSG_REPVERIFYOBJ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REPVERIFYOBJ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag714_t __midl_frag714 =
+{ 
+/* DRS_MSG_REPVERIFYOBJ */
+    { 
+    /* DRS_MSG_REPVERIFYOBJ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag716,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag713_t __midl_frag713 =
+{ 
+/* *DRS_MSG_REPVERIFYOBJ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag714
+};
+
+static const __midl_frag710_t __midl_frag710 =
+{ 
+/* IDL_DRSReplicaVerifyObjects */
+    { 
+    /* IDL_DRSReplicaVerifyObjects */      /* procedure IDL_DRSReplicaVerifyObjects */
+        (NDR64_UINT32) 19660864 /* 0x12c0040 */,    /* explicit handle */ /* IsIntrepreted, ClientMustSize, HasReturn, ServerCorrelation, HasExtensions */
+        (NDR64_UINT32) 32 /* 0x20 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 4 /* 0x4 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwVersion */      /* parameter dwVersion */
+        &__midl_frag907,
+        { 
+        /* dwVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgVerify */      /* parameter pmsgVerify */
+        &__midl_frag714,
+        { 
+        /* pmsgVerify */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag708_t __midl_frag708 =
+{ 
+/*  */
+    { 
+    /* *DRS_MSG_REVMEMB_REPLY_V1 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag706
+    }
+};
+
+static const __midl_frag706_t __midl_frag706 =
+{ 
+/* *DRS_MSG_REVMEMB_REPLY_V1 */
+    { 
+    /* *DRS_MSG_REVMEMB_REPLY_V1 */
+        { 
+        /* *DRS_MSG_REVMEMB_REPLY_V1 */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *DRS_MSG_REVMEMB_REPLY_V1 */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag227
+        },
+        &__midl_frag756,
+        0,
+        0
+    }
+};
+
+static const __midl_frag705_t __midl_frag705 =
+{ 
+/* DRS_MSG_GETMEMBERSHIPS2_REPLY_V1 */
+    { 
+    /* DRS_MSG_GETMEMBERSHIPS2_REPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETMEMBERSHIPS2_REPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag708,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag703_t __midl_frag703 =
+{ 
+/* DRS_MSG_GETMEMBERSHIPS2_REPLY */
+    { 
+    /* DRS_MSG_GETMEMBERSHIPS2_REPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag705,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag702_t __midl_frag702 =
+{ 
+/* *DRS_MSG_GETMEMBERSHIPS2_REPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag703
+};
+
+static const __midl_frag699_t __midl_frag699 =
+{ 
+/*  */
+    { 
+    /* *DRS_MSG_REVMEMB_REQ_V1 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag697
+    }
+};
+
+static const __midl_frag698_t __midl_frag698 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 1 /* 0x1 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag697_t __midl_frag697 =
+{ 
+/* *DRS_MSG_REVMEMB_REQ_V1 */
+    { 
+    /* *DRS_MSG_REVMEMB_REQ_V1 */
+        { 
+        /* *DRS_MSG_REVMEMB_REQ_V1 */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *DRS_MSG_REVMEMB_REQ_V1 */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag216
+        },
+        &__midl_frag698,
+        0,
+        0
+    }
+};
+
+static const __midl_frag696_t __midl_frag696 =
+{ 
+/* DRS_MSG_GETMEMBERSHIPS2_REQ_V1 */
+    { 
+    /* DRS_MSG_GETMEMBERSHIPS2_REQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETMEMBERSHIPS2_REQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag699,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag694_t __midl_frag694 =
+{ 
+/* DRS_MSG_GETMEMBERSHIPS2_REQ */
+    { 
+    /* DRS_MSG_GETMEMBERSHIPS2_REQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag696,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag693_t __midl_frag693 =
+{ 
+/* *DRS_MSG_GETMEMBERSHIPS2_REQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag694
+};
+
+static const __midl_frag690_t __midl_frag690 =
+{ 
+/* IDL_DRSGetMemberships2 */
+    { 
+    /* IDL_DRSGetMemberships2 */      /* procedure IDL_DRSGetMemberships2 */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag694,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag703,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag682_t __midl_frag682 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x23,    /* FC64_FP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag671
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag674
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag677
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag678_t __midl_frag678 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 256 /* 0x100 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */
+    }
+};
+
+static const __midl_frag677_t __midl_frag677 =
+{ 
+/* *WCHAR */
+    { 
+    /* *WCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 1 /* 0x1 */,
+        { 
+        /* *WCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag678
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag826
+    }
+};
+
+static const __midl_frag675_t __midl_frag675 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 256 /* 0x100 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    }
+};
+
+static const __midl_frag674_t __midl_frag674 =
+{ 
+/* *WCHAR */
+    { 
+    /* *WCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 1 /* 0x1 */,
+        { 
+        /* *WCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag675
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag826
+    }
+};
+
+static const __midl_frag672_t __midl_frag672 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 256 /* 0x100 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    }
+};
+
+static const __midl_frag671_t __midl_frag671 =
+{ 
+/* *WCHAR */
+    { 
+    /* *WCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 1 /* 0x1 */,
+        { 
+        /* *WCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag672
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag826
+    }
+};
+
+static const __midl_frag667_t __midl_frag667 =
+{ 
+/* DRS_MSG_ADDSIDREQ_V1 */
+    { 
+    /* DRS_MSG_ADDSIDREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDSIDREQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 96 /* 0x60 */,
+        0,
+        0,
+        &__midl_frag682,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag665_t __midl_frag665 =
+{ 
+/* DRS_MSG_ADDSIDREQ */
+    { 
+    /* DRS_MSG_ADDSIDREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 96 /* 0x60 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag667,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag664_t __midl_frag664 =
+{ 
+/* *DRS_MSG_ADDSIDREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag665
+};
+
+static const __midl_frag661_t __midl_frag661 =
+{ 
+/* IDL_DRSAddSidHistory */
+    { 
+    /* IDL_DRSAddSidHistory */      /* procedure IDL_DRSAddSidHistory */
+        (NDR64_UINT32) 23990336 /* 0x16e1040 */,    /* explicit handle */ /* IsIntrepreted, [ptr], ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag665,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag844,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag659_t __midl_frag659 =
+{ 
+/* *DS_REPL_NEIGHBORSW */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag550
+};
+
+static const __midl_frag658_t __midl_frag658 =
+{ 
+/* DS_REPL_CLIENT_CONTEXT */
+    { 
+    /* DS_REPL_CLIENT_CONTEXT */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CLIENT_CONTEXT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    }
+};
+
+static const __midl_frag656_t __midl_frag656 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        &__midl_frag756
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 48 /* 0x30 */,
+        &__midl_frag658
+    }
+};
+
+static const __midl_frag655_t __midl_frag655 =
+{ 
+/* DS_REPL_CLIENT_CONTEXTS */
+    { 
+    /* DS_REPL_CLIENT_CONTEXTS */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CLIENT_CONTEXTS */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag656
+    }
+};
+
+static const __midl_frag654_t __midl_frag654 =
+{ 
+/* *DS_REPL_CLIENT_CONTEXTS */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag655
+};
+
+static const __midl_frag653_t __midl_frag653 =
+{ 
+/* *UPTODATE_VECTOR_V1_EXT */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag44
+};
+
+static const __midl_frag650_t __midl_frag650 =
+{ 
+/* DS_REPL_SERVER_OUTGOING_CALL */
+    { 
+    /* DS_REPL_SERVER_OUTGOING_CALL */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_SERVER_OUTGOING_CALL */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        0,
+        0,
+        &__midl_frag906,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* DS_REPL_SERVER_OUTGOING_CALL */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag649_t __midl_frag649 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 256 /* 0x100 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag648_t __midl_frag648 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+        { 
+        /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag650
+        },
+        &__midl_frag649,
+        0,
+        0
+    }
+};
+
+static const __midl_frag647_t __midl_frag647 =
+{ 
+/* DS_REPL_SERVER_OUTGOING_CALLS */
+    { 
+    /* DS_REPL_SERVER_OUTGOING_CALLS */
+        0x37,    /* FC64_FORCED_CONF_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_SERVER_OUTGOING_CALLS */
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 1 /* 0x1 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        0,
+        0,
+        0,
+        &__midl_frag648,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag646_t __midl_frag646 =
+{ 
+/* *DS_REPL_SERVER_OUTGOING_CALLS */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag647
+};
+
+static const __midl_frag644_t __midl_frag644 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *BYTE */
+        0x23,    /* FC64_FP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag640
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag641_t __midl_frag641 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    }
+};
+
+static const __midl_frag640_t __midl_frag640 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag641
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag637_t __midl_frag637 =
+{ 
+/* DS_REPL_VALUE_META_DATA_2 */
+    { 
+    /* DS_REPL_VALUE_META_DATA_2 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_VALUE_META_DATA_2 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 104 /* 0x68 */,
+        0,
+        0,
+        &__midl_frag644,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag636_t __midl_frag636 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag635_t __midl_frag635 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+        { 
+        /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag637
+        },
+        &__midl_frag636,
+        0,
+        0
+    }
+};
+
+static const __midl_frag634_t __midl_frag634 =
+{ 
+/* DS_REPL_ATTR_VALUE_META_DATA_2 */
+    { 
+    /* DS_REPL_ATTR_VALUE_META_DATA_2 */
+        0x37,    /* FC64_FORCED_CONF_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_ATTR_VALUE_META_DATA_2 */
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 1 /* 0x1 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        0,
+        0,
+        0,
+        &__midl_frag635,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag633_t __midl_frag633 =
+{ 
+/* *DS_REPL_ATTR_VALUE_META_DATA_2 */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag634
+};
+
+static const __midl_frag631_t __midl_frag631 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag628_t __midl_frag628 =
+{ 
+/* DS_REPL_ATTR_META_DATA_2 */
+    { 
+    /* DS_REPL_ATTR_META_DATA_2 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_ATTR_META_DATA_2 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */,
+        0,
+        0,
+        &__midl_frag631,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag626_t __midl_frag626 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+        { 
+        /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag628
+        },
+        &__midl_frag636,
+        0,
+        0
+    }
+};
+
+static const __midl_frag625_t __midl_frag625 =
+{ 
+/* DS_REPL_OBJ_META_DATA_2 */
+    { 
+    /* DS_REPL_OBJ_META_DATA_2 */
+        0x37,    /* FC64_FORCED_CONF_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_OBJ_META_DATA_2 */
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 1 /* 0x1 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        0,
+        0,
+        0,
+        &__midl_frag626,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag624_t __midl_frag624 =
+{ 
+/* *DS_REPL_OBJ_META_DATA_2 */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag625
+};
+
+static const __midl_frag622_t __midl_frag622 =
+{ 
+/* DS_REPL_CURSOR_3W */
+    { 
+    /* DS_REPL_CURSOR_3W */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CURSOR_3W */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag619_t __midl_frag619 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        &__midl_frag636
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 40 /* 0x28 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 32 /* 0x20 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 40 /* 0x28 */,
+        &__midl_frag622
+    }
+};
+
+static const __midl_frag617_t __midl_frag617 =
+{ 
+/* DS_REPL_CURSORS_3W */
+    { 
+    /* DS_REPL_CURSORS_3W */
+        0x33,    /* FC64_CONF_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CURSORS_3W */
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag619
+    },
+    { 
+    /*  */
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                0x82,    /* FC64_VARIABLE_REPEAT */
+                { 
+                /* struct _NDR64_REPEAT_FORMAT */
+                    (NDR64_UINT8) 1 /* 0x1 */,
+                    (NDR64_UINT8) 0 /* 0x0 */
+                },
+                (NDR64_UINT16) 0 /* 0x0 */,
+                (NDR64_UINT32) 40 /* 0x28 */,
+                (NDR64_UINT32) 8 /* 0x8 */,
+                (NDR64_UINT32) 1 /* 0x1 */
+            },
+            { 
+            /*  */
+                { 
+                /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                    (NDR64_UINT32) 32 /* 0x20 */,
+                    (NDR64_UINT32) 0 /* 0x0 */
+                },
+                { 
+                /* *WCHAR */
+                    0x21,    /* FC64_UP */
+                    (NDR64_UINT8) 0 /* 0x0 */,
+                    (NDR64_UINT16) 0 /* 0x0 */,
+                    &__midl_frag905
+                }
+            }
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag616_t __midl_frag616 =
+{ 
+/* *DS_REPL_CURSORS_3W */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag617
+};
+
+static const __midl_frag615_t __midl_frag615 =
+{ 
+/* DS_REPL_CURSOR_2 */
+    { 
+    /* DS_REPL_CURSOR_2 */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CURSOR_2 */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    }
+};
+
+static const __midl_frag613_t __midl_frag613 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag636
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag615
+    }
+};
+
+static const __midl_frag612_t __midl_frag612 =
+{ 
+/* DS_REPL_CURSORS_2 */
+    { 
+    /* DS_REPL_CURSORS_2 */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CURSORS_2 */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag613
+    }
+};
+
+static const __midl_frag611_t __midl_frag611 =
+{ 
+/* *DS_REPL_CURSORS_2 */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag612
+};
+
+static const __midl_frag609_t __midl_frag609 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *BYTE */
+        0x23,    /* FC64_FP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag640
+    }
+};
+
+static const __midl_frag603_t __midl_frag603 =
+{ 
+/* DS_REPL_VALUE_META_DATA */
+    { 
+    /* DS_REPL_VALUE_META_DATA */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_VALUE_META_DATA */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 96 /* 0x60 */,
+        0,
+        0,
+        &__midl_frag609,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag601_t __midl_frag601 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+        { 
+        /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag603
+        },
+        &__midl_frag636,
+        0,
+        0
+    }
+};
+
+static const __midl_frag600_t __midl_frag600 =
+{ 
+/* DS_REPL_ATTR_VALUE_META_DATA */
+    { 
+    /* DS_REPL_ATTR_VALUE_META_DATA */
+        0x37,    /* FC64_FORCED_CONF_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_ATTR_VALUE_META_DATA */
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 1 /* 0x1 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        0,
+        0,
+        0,
+        &__midl_frag601,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag599_t __midl_frag599 =
+{ 
+/* *DS_REPL_ATTR_VALUE_META_DATA */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag600
+};
+
+static const __midl_frag595_t __midl_frag595 =
+{ 
+/* DS_REPL_OPW */
+    { 
+    /* DS_REPL_OPW */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_OPW */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 80 /* 0x50 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 40 /* 0x28 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag591_t __midl_frag591 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag590_t __midl_frag590 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 80 /* 0x50 */,
+        &__midl_frag591
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 80 /* 0x50 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 3 /* 0x3 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 24 /* 0x18 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 32 /* 0x20 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 40 /* 0x28 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 80 /* 0x50 */,
+        &__midl_frag595
+    }
+};
+
+static const __midl_frag589_t __midl_frag589 =
+{ 
+/* DS_REPL_PENDING_OPSW */
+    { 
+    /* DS_REPL_PENDING_OPSW */
+        0x37,    /* FC64_FORCED_CONF_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_PENDING_OPSW */
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 1 /* 0x1 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        0,
+        &__midl_frag590,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag588_t __midl_frag588 =
+{ 
+/* *DS_REPL_PENDING_OPSW */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag589
+};
+
+static const __midl_frag587_t __midl_frag587 =
+{ 
+/* *DS_REPL_KCC_DSA_FAILURESW */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag580
+};
+
+static const __midl_frag585_t __midl_frag585 =
+{ 
+/* DS_REPL_KCC_DSA_FAILUREW */
+    { 
+    /* DS_REPL_KCC_DSA_FAILUREW */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_KCC_DSA_FAILUREW */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag582_t __midl_frag582 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        &__midl_frag636
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 40 /* 0x28 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 40 /* 0x28 */,
+        &__midl_frag585
+    }
+};
+
+static const __midl_frag580_t __midl_frag580 =
+{ 
+/* DS_REPL_KCC_DSA_FAILURESW */
+    { 
+    /* DS_REPL_KCC_DSA_FAILURESW */
+        0x33,    /* FC64_CONF_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_KCC_DSA_FAILURESW */
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag582
+    },
+    { 
+    /*  */
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                0x82,    /* FC64_VARIABLE_REPEAT */
+                { 
+                /* struct _NDR64_REPEAT_FORMAT */
+                    (NDR64_UINT8) 1 /* 0x1 */,
+                    (NDR64_UINT8) 0 /* 0x0 */
+                },
+                (NDR64_UINT16) 0 /* 0x0 */,
+                (NDR64_UINT32) 40 /* 0x28 */,
+                (NDR64_UINT32) 8 /* 0x8 */,
+                (NDR64_UINT32) 1 /* 0x1 */
+            },
+            { 
+            /*  */
+                { 
+                /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                    (NDR64_UINT32) 0 /* 0x0 */,
+                    (NDR64_UINT32) 0 /* 0x0 */
+                },
+                { 
+                /* *WCHAR */
+                    0x21,    /* FC64_UP */
+                    (NDR64_UINT8) 0 /* 0x0 */,
+                    (NDR64_UINT16) 0 /* 0x0 */,
+                    &__midl_frag905
+                }
+            }
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag575_t __midl_frag575 =
+{ 
+/* DS_REPL_ATTR_META_DATA */
+    { 
+    /* DS_REPL_ATTR_META_DATA */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_ATTR_META_DATA */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 56 /* 0x38 */,
+        0,
+        0,
+        &__midl_frag906,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag573_t __midl_frag573 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+        { 
+        /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag575
+        },
+        &__midl_frag636,
+        0,
+        0
+    }
+};
+
+static const __midl_frag572_t __midl_frag572 =
+{ 
+/* DS_REPL_OBJ_META_DATA */
+    { 
+    /* DS_REPL_OBJ_META_DATA */
+        0x37,    /* FC64_FORCED_CONF_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_OBJ_META_DATA */
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 1 /* 0x1 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        0,
+        0,
+        0,
+        &__midl_frag573,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag571_t __midl_frag571 =
+{ 
+/* *DS_REPL_OBJ_META_DATA */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag572
+};
+
+static const __midl_frag570_t __midl_frag570 =
+{ 
+/* DS_REPL_CURSOR */
+    { 
+    /* DS_REPL_CURSOR */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CURSOR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */
+    }
+};
+
+static const __midl_frag568_t __midl_frag568 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag636
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag570
+    }
+};
+
+static const __midl_frag567_t __midl_frag567 =
+{ 
+/* DS_REPL_CURSORS */
+    { 
+    /* DS_REPL_CURSORS */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_CURSORS */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag568
+    }
+};
+
+static const __midl_frag566_t __midl_frag566 =
+{ 
+/* *DS_REPL_CURSORS */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag567
+};
+
+static const __midl_frag561_t __midl_frag561 =
+{ 
+/* DS_REPL_NEIGHBORW */
+    { 
+    /* DS_REPL_NEIGHBORW */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_NEIGHBORW */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 144 /* 0x90 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag555_t __midl_frag555 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 144 /* 0x90 */,
+        &__midl_frag636
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 144 /* 0x90 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 4 /* 0x4 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 8 /* 0x8 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 16 /* 0x10 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 24 /* 0x18 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 144 /* 0x90 */,
+        &__midl_frag561
+    }
+};
+
+static const __midl_frag550_t __midl_frag550 =
+{ 
+/* DS_REPL_NEIGHBORSW */
+    { 
+    /* DS_REPL_NEIGHBORSW */
+        0x33,    /* FC64_CONF_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_REPL_NEIGHBORSW */
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag555
+    },
+    { 
+    /*  */
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                0x82,    /* FC64_VARIABLE_REPEAT */
+                { 
+                /* struct _NDR64_REPEAT_FORMAT */
+                    (NDR64_UINT8) 1 /* 0x1 */,
+                    (NDR64_UINT8) 0 /* 0x0 */
+                },
+                (NDR64_UINT16) 0 /* 0x0 */,
+                (NDR64_UINT32) 144 /* 0x90 */,
+                (NDR64_UINT32) 8 /* 0x8 */,
+                (NDR64_UINT32) 4 /* 0x4 */
+            },
+            { 
+            /*  */
+                { 
+                /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                    (NDR64_UINT32) 0 /* 0x0 */,
+                    (NDR64_UINT32) 0 /* 0x0 */
+                },
+                { 
+                /* *WCHAR */
+                    0x21,    /* FC64_UP */
+                    (NDR64_UINT8) 0 /* 0x0 */,
+                    (NDR64_UINT16) 0 /* 0x0 */,
+                    &__midl_frag905
+                },
+                { 
+                /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                    (NDR64_UINT32) 8 /* 0x8 */,
+                    (NDR64_UINT32) 0 /* 0x0 */
+                },
+                { 
+                /* *WCHAR */
+                    0x21,    /* FC64_UP */
+                    (NDR64_UINT8) 0 /* 0x0 */,
+                    (NDR64_UINT16) 0 /* 0x0 */,
+                    &__midl_frag905
+                },
+                { 
+                /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                    (NDR64_UINT32) 16 /* 0x10 */,
+                    (NDR64_UINT32) 0 /* 0x0 */
+                },
+                { 
+                /* *WCHAR */
+                    0x21,    /* FC64_UP */
+                    (NDR64_UINT8) 0 /* 0x0 */,
+                    (NDR64_UINT16) 0 /* 0x0 */,
+                    &__midl_frag905
+                },
+                { 
+                /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                    (NDR64_UINT32) 24 /* 0x18 */,
+                    (NDR64_UINT32) 0 /* 0x0 */
+                },
+                { 
+                /* *WCHAR */
+                    0x21,    /* FC64_UP */
+                    (NDR64_UINT8) 0 /* 0x0 */,
+                    (NDR64_UINT16) 0 /* 0x0 */,
+                    &__midl_frag905
+                }
+            }
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag547_t __midl_frag547 =
+{ 
+/* DRS_MSG_GETREPLINFO_REPLY */
+    { 
+    /* DRS_MSG_GETREPLINFO_REPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 15 /* 0xf */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 0 /* 0x0 */,
+        &__midl_frag659,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag566,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag571,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 3 /* 0x3 */,
+        &__midl_frag587,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 4 /* 0x4 */,
+        &__midl_frag587,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 5 /* 0x5 */,
+        &__midl_frag588,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 6 /* 0x6 */,
+        &__midl_frag599,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 7 /* 0x7 */,
+        &__midl_frag611,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 8 /* 0x8 */,
+        &__midl_frag616,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 9 /* 0x9 */,
+        &__midl_frag624,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 10 /* 0xa */,
+        &__midl_frag633,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) -6 /* 0xfffffffffffffffa */,
+        &__midl_frag646,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) -5 /* 0xfffffffffffffffb */,
+        &__midl_frag653,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) -4 /* 0xfffffffffffffffc */,
+        &__midl_frag654,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) -2 /* 0xfffffffffffffffe */,
+        &__midl_frag659,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag546_t __midl_frag546 =
+{ 
+/* *DRS_MSG_GETREPLINFO_REPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag547
+};
+
+static const __midl_frag542_t __midl_frag542 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag538_t __midl_frag538 =
+{ 
+/* DRS_MSG_GETREPLINFO_REQ_V2 */
+    { 
+    /* DRS_MSG_GETREPLINFO_REQ_V2 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETREPLINFO_REQ_V2 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */,
+        0,
+        0,
+        &__midl_frag542,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* DRS_MSG_GETREPLINFO_REQ_V2 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag534_t __midl_frag534 =
+{ 
+/* DRS_MSG_GETREPLINFO_REQ_V1 */
+    { 
+    /* DRS_MSG_GETREPLINFO_REQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETREPLINFO_REQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag906,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag532_t __midl_frag532 =
+{ 
+/* DRS_MSG_GETREPLINFO_REQ */
+    { 
+    /* DRS_MSG_GETREPLINFO_REQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 64 /* 0x40 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag534,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag538,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag531_t __midl_frag531 =
+{ 
+/* *DRS_MSG_GETREPLINFO_REQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag532
+};
+
+static const __midl_frag528_t __midl_frag528 =
+{ 
+/* IDL_DRSGetReplInfo */
+    { 
+    /* IDL_DRSGetReplInfo */      /* procedure IDL_DRSGetReplInfo */
+        (NDR64_UINT32) 23990336 /* 0x16e1040 */,    /* explicit handle */ /* IsIntrepreted, [ptr], ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag532,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag547,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag524_t __midl_frag524 =
+{ 
+/* DRS_MSG_KCC_EXECUTE */
+    { 
+    /* DRS_MSG_KCC_EXECUTE */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 3 /* 0x3 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag757,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag523_t __midl_frag523 =
+{ 
+/* *DRS_MSG_KCC_EXECUTE */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag524
+};
+
+static const __midl_frag520_t __midl_frag520 =
+{ 
+/* IDL_DRSExecuteKCC */
+    { 
+    /* IDL_DRSExecuteKCC */      /* procedure IDL_DRSExecuteKCC */
+        (NDR64_UINT32) 19660864 /* 0x12c0040 */,    /* explicit handle */ /* IsIntrepreted, ClientMustSize, HasReturn, ServerCorrelation, HasExtensions */
+        (NDR64_UINT32) 32 /* 0x20 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 4 /* 0x4 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag524,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag518_t __midl_frag518 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *DRS_ERROR_DATA */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag486
+    },
+    { 
+    /* *ADDENTRY_REPLY_INFO */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag516
+    }
+};
+
+static const __midl_frag517_t __midl_frag517 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */
+    }
+};
+
+static const __midl_frag516_t __midl_frag516 =
+{ 
+/* *ADDENTRY_REPLY_INFO */
+    { 
+    /* *ADDENTRY_REPLY_INFO */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* *ADDENTRY_REPLY_INFO */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 44 /* 0x2c */,
+        &__midl_frag517
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        &__midl_frag483
+    }
+};
+
+static const __midl_frag515_t __midl_frag515 =
+{ 
+/* SYSERR_DRS_WIRE_V1 */
+    { 
+    /* SYSERR_DRS_WIRE_V1 */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* SYSERR_DRS_WIRE_V1 */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    }
+};
+
+static const __midl_frag511_t __midl_frag511 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *DSA_ADDRESS_LIST_DRS_WIRE_V1 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag502
+    },
+    { 
+    /* *CONTREF_DRS_WIRE_V1 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag509
+    }
+};
+
+static const __midl_frag509_t __midl_frag509 =
+{ 
+/* CONTREF_DRS_WIRE_V1 */
+    { 
+    /* CONTREF_DRS_WIRE_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* CONTREF_DRS_WIRE_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        0,
+        0,
+        &__midl_frag511,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* NAMERESOP_DRS_WIRE_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x10,    /* FC64_CHAR */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x10,    /* FC64_CHAR */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x10,    /* FC64_CHAR */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 3 /* 0x3 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* CONTREF_DRS_WIRE_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag508_t __midl_frag508 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag504
+    }
+};
+
+static const __midl_frag507_t __midl_frag507 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_NOOP */
+        0x5,    /* FC_EXPR_PAD */
+        (NDR64_UINT8) 4 /* 0x4 */,
+        (NDR64_UINT16) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_EXPR_CONST64 */
+        0x2,    /* FC_EXPR_CONST64 */
+        0x7,    /* FC64_INT64 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT64) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag506_t __midl_frag506 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_OPERATOR */
+        0x4,    /* FC_EXPR_OPER */
+        0x11,    /* OP_SLASH */
+        0x0,    /* FC64_ZERO */
+        (NDR64_UINT8) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x3,    /* FC64_UINT16 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_EXPR_CONST64 */
+        0x2,    /* FC_EXPR_CONST64 */
+        0x7,    /* FC64_INT64 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT64) 2 /* 0x2 */
+    }
+};
+
+static const __midl_frag505_t __midl_frag505 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_OPERATOR */
+        0x4,    /* FC_EXPR_OPER */
+        0x11,    /* OP_SLASH */
+        0x0,    /* FC64_ZERO */
+        (NDR64_UINT8) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x3,    /* FC64_UINT16 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */
+    },
+    { 
+    /* struct _NDR64_EXPR_CONST64 */
+        0x2,    /* FC_EXPR_CONST64 */
+        0x7,    /* FC64_INT64 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT64) 2 /* 0x2 */
+    }
+};
+
+static const __midl_frag504_t __midl_frag504 =
+{ 
+/* *WCHAR */
+    { 
+    /* *WCHAR */
+        0x43,    /* FC64_CONFVAR_ARRAY */
+        (NDR64_UINT8) 1 /* 0x1 */,
+        { 
+        /* *WCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag505,
+        &__midl_frag506
+    }
+};
+
+static const __midl_frag503_t __midl_frag503 =
+{ 
+/* RPC_UNICODE_STRING */
+    { 
+    /* RPC_UNICODE_STRING */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* RPC_UNICODE_STRING */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag508,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag502_t __midl_frag502 =
+{ 
+/* DSA_ADDRESS_LIST_DRS_WIRE_V1 */
+    { 
+    /* DSA_ADDRESS_LIST_DRS_WIRE_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DSA_ADDRESS_LIST_DRS_WIRE_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSA_ADDRESS_LIST_DRS_WIRE_V1 */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag502
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *RPC_UNICODE_STRING */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag503
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag501_t __midl_frag501 =
+{ 
+/* REFERR_DRS_WIRE_V1 */
+    { 
+    /* REFERR_DRS_WIRE_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* REFERR_DRS_WIRE_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */,
+        0,
+        0,
+        &__midl_frag511,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* NAMERESOP_DRS_WIRE_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x10,    /* FC64_CHAR */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x10,    /* FC64_CHAR */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x10,    /* FC64_CHAR */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 3 /* 0x3 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* CONTREF_DRS_WIRE_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag500_t __midl_frag500 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    }
+};
+
+static const __midl_frag499_t __midl_frag499 =
+{ 
+/* NAMERR_DRS_WIRE_V1 */
+    { 
+    /* NAMERR_DRS_WIRE_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* NAMERR_DRS_WIRE_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        &__midl_frag500,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 2 /* 0x2 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag498_t __midl_frag498 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *PROBLEMLIST_DRS_WIRE_V1 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag492
+    },
+    { 
+    /* *UCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag496
+    }
+};
+
+static const __midl_frag497_t __midl_frag497 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 26214400 /* 0x1900000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    }
+};
+
+static const __midl_frag496_t __midl_frag496 =
+{ 
+/* *UCHAR */
+    { 
+    /* *UCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *UCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag497
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag864
+    }
+};
+
+static const __midl_frag495_t __midl_frag495 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 26214400 /* 0x1900000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    }
+};
+
+static const __midl_frag494_t __midl_frag494 =
+{ 
+/* *UCHAR */
+    { 
+    /* *UCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *UCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag495
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag864
+    }
+};
+
+static const __midl_frag493_t __midl_frag493 =
+{ 
+/* PROBLEMLIST_DRS_WIRE_V1 */
+    { 
+    /* PROBLEMLIST_DRS_WIRE_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* PROBLEMLIST_DRS_WIRE_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PROBLEMLIST_DRS_WIRE_V1 */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag492
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 40 /* 0x28 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag494
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag492_t __midl_frag492 =
+{ 
+/* PROBLEMLIST_DRS_WIRE_V1 */
+    { 
+    /* PROBLEMLIST_DRS_WIRE_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* PROBLEMLIST_DRS_WIRE_V1 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag493
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag491_t __midl_frag491 =
+{ 
+/* ATRERR_DRS_WIRE_V1 */
+    { 
+    /* ATRERR_DRS_WIRE_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* ATRERR_DRS_WIRE_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */,
+        0,
+        0,
+        &__midl_frag498,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* INTFORMPROB_DRS_WIRE_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 2 /* 0x2 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* ATTRVAL */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag490_t __midl_frag490 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    }
+};
+
+static const __midl_frag489_t __midl_frag489 =
+{ 
+/* DIRERR_DRS_WIRE_V1 */
+    { 
+    /* DIRERR_DRS_WIRE_V1 */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 64 /* 0x40 */,
+        &__midl_frag490,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 7 /* 0x7 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag491,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag499,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 3 /* 0x3 */,
+        &__midl_frag501,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 4 /* 0x4 */,
+        &__midl_frag515,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 5 /* 0x5 */,
+        &__midl_frag515,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 6 /* 0x6 */,
+        &__midl_frag515,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 7 /* 0x7 */,
+        &__midl_frag515,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag488_t __midl_frag488 =
+{ 
+/* DRS_ERROR_DATA_V1 */
+    { 
+    /* DRS_ERROR_DATA_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_ERROR_DATA_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DIRERR_DRS_WIRE_V1 */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag489
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag486_t __midl_frag486 =
+{ 
+/* DRS_ERROR_DATA */
+    { 
+    /* DRS_ERROR_DATA */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag591,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag488,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag485_t __midl_frag485 =
+{ 
+/* DRS_MSG_ADDENTRYREPLY_V3 */
+    { 
+    /* DRS_MSG_ADDENTRYREPLY_V3 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDENTRYREPLY_V3 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        0,
+        0,
+        &__midl_frag518,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag484_t __midl_frag484 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *ADDENTRY_REPLY_INFO */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag481
+    }
+};
+
+static const __midl_frag483_t __midl_frag483 =
+{ 
+/* ADDENTRY_REPLY_INFO */
+    { 
+    /* ADDENTRY_REPLY_INFO */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* ADDENTRY_REPLY_INFO */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 44 /* 0x2c */
+    }
+};
+
+static const __midl_frag482_t __midl_frag482 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 28 /* 0x1c */
+    }
+};
+
+static const __midl_frag481_t __midl_frag481 =
+{ 
+/* *ADDENTRY_REPLY_INFO */
+    { 
+    /* *ADDENTRY_REPLY_INFO */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* *ADDENTRY_REPLY_INFO */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 44 /* 0x2c */,
+        &__midl_frag482
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        &__midl_frag483
+    }
+};
+
+static const __midl_frag480_t __midl_frag480 =
+{ 
+/* DRS_MSG_ADDENTRYREPLY_V2 */
+    { 
+    /* DRS_MSG_ADDENTRYREPLY_V2 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDENTRYREPLY_V2 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        0,
+        0,
+        &__midl_frag484,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 2 /* 0x2 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag479_t __midl_frag479 =
+{ 
+/* DRS_MSG_ADDENTRYREPLY_V1 */
+    { 
+    /* DRS_MSG_ADDENTRYREPLY_V1 */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_ADDENTRYREPLY_V1 */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */
+    }
+};
+
+static const __midl_frag477_t __midl_frag477 =
+{ 
+/* DRS_MSG_ADDENTRYREPLY */
+    { 
+    /* DRS_MSG_ADDENTRYREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 64 /* 0x40 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 3 /* 0x3 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag479,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag480,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 3 /* 0x3 */,
+        &__midl_frag485,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag476_t __midl_frag476 =
+{ 
+/* *DRS_MSG_ADDENTRYREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag477
+};
+
+static const __midl_frag473_t __midl_frag473 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */
+    }
+};
+
+static const __midl_frag472_t __midl_frag472 =
+{ 
+/* *ATTR */
+    { 
+    /* *ATTR */
+        { 
+        /* *ATTR */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *ATTR */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag85
+        },
+        &__midl_frag473,
+        0,
+        0
+    }
+};
+
+static const __midl_frag471_t __midl_frag471 =
+{ 
+/* DRS_MSG_ADDENTRYREQ_V3 */
+    { 
+    /* DRS_MSG_ADDENTRYREQ_V3 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDENTRYREQ_V3 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ENTINFLIST */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag464
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ATTR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag472
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 40 /* 0x28 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DRS_SecBufferDesc */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag253
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag470_t __midl_frag470 =
+{ 
+/* DRS_MSG_ADDENTRYREQ_V3 */
+    { 
+    /* DRS_MSG_ADDENTRYREQ_V3 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDENTRYREQ_V3 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag471
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag465_t __midl_frag465 =
+{ 
+/* ENTINFLIST */
+    { 
+    /* ENTINFLIST */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* ENTINFLIST */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ENTINFLIST */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag464
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ATTR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag472
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag464_t __midl_frag464 =
+{ 
+/* ENTINFLIST */
+    { 
+    /* ENTINFLIST */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* ENTINFLIST */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag465
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag461_t __midl_frag461 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag460_t __midl_frag460 =
+{ 
+/* *ATTR */
+    { 
+    /* *ATTR */
+        { 
+        /* *ATTR */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *ATTR */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag85
+        },
+        &__midl_frag461,
+        0,
+        0
+    }
+};
+
+static const __midl_frag459_t __midl_frag459 =
+{ 
+/* DRS_MSG_ADDENTRYREQ_V1 */
+    { 
+    /* DRS_MSG_ADDENTRYREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDENTRYREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ATTR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag460
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag458_t __midl_frag458 =
+{ 
+/* DRS_MSG_ADDENTRYREQ_V1 */
+    { 
+    /* DRS_MSG_ADDENTRYREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_ADDENTRYREQ_V1 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag459
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag456_t __midl_frag456 =
+{ 
+/* DRS_MSG_ADDENTRYREQ */
+    { 
+    /* DRS_MSG_ADDENTRYREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 48 /* 0x30 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 3 /* 0x3 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag458,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag464,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 3 /* 0x3 */,
+        &__midl_frag470,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag455_t __midl_frag455 =
+{ 
+/* *DRS_MSG_ADDENTRYREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag456
+};
+
+static const __midl_frag452_t __midl_frag452 =
+{ 
+/* IDL_DRSAddEntry */
+    { 
+    /* IDL_DRSAddEntry */      /* procedure IDL_DRSAddEntry */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag456,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag477,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [out], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag450_t __midl_frag450 =
+{ 
+/*  */
+    { 
+    /* *DS_DOMAIN_CONTROLLER_INFO_FFFFFFFFW */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag445
+    }
+};
+
+static const __midl_frag448_t __midl_frag448 =
+{ 
+/* DS_DOMAIN_CONTROLLER_INFO_FFFFFFFFW */
+    { 
+    /* DS_DOMAIN_CONTROLLER_INFO_FFFFFFFFW */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_DOMAIN_CONTROLLER_INFO_FFFFFFFFW */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag445_t __midl_frag445 =
+{ 
+/* *DS_DOMAIN_CONTROLLER_INFO_FFFFFFFFW */
+    { 
+    /* *DS_DOMAIN_CONTROLLER_INFO_FFFFFFFFW */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* *DS_DOMAIN_CONTROLLER_INFO_FFFFFFFFW */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag756
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 24 /* 0x18 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag448
+    }
+};
+
+static const __midl_frag444_t __midl_frag444 =
+{ 
+/* DRS_MSG_DCINFOREPLY_VFFFFFFFF */
+    { 
+    /* DRS_MSG_DCINFOREPLY_VFFFFFFFF */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_DCINFOREPLY_VFFFFFFFF */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag450,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag443_t __midl_frag443 =
+{ 
+/*  */
+    { 
+    /* *DS_DOMAIN_CONTROLLER_INFO_3W */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag426
+    }
+};
+
+static const __midl_frag435_t __midl_frag435 =
+{ 
+/* DS_DOMAIN_CONTROLLER_INFO_3W */
+    { 
+    /* DS_DOMAIN_CONTROLLER_INFO_3W */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_DOMAIN_CONTROLLER_INFO_3W */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 136 /* 0x88 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 40 /* 0x28 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 48 /* 0x30 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag426_t __midl_frag426 =
+{ 
+/* *DS_DOMAIN_CONTROLLER_INFO_3W */
+    { 
+    /* *DS_DOMAIN_CONTROLLER_INFO_3W */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* *DS_DOMAIN_CONTROLLER_INFO_3W */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 136 /* 0x88 */,
+        &__midl_frag756
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 136 /* 0x88 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 7 /* 0x7 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 8 /* 0x8 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 16 /* 0x10 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 24 /* 0x18 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 32 /* 0x20 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 40 /* 0x28 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 48 /* 0x30 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 136 /* 0x88 */,
+        &__midl_frag435
+    }
+};
+
+static const __midl_frag425_t __midl_frag425 =
+{ 
+/* DRS_MSG_DCINFOREPLY_V3 */
+    { 
+    /* DRS_MSG_DCINFOREPLY_V3 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_DCINFOREPLY_V3 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag443,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag405_t __midl_frag405 =
+{ 
+/*  */
+    { 
+    /* *DS_DOMAIN_CONTROLLER_INFO_1W */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag392
+    }
+};
+
+static const __midl_frag399_t __midl_frag399 =
+{ 
+/* DS_DOMAIN_CONTROLLER_INFO_1W */
+    { 
+    /* DS_DOMAIN_CONTROLLER_INFO_1W */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_DOMAIN_CONTROLLER_INFO_1W */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag392_t __midl_frag392 =
+{ 
+/* *DS_DOMAIN_CONTROLLER_INFO_1W */
+    { 
+    /* *DS_DOMAIN_CONTROLLER_INFO_1W */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* *DS_DOMAIN_CONTROLLER_INFO_1W */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        &__midl_frag756
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 48 /* 0x30 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 5 /* 0x5 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 8 /* 0x8 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 16 /* 0x10 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 24 /* 0x18 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            },
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 32 /* 0x20 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 48 /* 0x30 */,
+        &__midl_frag399
+    }
+};
+
+static const __midl_frag391_t __midl_frag391 =
+{ 
+/* DRS_MSG_DCINFOREPLY_V1 */
+    { 
+    /* DRS_MSG_DCINFOREPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_DCINFOREPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag405,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag389_t __midl_frag389 =
+{ 
+/* DRS_MSG_DCINFOREPLY */
+    { 
+    /* DRS_MSG_DCINFOREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag391,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag425,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 3 /* 0x3 */,
+        &__midl_frag425,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) -1 /* 0xffffffffffffffff */,
+        &__midl_frag444,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag388_t __midl_frag388 =
+{ 
+/* *DRS_MSG_DCINFOREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag389
+};
+
+static const __midl_frag384_t __midl_frag384 =
+{ 
+/* DRS_MSG_DCINFOREQ_V1 */
+    { 
+    /* DRS_MSG_DCINFOREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_DCINFOREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag382_t __midl_frag382 =
+{ 
+/* DRS_MSG_DCINFOREQ */
+    { 
+    /* DRS_MSG_DCINFOREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag384,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag381_t __midl_frag381 =
+{ 
+/* *DRS_MSG_DCINFOREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag382
+};
+
+static const __midl_frag378_t __midl_frag378 =
+{ 
+/* IDL_DRSDomainControllerInfo */
+    { 
+    /* IDL_DRSDomainControllerInfo */      /* procedure IDL_DRSDomainControllerInfo */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag382,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag389,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag363_t __midl_frag363 =
+{ 
+/* IDL_DRSRemoveDsDomain */
+    { 
+    /* IDL_DRSRemoveDsDomain */      /* procedure IDL_DRSRemoveDsDomain */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag852,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag844,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag353_t __midl_frag353 =
+{ 
+/* DRS_MSG_RMSVRREQ_V1 */
+    { 
+    /* DRS_MSG_RMSVRREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_RMSVRREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag905
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag351_t __midl_frag351 =
+{ 
+/* DRS_MSG_RMSVRREQ */
+    { 
+    /* DRS_MSG_RMSVRREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag353,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag350_t __midl_frag350 =
+{ 
+/* *DRS_MSG_RMSVRREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag351
+};
+
+static const __midl_frag347_t __midl_frag347 =
+{ 
+/* IDL_DRSRemoveDsServer */
+    { 
+    /* IDL_DRSRemoveDsServer */      /* procedure IDL_DRSRemoveDsServer */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag351,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag844,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag339_t __midl_frag339 =
+{ 
+/*  */
+    { 
+    /* *WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag905
+    },
+    { 
+    /* **WCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag336
+    }
+};
+
+static const __midl_frag337_t __midl_frag337 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    }
+};
+
+static const __midl_frag336_t __midl_frag336 =
+{ 
+/* **WCHAR */
+    { 
+    /* **WCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* **WCHAR */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag337
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag334_t __midl_frag334 =
+{ 
+/* DRS_MSG_SPNREQ_V1 */
+    { 
+    /* DRS_MSG_SPNREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_SPNREQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag339,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag332_t __midl_frag332 =
+{ 
+/* DRS_MSG_SPNREQ */
+    { 
+    /* DRS_MSG_SPNREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag334,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag331_t __midl_frag331 =
+{ 
+/* *DRS_MSG_SPNREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag332
+};
+
+static const __midl_frag328_t __midl_frag328 =
+{ 
+/* IDL_DRSWriteSPN */
+    { 
+    /* IDL_DRSWriteSPN */      /* procedure IDL_DRSWriteSPN */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag332,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag844,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag326_t __midl_frag326 =
+{ 
+/*  */
+    { 
+    /* *__MIDL_ntdsapi_import_0008 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag320
+    }
+};
+
+static const __midl_frag322_t __midl_frag322 =
+{ 
+/* __MIDL_ntdsapi_import_0008 */
+    { 
+    /* __MIDL_ntdsapi_import_0008 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* __MIDL_ntdsapi_import_0008 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        &__midl_frag631,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag320_t __midl_frag320 =
+{ 
+/* *__MIDL_ntdsapi_import_0008 */
+    { 
+    /* *__MIDL_ntdsapi_import_0008 */
+        { 
+        /* *__MIDL_ntdsapi_import_0008 */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *__MIDL_ntdsapi_import_0008 */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag322
+        },
+        &__midl_frag636,
+        0,
+        0
+    }
+};
+
+static const __midl_frag319_t __midl_frag319 =
+{ 
+/* DS_NAME_RESULTW */
+    { 
+    /* DS_NAME_RESULTW */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DS_NAME_RESULTW */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag326,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag318_t __midl_frag318 =
+{ 
+/* DRS_MSG_CRACKREPLY_V1 */
+    { 
+    /* DRS_MSG_CRACKREPLY_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_CRACKREPLY_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DS_NAME_RESULTW */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag319
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag316_t __midl_frag316 =
+{ 
+/* DRS_MSG_CRACKREPLY */
+    { 
+    /* DRS_MSG_CRACKREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag318,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag315_t __midl_frag315 =
+{ 
+/* *DRS_MSG_CRACKREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag316
+};
+
+static const __midl_frag311_t __midl_frag311 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 1 /* 0x1 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 20 /* 0x14 */
+    }
+};
+
+static const __midl_frag310_t __midl_frag310 =
+{ 
+/* **WCHAR */
+    { 
+    /* **WCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* **WCHAR */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag311
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *WCHAR */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag905
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag905
+    }
+};
+
+static const __midl_frag309_t __midl_frag309 =
+{ 
+/* DRS_MSG_CRACKREQ_V1 */
+    { 
+    /* DRS_MSG_CRACKREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_CRACKREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* **WCHAR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag310
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag307_t __midl_frag307 =
+{ 
+/* DRS_MSG_CRACKREQ */
+    { 
+    /* DRS_MSG_CRACKREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag309,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag306_t __midl_frag306 =
+{ 
+/* *DRS_MSG_CRACKREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag307
+};
+
+static const __midl_frag303_t __midl_frag303 =
+{ 
+/* IDL_DRSCrackNames */
+    { 
+    /* IDL_DRSCrackNames */      /* procedure IDL_DRSCrackNames */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag307,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag316,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag301_t __midl_frag301 =
+{ 
+/*  */
+    { 
+    /* *BYTE */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag295
+    },
+    { 
+    /* *BYTE */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag298
+    }
+};
+
+static const __midl_frag298_t __midl_frag298 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag735
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag296_t __midl_frag296 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10485760 /* 0xa00000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag295_t __midl_frag295 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag296
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag294_t __midl_frag294 =
+{ 
+/* DRS_MSG_NT4_CHGLOG_REPLY_V1 */
+    { 
+    /* DRS_MSG_NT4_CHGLOG_REPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_NT4_CHGLOG_REPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 80 /* 0x50 */,
+        0,
+        0,
+        &__midl_frag301,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag292_t __midl_frag292 =
+{ 
+/* DRS_MSG_NT4_CHGLOG_REPLY */
+    { 
+    /* DRS_MSG_NT4_CHGLOG_REPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 80 /* 0x50 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag294,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag291_t __midl_frag291 =
+{ 
+/* *DRS_MSG_NT4_CHGLOG_REPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag292
+};
+
+static const __midl_frag288_t __midl_frag288 =
+{ 
+/*  */
+    { 
+    /* *BYTE */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag285
+    }
+};
+
+static const __midl_frag286_t __midl_frag286 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10485760 /* 0xa00000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag285_t __midl_frag285 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag286
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag284_t __midl_frag284 =
+{ 
+/* DRS_MSG_NT4_CHGLOG_REQ_V1 */
+    { 
+    /* DRS_MSG_NT4_CHGLOG_REQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_NT4_CHGLOG_REQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        &__midl_frag288,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag282_t __midl_frag282 =
+{ 
+/* DRS_MSG_NT4_CHGLOG_REQ */
+    { 
+    /* DRS_MSG_NT4_CHGLOG_REQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag284,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag281_t __midl_frag281 =
+{ 
+/* *DRS_MSG_NT4_CHGLOG_REQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag282
+};
+
+static const __midl_frag278_t __midl_frag278 =
+{ 
+/* IDL_DRSGetNT4ChangeLog */
+    { 
+    /* IDL_DRSGetNT4ChangeLog */      /* procedure IDL_DRSGetNT4ChangeLog */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag282,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag292,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [out], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag275_t __midl_frag275 =
+{ 
+/* DRS_MSG_MOVEREPLY_V2 */
+    { 
+    /* DRS_MSG_MOVEREPLY_V2 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_MOVEREPLY_V2 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag500,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag272_t __midl_frag272 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag461,
+        0,
+        0
+    }
+};
+
+static const __midl_frag271_t __midl_frag271 =
+{ 
+/* *ENTINF */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag203
+};
+
+static const __midl_frag270_t __midl_frag270 =
+{ 
+/* DRS_MSG_MOVEREPLY_V1 */
+    { 
+    /* DRS_MSG_MOVEREPLY_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_MOVEREPLY_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* **ENTINF */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 16 /* 0x10 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag271
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag272
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ULONG */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 8 /* 0x8 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag907
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag269_t __midl_frag269 =
+{ 
+/* DRS_MSG_MOVEREPLY_V1 */
+    { 
+    /* DRS_MSG_MOVEREPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_MOVEREPLY_V1 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag270
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag267_t __midl_frag267 =
+{ 
+/* DRS_MSG_MOVEREPLY */
+    { 
+    /* DRS_MSG_MOVEREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag269,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag275,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag266_t __midl_frag266 =
+{ 
+/* *DRS_MSG_MOVEREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag267
+};
+
+static const __midl_frag263_t __midl_frag263 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */
+    }
+};
+
+static const __midl_frag262_t __midl_frag262 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag263,
+        0,
+        0
+    }
+};
+
+static const __midl_frag260_t __midl_frag260 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag756
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag259_t __midl_frag259 =
+{ 
+/* DRS_SecBuffer */
+    { 
+    /* DRS_SecBuffer */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_SecBuffer */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *BYTE */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag260
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag255_t __midl_frag255 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    }
+};
+
+static const __midl_frag254_t __midl_frag254 =
+{ 
+/* *DRS_SecBuffer */
+    { 
+    /* *DRS_SecBuffer */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* *DRS_SecBuffer */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag255
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 1 /* 0x1 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 8 /* 0x8 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *BYTE */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 32 /* 0x20 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag260
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag259
+    }
+};
+
+static const __midl_frag253_t __midl_frag253 =
+{ 
+/* DRS_SecBufferDesc */
+    { 
+    /* DRS_SecBufferDesc */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_SecBufferDesc */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DRS_SecBuffer */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag254
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag252_t __midl_frag252 =
+{ 
+/* DRS_MSG_MOVEREQ_V2 */
+    { 
+    /* DRS_MSG_MOVEREQ_V2 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_MOVEREQ_V2 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ENTINF */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag203
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DRS_SecBufferDesc */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag253
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 48 /* 0x30 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag262
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag251_t __midl_frag251 =
+{ 
+/* DRS_MSG_MOVEREQ_V2 */
+    { 
+    /* DRS_MSG_MOVEREQ_V2 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_MOVEREQ_V2 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag252
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag249_t __midl_frag249 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag473,
+        0,
+        0
+    }
+};
+
+static const __midl_frag247_t __midl_frag247 =
+{ 
+/* DRS_MSG_MOVEREQ_V1 */
+    { 
+    /* DRS_MSG_MOVEREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_MOVEREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *char */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 8 /* 0x8 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag864
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ENTINF */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag203
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UUID */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag515
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag249
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag246_t __midl_frag246 =
+{ 
+/* DRS_MSG_MOVEREQ_V1 */
+    { 
+    /* DRS_MSG_MOVEREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_MOVEREQ_V1 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag247
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag244_t __midl_frag244 =
+{ 
+/* DRS_MSG_MOVEREQ */
+    { 
+    /* DRS_MSG_MOVEREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 64 /* 0x40 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag246,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag251,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag243_t __midl_frag243 =
+{ 
+/* *DRS_MSG_MOVEREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag244
+};
+
+static const __midl_frag240_t __midl_frag240 =
+{ 
+/* IDL_DRSInterDomainMove */
+    { 
+    /* IDL_DRSInterDomainMove */      /* procedure IDL_DRSInterDomainMove */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag244,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag267,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag238_t __midl_frag238 =
+{ 
+/*  */
+    { 
+    /* **DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag228
+    },
+    { 
+    /* *DWORD */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag231
+    },
+    { 
+    /* **NT4SID */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag234
+    }
+};
+
+static const __midl_frag237_t __midl_frag237 =
+{ 
+/* *NT4SID */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag236
+};
+
+static const __midl_frag236_t __midl_frag236 =
+{ 
+/* NT4SID */
+    { 
+    /* NT4SID */
+        0x30,    /* FC64_STRUCT */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* NT4SID */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 28 /* 0x1c */
+    }
+};
+
+static const __midl_frag235_t __midl_frag235 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag234_t __midl_frag234 =
+{ 
+/* **NT4SID */
+    { 
+    /* **NT4SID */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* **NT4SID */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag235
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *NT4SID */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag236
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag237
+    }
+};
+
+static const __midl_frag231_t __midl_frag231 =
+{ 
+/* *DWORD */
+    { 
+    /* *DWORD */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* *DWORD */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag255
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag907
+    }
+};
+
+static const __midl_frag230_t __midl_frag230 =
+{ 
+/* *DSNAME */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag26
+};
+
+static const __midl_frag228_t __midl_frag228 =
+{ 
+/* **DSNAME */
+    { 
+    /* **DSNAME */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* **DSNAME */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag255
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *DSNAME */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag26
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag230
+    }
+};
+
+static const __midl_frag227_t __midl_frag227 =
+{ 
+/* DRS_MSG_REVMEMB_REPLY_V1 */
+    { 
+    /* DRS_MSG_REVMEMB_REPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REVMEMB_REPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        0,
+        0,
+        &__midl_frag238,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag225_t __midl_frag225 =
+{ 
+/* DRS_MSG_REVMEMB_REPLY */
+    { 
+    /* DRS_MSG_REVMEMB_REPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 40 /* 0x28 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag227,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag224_t __midl_frag224 =
+{ 
+/* *DRS_MSG_REVMEMB_REPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag225
+};
+
+static const __midl_frag221_t __midl_frag221 =
+{ 
+/* REVERSE_MEMBERSHIP_OPERATION_TYPE */
+    0xa4,    /* FC64_RANGE */
+    0x5,    /* FC64_INT32 */
+    (NDR64_UINT16) 0 /* 0x0 */,
+    (NDR64_INT64) 1 /* 0x1 */,
+    (NDR64_INT64) 7 /* 0x7 */
+};
+
+static const __midl_frag220_t __midl_frag220 =
+{ 
+/*  */
+    { 
+    /* **DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag217
+    },
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    }
+};
+
+static const __midl_frag217_t __midl_frag217 =
+{ 
+/* **DSNAME */
+    { 
+    /* **DSNAME */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* **DSNAME */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag698
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *DSNAME */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag26
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag230
+    }
+};
+
+static const __midl_frag216_t __midl_frag216 =
+{ 
+/* DRS_MSG_REVMEMB_REQ_V1 */
+    { 
+    /* DRS_MSG_REVMEMB_REQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REVMEMB_REQ_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag220,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag221
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag214_t __midl_frag214 =
+{ 
+/* DRS_MSG_REVMEMB_REQ */
+    { 
+    /* DRS_MSG_REVMEMB_REQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag216,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag213_t __midl_frag213 =
+{ 
+/* *DRS_MSG_REVMEMB_REQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag214
+};
+
+static const __midl_frag210_t __midl_frag210 =
+{ 
+/* IDL_DRSGetMemberships */
+    { 
+    /* IDL_DRSGetMemberships */      /* procedure IDL_DRSGetMemberships */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag214,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag225,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag208_t __midl_frag208 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    }
+};
+
+static const __midl_frag207_t __midl_frag207 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag208,
+        0,
+        0
+    }
+};
+
+static const __midl_frag206_t __midl_frag206 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *ATTR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag204
+    }
+};
+
+static const __midl_frag204_t __midl_frag204 =
+{ 
+/* *ATTR */
+    { 
+    /* *ATTR */
+        { 
+        /* *ATTR */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *ATTR */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag85
+        },
+        &__midl_frag208,
+        0,
+        0
+    }
+};
+
+static const __midl_frag203_t __midl_frag203 =
+{ 
+/* ENTINF */
+    { 
+    /* ENTINF */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* ENTINF */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        &__midl_frag206,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* ATTRBLOCK */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag201_t __midl_frag201 =
+{ 
+/* *ENTINF */
+    { 
+    /* *ENTINF */
+        { 
+        /* *ENTINF */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *ENTINF */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag203
+        },
+        &__midl_frag255,
+        0,
+        0
+    }
+};
+
+static const __midl_frag200_t __midl_frag200 =
+{ 
+/* DRS_MSG_VERIFYREPLY_V1 */
+    { 
+    /* DRS_MSG_VERIFYREPLY_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_VERIFYREPLY_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ENTINF */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag201
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag207
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag199_t __midl_frag199 =
+{ 
+/* DRS_MSG_VERIFYREPLY_V1 */
+    { 
+    /* DRS_MSG_VERIFYREPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_VERIFYREPLY_V1 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag200
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag197_t __midl_frag197 =
+{ 
+/* DRS_MSG_VERIFYREPLY */
+    { 
+    /* DRS_MSG_VERIFYREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag199,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag196_t __midl_frag196 =
+{ 
+/* *DRS_MSG_VERIFYREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag197
+};
+
+static const __midl_frag193_t __midl_frag193 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */
+    }
+};
+
+static const __midl_frag192_t __midl_frag192 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag193,
+        0,
+        0
+    }
+};
+
+static const __midl_frag188_t __midl_frag188 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 1 /* 0x1 */,
+        (NDR64_INT64) 10000 /* 0x2710 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */
+    }
+};
+
+static const __midl_frag187_t __midl_frag187 =
+{ 
+/* **DSNAME */
+    { 
+    /* **DSNAME */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* **DSNAME */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag188
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_REPEAT_FORMAT */
+            0x82,    /* FC64_VARIABLE_REPEAT */
+            { 
+            /* struct _NDR64_REPEAT_FORMAT */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT8) 0 /* 0x0 */
+            },
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 1 /* 0x1 */
+        },
+        { 
+        /*  */
+            { 
+            /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+                (NDR64_UINT32) 0 /* 0x0 */,
+                (NDR64_UINT32) 0 /* 0x0 */
+            },
+            { 
+            /* *DSNAME */
+                0x21,    /* FC64_UP */
+                (NDR64_UINT8) 0 /* 0x0 */,
+                (NDR64_UINT16) 0 /* 0x0 */,
+                &__midl_frag26
+            }
+        },
+        0x93    /* FC64_END */
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 8 /* 0x8 */,
+        &__midl_frag230
+    }
+};
+
+static const __midl_frag186_t __midl_frag186 =
+{ 
+/* DRS_MSG_VERIFYREQ_V1 */
+    { 
+    /* DRS_MSG_VERIFYREQ_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_VERIFYREQ_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* **DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag187
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *ATTR */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag204
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 40 /* 0x28 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag192
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag185_t __midl_frag185 =
+{ 
+/* DRS_MSG_VERIFYREQ_V1 */
+    { 
+    /* DRS_MSG_VERIFYREQ_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_VERIFYREQ_V1 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 48 /* 0x30 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag186
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag183_t __midl_frag183 =
+{ 
+/* DRS_MSG_VERIFYREQ */
+    { 
+    /* DRS_MSG_VERIFYREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 48 /* 0x30 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag185,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag182_t __midl_frag182 =
+{ 
+/* *DRS_MSG_VERIFYREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag183
+};
+
+static const __midl_frag179_t __midl_frag179 =
+{ 
+/* IDL_DRSVerifyNames */
+    { 
+    /* IDL_DRSVerifyNames */      /* procedure IDL_DRSVerifyNames */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag183,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag197,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag177_t __midl_frag177 =
+{ 
+/* *char */
+    { 
+    /* *char */
+        0x63,    /* FC64_CONF_CHAR_STRING */
+        { 
+        /* *char */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT16) 1 /* 0x1 */
+    }
+};
+
+static const __midl_frag176_t __midl_frag176 =
+{ 
+/* DRS_MSG_REPMOD_V1 */
+    { 
+    /* DRS_MSG_REPMOD_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REPMOD_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 128 /* 0x80 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *char */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag177
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag174_t __midl_frag174 =
+{ 
+/* DRS_MSG_REPMOD */
+    { 
+    /* DRS_MSG_REPMOD */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 128 /* 0x80 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag176,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag173_t __midl_frag173 =
+{ 
+/* *DRS_MSG_REPMOD */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag174
+};
+
+static const __midl_frag170_t __midl_frag170 =
+{ 
+/* IDL_DRSReplicaModify */
+    { 
+    /* IDL_DRSReplicaModify */      /* procedure IDL_DRSReplicaModify */
+        (NDR64_UINT32) 19660864 /* 0x12c0040 */,    /* explicit handle */ /* IsIntrepreted, ClientMustSize, HasReturn, ServerCorrelation, HasExtensions */
+        (NDR64_UINT32) 32 /* 0x20 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 4 /* 0x4 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwVersion */      /* parameter dwVersion */
+        &__midl_frag907,
+        { 
+        /* dwVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgMod */      /* parameter pmsgMod */
+        &__midl_frag174,
+        { 
+        /* pmsgMod */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag167_t __midl_frag167 =
+{ 
+/* DRS_MSG_REPDEL_V1 */
+    { 
+    /* DRS_MSG_REPDEL_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REPDEL_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *char */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag177
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag165_t __midl_frag165 =
+{ 
+/* DRS_MSG_REPDEL */
+    { 
+    /* DRS_MSG_REPDEL */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag167,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag164_t __midl_frag164 =
+{ 
+/* *DRS_MSG_REPDEL */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag165
+};
+
+static const __midl_frag161_t __midl_frag161 =
+{ 
+/* IDL_DRSReplicaDel */
+    { 
+    /* IDL_DRSReplicaDel */      /* procedure IDL_DRSReplicaDel */
+        (NDR64_UINT32) 19660864 /* 0x12c0040 */,    /* explicit handle */ /* IsIntrepreted, ClientMustSize, HasReturn, ServerCorrelation, HasExtensions */
+        (NDR64_UINT32) 32 /* 0x20 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 4 /* 0x4 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwVersion */      /* parameter dwVersion */
+        &__midl_frag907,
+        { 
+        /* dwVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgDel */      /* parameter pmsgDel */
+        &__midl_frag165,
+        { 
+        /* pmsgDel */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag158_t __midl_frag158 =
+{ 
+/* DRS_MSG_REPADD_V2 */
+    { 
+    /* DRS_MSG_REPADD_V2 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REPADD_V2 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 120 /* 0x78 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *char */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag177
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag156_t __midl_frag156 =
+{ 
+/* DRS_MSG_REPADD_V1 */
+    { 
+    /* DRS_MSG_REPADD_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REPADD_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 104 /* 0x68 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *char */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag177
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag154_t __midl_frag154 =
+{ 
+/* DRS_MSG_REPADD */
+    { 
+    /* DRS_MSG_REPADD */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 120 /* 0x78 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag156,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag158,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag153_t __midl_frag153 =
+{ 
+/* *DRS_MSG_REPADD */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag154
+};
+
+static const __midl_frag150_t __midl_frag150 =
+{ 
+/* IDL_DRSReplicaAdd */
+    { 
+    /* IDL_DRSReplicaAdd */      /* procedure IDL_DRSReplicaAdd */
+        (NDR64_UINT32) 19660864 /* 0x12c0040 */,    /* explicit handle */ /* IsIntrepreted, ClientMustSize, HasReturn, ServerCorrelation, HasExtensions */
+        (NDR64_UINT32) 32 /* 0x20 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 4 /* 0x4 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwVersion */      /* parameter dwVersion */
+        &__midl_frag907,
+        { 
+        /* dwVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgAdd */      /* parameter pmsgAdd */
+        &__midl_frag154,
+        { 
+        /* pmsgAdd */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag147_t __midl_frag147 =
+{ 
+/* DRS_MSG_UPDREFS_V1 */
+    { 
+    /* DRS_MSG_UPDREFS_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_UPDREFS_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *char */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag177
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag145_t __midl_frag145 =
+{ 
+/* DRS_MSG_UPDREFS */
+    { 
+    /* DRS_MSG_UPDREFS */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 40 /* 0x28 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag147,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag144_t __midl_frag144 =
+{ 
+/* *DRS_MSG_UPDREFS */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag145
+};
+
+static const __midl_frag141_t __midl_frag141 =
+{ 
+/* IDL_DRSUpdateRefs */
+    { 
+    /* IDL_DRSUpdateRefs */      /* procedure IDL_DRSUpdateRefs */
+        (NDR64_UINT32) 19660864 /* 0x12c0040 */,    /* explicit handle */ /* IsIntrepreted, ClientMustSize, HasReturn, ServerCorrelation, HasExtensions */
+        (NDR64_UINT32) 32 /* 0x20 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 4 /* 0x4 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwVersion */      /* parameter dwVersion */
+        &__midl_frag907,
+        { 
+        /* dwVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgUpdRefs */      /* parameter pmsgUpdRefs */
+        &__midl_frag145,
+        { 
+        /* pmsgUpdRefs */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag137_t __midl_frag137 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *UPTODATE_VECTOR_V2_EXT */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag108
+    },
+    { 
+    /* *PrefixTableEntry */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag128
+    },
+    { 
+    /* *REPLENTINFLIST */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag82
+    },
+    { 
+    /* *REPLVALINF_V3 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag130
+    }
+};
+
+static const __midl_frag135_t __midl_frag135 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *UCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag133
+    }
+};
+
+static const __midl_frag134_t __midl_frag134 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 26214400 /* 0x1900000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    }
+};
+
+static const __midl_frag133_t __midl_frag133 =
+{ 
+/* *UCHAR */
+    { 
+    /* *UCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *UCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag134
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag864
+    }
+};
+
+static const __midl_frag132_t __midl_frag132 =
+{ 
+/* REPLVALINF_V3 */
+    { 
+    /* REPLVALINF_V3 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* REPLVALINF_V3 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 112 /* 0x70 */,
+        0,
+        0,
+        &__midl_frag135,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* ATTRVAL */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* PROPERTY_META_DATA_EXT */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag131_t __midl_frag131 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 148 /* 0x94 */
+    }
+};
+
+static const __midl_frag130_t __midl_frag130 =
+{ 
+/* *REPLVALINF_V3 */
+    { 
+    /* *REPLVALINF_V3 */
+        { 
+        /* *REPLVALINF_V3 */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *REPLVALINF_V3 */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag132
+        },
+        &__midl_frag131,
+        0,
+        0
+    }
+};
+
+static const __midl_frag129_t __midl_frag129 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 96 /* 0x60 */
+    }
+};
+
+static const __midl_frag128_t __midl_frag128 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag129,
+        0,
+        0
+    }
+};
+
+static const __midl_frag127_t __midl_frag127 =
+{ 
+/* DRS_MSG_GETCHGREPLY_V9 */
+    { 
+    /* DRS_MSG_GETCHGREPLY_V9 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREPLY_V9 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 168 /* 0xa8 */,
+        0,
+        0,
+        &__midl_frag137,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* SCHEMA_PREFIX_TABLE */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* DRS_MSG_GETCHGREPLY_V9 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag126_t __midl_frag126 =
+{ 
+/*  */
+    (NDR64_UINT32) 1 /* 0x1 */,
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 12 /* 0xc */
+    }
+};
+
+static const __midl_frag125_t __midl_frag125 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag126
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag124_t __midl_frag124 =
+{ 
+/* DRS_MSG_GETCHGREPLY_V7 */
+    { 
+    /* DRS_MSG_GETCHGREPLY_V7 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREPLY_V7 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *BYTE */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag125
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag121_t __midl_frag121 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *UPTODATE_VECTOR_V2_EXT */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag108
+    },
+    { 
+    /* *PrefixTableEntry */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag128
+    },
+    { 
+    /* *REPLENTINFLIST */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag82
+    },
+    { 
+    /* *REPLVALINF_V1 */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag114
+    }
+};
+
+static const __midl_frag116_t __midl_frag116 =
+{ 
+/* REPLVALINF_V1 */
+    { 
+    /* REPLVALINF_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* REPLVALINF_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 88 /* 0x58 */,
+        0,
+        0,
+        &__midl_frag135,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* ATTRVAL */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* PROPERTY_META_DATA_EXT */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag114_t __midl_frag114 =
+{ 
+/* *REPLVALINF_V1 */
+    { 
+    /* *REPLVALINF_V1 */
+        { 
+        /* *REPLVALINF_V1 */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *REPLVALINF_V1 */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag116
+        },
+        &__midl_frag131,
+        0,
+        0
+    }
+};
+
+static const __midl_frag109_t __midl_frag109 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag461
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 32 /* 0x20 */,
+        &__midl_frag615
+    }
+};
+
+static const __midl_frag108_t __midl_frag108 =
+{ 
+/* UPTODATE_VECTOR_V2_EXT */
+    { 
+    /* UPTODATE_VECTOR_V2_EXT */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* UPTODATE_VECTOR_V2_EXT */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag109
+    }
+};
+
+static const __midl_frag107_t __midl_frag107 =
+{ 
+/* DRS_MSG_GETCHGREPLY_V6 */
+    { 
+    /* DRS_MSG_GETCHGREPLY_V6 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREPLY_V6 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 168 /* 0xa8 */,
+        0,
+        0,
+        &__midl_frag121,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* SCHEMA_PREFIX_TABLE */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* DRS_MSG_GETCHGREPLY_V6 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag104_t __midl_frag104 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag490
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag103_t __midl_frag103 =
+{ 
+/* DRS_MSG_GETCHGREPLY_V2 */
+    { 
+    /* DRS_MSG_GETCHGREPLY_V2 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREPLY_V2 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 8 /* 0x8 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *BYTE */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag104
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag100_t __midl_frag100 =
+{ 
+/*  */
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *UPTODATE_VECTOR_V1_EXT */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag44
+    },
+    { 
+    /* *PrefixTableEntry */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag128
+    },
+    { 
+    /* *REPLENTINFLIST */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag82
+    }
+};
+
+static const __midl_frag99_t __midl_frag99 =
+{ 
+/*  */
+    { 
+    /* *REPLENTINFLIST */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag82
+    },
+    { 
+    /* *DSNAME */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag26
+    },
+    { 
+    /* *ATTR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag472
+    },
+    { 
+    /* *UUID */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag515
+    },
+    { 
+    /* *PROPERTY_META_DATA_EXT_VECTOR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag94
+    }
+};
+
+static const __midl_frag97_t __midl_frag97 =
+{ 
+/* PROPERTY_META_DATA_EXT */
+    { 
+    /* PROPERTY_META_DATA_EXT */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* PROPERTY_META_DATA_EXT */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag96_t __midl_frag96 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag95_t __midl_frag95 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+        { 
+        /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* struct _NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag97
+        },
+        &__midl_frag96,
+        0,
+        0
+    }
+};
+
+static const __midl_frag94_t __midl_frag94 =
+{ 
+/* PROPERTY_META_DATA_EXT_VECTOR */
+    { 
+    /* PROPERTY_META_DATA_EXT_VECTOR */
+        0x37,    /* FC64_FORCED_CONF_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* PROPERTY_META_DATA_EXT_VECTOR */
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 1 /* 0x1 */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        0,
+        0,
+        0,
+        &__midl_frag95,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag93_t __midl_frag93 =
+{ 
+/*  */
+    { 
+    /* *ATTRVAL */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag86
+    }
+};
+
+static const __midl_frag92_t __midl_frag92 =
+{ 
+/*  */
+    { 
+    /* *UCHAR */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag89
+    }
+};
+
+static const __midl_frag90_t __midl_frag90 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 26214400 /* 0x1900000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag89_t __midl_frag89 =
+{ 
+/* *UCHAR */
+    { 
+    /* *UCHAR */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *UCHAR */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag90
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag864
+    }
+};
+
+static const __midl_frag88_t __midl_frag88 =
+{ 
+/* ATTRVAL */
+    { 
+    /* ATTRVAL */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* ATTRVAL */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        0,
+        0,
+        &__midl_frag92,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag86_t __midl_frag86 =
+{ 
+/* *ATTRVAL */
+    { 
+    /* *ATTRVAL */
+        { 
+        /* *ATTRVAL */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *ATTRVAL */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag88
+        },
+        &__midl_frag286,
+        0,
+        0
+    }
+};
+
+static const __midl_frag85_t __midl_frag85 =
+{ 
+/* ATTR */
+    { 
+    /* ATTR */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* ATTR */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        &__midl_frag93,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* ATTRVALBLOCK */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag82_t __midl_frag82 =
+{ 
+/* REPLENTINFLIST */
+    { 
+    /* REPLENTINFLIST */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* REPLENTINFLIST */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 64 /* 0x40 */,
+        0,
+        0,
+        &__midl_frag99,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* ATTRBLOCK */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag79_t __midl_frag79 =
+{ 
+/* DRS_MSG_GETCHGREPLY_V1 */
+    { 
+    /* DRS_MSG_GETCHGREPLY_V1 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREPLY_V1 */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 144 /* 0x90 */,
+        0,
+        0,
+        &__midl_frag100,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x4,    /* FC64_INT16 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag799
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x7,    /* FC64_INT64 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* SCHEMA_PREFIX_TABLE */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* DRS_MSG_GETCHGREPLY_V1 */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag77_t __midl_frag77 =
+{ 
+/* DRS_MSG_GETCHGREPLY */
+    { 
+    /* DRS_MSG_GETCHGREPLY */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 168 /* 0xa8 */,
+        &__midl_frag903,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 5 /* 0x5 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag79,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 2 /* 0x2 */,
+        &__midl_frag103,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 6 /* 0x6 */,
+        &__midl_frag107,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 7 /* 0x7 */,
+        &__midl_frag124,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 9 /* 0x9 */,
+        &__midl_frag127,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag76_t __midl_frag76 =
+{ 
+/* *DRS_MSG_GETCHGREPLY */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag77
+};
+
+static const __midl_frag73_t __midl_frag73 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 112 /* 0x70 */
+    }
+};
+
+static const __midl_frag72_t __midl_frag72 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag73,
+        0,
+        0
+    }
+};
+
+static const __midl_frag71_t __midl_frag71 =
+{ 
+/* DRS_MSG_GETCHGREQ_V10 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V10 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V10 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 136 /* 0x88 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 64 /* 0x40 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UPTODATE_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag44
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 96 /* 0x60 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 104 /* 0x68 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 120 /* 0x78 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag72
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag70_t __midl_frag70 =
+{ 
+/* DRS_MSG_GETCHGREQ_V10 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V10 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V10 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 136 /* 0x88 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag71
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag67_t __midl_frag67 =
+{ 
+/* DRS_MSG_GETCHGREQ_V8 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V8 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V8 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 128 /* 0x80 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 64 /* 0x40 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UPTODATE_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag44
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 96 /* 0x60 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 104 /* 0x68 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 120 /* 0x78 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag72
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag66_t __midl_frag66 =
+{ 
+/* DRS_MSG_GETCHGREQ_V8 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V8 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V8 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 128 /* 0x80 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag67
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag65_t __midl_frag65 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 152 /* 0x98 */
+    }
+};
+
+static const __midl_frag64_t __midl_frag64 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag65,
+        0,
+        0
+    }
+};
+
+static const __midl_frag63_t __midl_frag63 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 104 /* 0x68 */
+    }
+};
+
+static const __midl_frag62_t __midl_frag62 =
+{ 
+/* *PrefixTableEntry */
+    { 
+    /* *PrefixTableEntry */
+        { 
+        /* *PrefixTableEntry */
+            0x46,    /* FC64_FORCED_BOGUS_ARRAY */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            { 
+            /* *PrefixTableEntry */
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            },
+            (NDR64_UINT8) 1 /* 0x1 */,
+            (NDR64_UINT32) 0 /* 0x0 */,
+            &__midl_frag54
+        },
+        &__midl_frag63,
+        0,
+        0
+    }
+};
+
+static const __midl_frag61_t __midl_frag61 =
+{ 
+/* DRS_MSG_GETCHGREQ_V7 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V7 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V7 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 168 /* 0xa8 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *MTX_ADDR */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag40
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 56 /* 0x38 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 88 /* 0x58 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UPTODATE_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag44
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 96 /* 0x60 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 112 /* 0x70 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag62
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 136 /* 0x88 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 144 /* 0x90 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 160 /* 0xa0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag64
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag60_t __midl_frag60 =
+{ 
+/* DRS_MSG_GETCHGREQ_V7 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V7 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V7 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 168 /* 0xa8 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag61
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag59_t __midl_frag59 =
+{ 
+/* DRS_MSG_GETCHGREQ_V5 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V5 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V5 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 96 /* 0x60 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 32 /* 0x20 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 64 /* 0x40 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UPTODATE_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag44
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag58_t __midl_frag58 =
+{ 
+/*  */
+    { 
+    /* *BYTE */
+        0x21,    /* FC64_UP */
+        (NDR64_UINT8) 32 /* 0x20 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        &__midl_frag55
+    }
+};
+
+static const __midl_frag55_t __midl_frag55 =
+{ 
+/* *BYTE */
+    { 
+    /* *BYTE */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* *BYTE */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag235
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag54_t __midl_frag54 =
+{ 
+/* PrefixTableEntry */
+    { 
+    /* PrefixTableEntry */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* PrefixTableEntry */
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        0,
+        0,
+        &__midl_frag58,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* OID_t */
+            0x92,    /* FC64_BUFFER_ALIGN */
+            (NDR64_UINT8) 7 /* 0x7 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x5,    /* FC64_INT32 */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_MEMPAD_FORMAT */
+            0x90,    /* FC64_STRUCTPADN */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 4 /* 0x4 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x14,    /* FC64_POINTER */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag50_t __midl_frag50 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 1 /* 0x1 */,
+        (NDR64_INT64) 1048576 /* 0x100000 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 8 /* 0x8 */
+    }
+};
+
+static const __midl_frag49_t __midl_frag49 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag50
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag907
+    }
+};
+
+static const __midl_frag48_t __midl_frag48 =
+{ 
+/* PARTIAL_ATTR_VECTOR_V1_EXT */
+    { 
+    /* PARTIAL_ATTR_VECTOR_V1_EXT */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* PARTIAL_ATTR_VECTOR_V1_EXT */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 12 /* 0xc */,
+        &__midl_frag49
+    }
+};
+
+static const __midl_frag45_t __midl_frag45 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag461
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 24 /* 0x18 */,
+        &__midl_frag570
+    }
+};
+
+static const __midl_frag44_t __midl_frag44 =
+{ 
+/* UPTODATE_VECTOR_V1_EXT */
+    { 
+    /* UPTODATE_VECTOR_V1_EXT */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* UPTODATE_VECTOR_V1_EXT */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 16 /* 0x10 */,
+        &__midl_frag45
+    }
+};
+
+static const __midl_frag42_t __midl_frag42 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 1 /* 0x1 */,
+        (NDR64_INT64) 256 /* 0x100 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 0 /* 0x0 */
+    }
+};
+
+static const __midl_frag41_t __midl_frag41 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag42
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag864
+    }
+};
+
+static const __midl_frag40_t __midl_frag40 =
+{ 
+/* MTX_ADDR */
+    { 
+    /* MTX_ADDR */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* MTX_ADDR */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag41
+    }
+};
+
+static const __midl_frag39_t __midl_frag39 =
+{ 
+/* DRS_MSG_GETCHGREQ_V4 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V4 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V4 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 136 /* 0x88 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 16 /* 0x10 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *MTX_ADDR */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag40
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 56 /* 0x38 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 88 /* 0x58 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *UPTODATE_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag44
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 96 /* 0x60 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PARTIAL_ATTR_VECTOR_V1_EXT */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag48
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 112 /* 0x70 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *PrefixTableEntry */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 32 /* 0x20 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag62
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag38_t __midl_frag38 =
+{ 
+/* DRS_MSG_GETCHGREQ_V4 */
+    { 
+    /* DRS_MSG_GETCHGREQ_V4 */
+        0x35,    /* FC64_FORCED_BOGUS_STRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_GETCHGREQ_V4 */
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 136 /* 0x88 */,
+        0,
+        0,
+        0,
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_EMBEDDED_COMPLEX_FORMAT */
+            0x91,    /* FC64_EMBEDDED_COMPLEX */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag39
+        },
+        { 
+        /* struct _NDR64_SIMPLE_MEMBER_FORMAT */
+            0x93,    /* FC64_END */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        }
+    }
+};
+
+static const __midl_frag36_t __midl_frag36 =
+{ 
+/* DRS_MSG_GETCHGREQ */
+    { 
+    /* DRS_MSG_GETCHGREQ */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 168 /* 0xa8 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 5 /* 0x5 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 4 /* 0x4 */,
+        &__midl_frag38,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 5 /* 0x5 */,
+        &__midl_frag59,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 7 /* 0x7 */,
+        &__midl_frag60,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 8 /* 0x8 */,
+        &__midl_frag66,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 10 /* 0xa */,
+        &__midl_frag70,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag35_t __midl_frag35 =
+{ 
+/* *DRS_MSG_GETCHGREQ */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag36
+};
+
+static const __midl_frag32_t __midl_frag32 =
+{ 
+/* IDL_DRSGetNCChanges */
+    { 
+    /* IDL_DRSGetNCChanges */      /* procedure IDL_DRSGetNCChanges */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 40 /* 0x28 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 6 /* 0x6 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwInVersion */      /* parameter dwInVersion */
+        &__midl_frag907,
+        { 
+        /* dwInVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgIn */      /* parameter pmsgIn */
+        &__midl_frag36,
+        { 
+        /* pmsgIn */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* pdwOutVersion */      /* parameter pdwOutVersion */
+        &__midl_frag907,
+        { 
+        /* pdwOutVersion */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* [out], Basetype, SimpleRef, UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgOut */      /* parameter pmsgOut */
+        &__midl_frag77,
+        { 
+        /* pmsgOut */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [out], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag28_t __midl_frag28 =
+{ 
+/*  */
+    (NDR64_UINT32) 5 /* 0x5 */,
+    { 
+    /* struct _NDR64_RANGE_FORMAT */
+        0xa4,    /* FC64_RANGE */
+        0x5,    /* FC64_INT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_INT64) 0 /* 0x0 */,
+        (NDR64_INT64) 10485761 /* 0xa00001 */
+    },
+    { 
+    /* struct _NDR64_EXPR_OPERATOR */
+        0x4,    /* FC_EXPR_OPER */
+        0xe,    /* OP_PLUS */
+        0x0,    /* FC64_ZERO */
+        (NDR64_UINT8) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_EXPR_VAR */
+        0x3,    /* FC_EXPR_VAR */
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 52 /* 0x34 */
+    },
+    { 
+    /* struct _NDR64_EXPR_NOOP */
+        0x5,    /* FC_EXPR_PAD */
+        (NDR64_UINT8) 4 /* 0x4 */,
+        (NDR64_UINT16) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_EXPR_CONST64 */
+        0x2,    /* FC_EXPR_CONST64 */
+        0x7,    /* FC64_INT64 */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT64) 1 /* 0x1 */
+    }
+};
+
+static const __midl_frag27_t __midl_frag27 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 1 /* 0x1 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag28
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 2 /* 0x2 */,
+        &__midl_frag826
+    }
+};
+
+static const __midl_frag26_t __midl_frag26 =
+{ 
+/* DSNAME */
+    { 
+    /* DSNAME */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DSNAME */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 56 /* 0x38 */,
+        &__midl_frag27
+    }
+};
+
+static const __midl_frag25_t __midl_frag25 =
+{ 
+/* DRS_MSG_REPSYNC_V1 */
+    { 
+    /* DRS_MSG_REPSYNC_V1 */
+        0x31,    /* FC64_PSTRUCT */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        { 
+        /* DRS_MSG_REPSYNC_V1 */
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 40 /* 0x28 */
+    },
+    { 
+    /*  */
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *DSNAME */
+            0x20,    /* FC64_RP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag26
+        },
+        { 
+        /* struct _NDR64_NO_REPEAT_FORMAT */
+            0x80,    /* FC64_NO_REPEAT */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* struct _NDR64_POINTER_INSTANCE_HEADER_FORMAT */
+            (NDR64_UINT32) 24 /* 0x18 */,
+            (NDR64_UINT32) 0 /* 0x0 */
+        },
+        { 
+        /* *char */
+            0x21,    /* FC64_UP */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            &__midl_frag177
+        },
+        0x93    /* FC64_END */
+    }
+};
+
+static const __midl_frag23_t __midl_frag23 =
+{ 
+/* DRS_MSG_REPSYNC */
+    { 
+    /* DRS_MSG_REPSYNC */
+        0x51,    /* FC64_NON_ENCAPSULATED_UNION */
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT8) 0 /* 0x0 */,
+        0x6,    /* FC64_UINT32 */
+        (NDR64_UINT32) 40 /* 0x28 */,
+        &__midl_frag894,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM_SELECTOR */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT8) 7 /* 0x7 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */
+    },
+    { 
+    /* struct _NDR64_UNION_ARM */
+        (NDR64_INT64) 1 /* 0x1 */,
+        &__midl_frag25,
+        (NDR64_UINT32) 0 /* 0x0 */
+    },
+    (NDR64_UINT32) 4294967295 /* 0xffffffff */
+};
+
+static const __midl_frag22_t __midl_frag22 =
+{ 
+/* *DRS_MSG_REPSYNC */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag23
+};
+
+static const __midl_frag19_t __midl_frag19 =
+{ 
+/* IDL_DRSReplicaSync */
+    { 
+    /* IDL_DRSReplicaSync */      /* procedure IDL_DRSReplicaSync */
+        (NDR64_UINT32) 19660864 /* 0x12c0040 */,    /* explicit handle */ /* IsIntrepreted, ClientMustSize, HasReturn, ServerCorrelation, HasExtensions */
+        (NDR64_UINT32) 32 /* 0x20 */ ,  /* Stack size */
+        (NDR64_UINT32) 44 /* 0x2c */,
+        (NDR64_UINT32) 8 /* 0x8 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 4 /* 0x4 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 64 /* 0x40 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* hDrs */      /* parameter hDrs */
+        &__midl_frag849,
+        { 
+        /* hDrs */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* dwVersion */      /* parameter dwVersion */
+        &__midl_frag907,
+        { 
+        /* dwVersion */
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pmsgSync */      /* parameter pmsgSync */
+        &__midl_frag23,
+        { 
+        /* pmsgSync */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag17_t __midl_frag17 =
+{ 
+/* struct _NDR64_CONTEXT_HANDLE_FORMAT */
+    0x70,    /* FC64_BIND_CONTEXT */
+    (NDR64_UINT8) 225 /* 0xe1 */,
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT8) 0 /* 0x0 */
+};
+
+static const __midl_frag16_t __midl_frag16 =
+{ 
+/* *struct _NDR64_POINTER_FORMAT */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag17
+};
+
+static const __midl_frag15_t __midl_frag15 =
+{ 
+/* IDL_DRSUnbind */
+    { 
+    /* IDL_DRSUnbind */      /* procedure IDL_DRSUnbind */
+        (NDR64_UINT32) 17301568 /* 0x1080040 */,    /* explicit handle */ /* IsIntrepreted, HasReturn, HasExtensions */
+        (NDR64_UINT32) 16 /* 0x10 */ ,  /* Stack size */
+        (NDR64_UINT32) 60 /* 0x3c */,
+        (NDR64_UINT32) 68 /* 0x44 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 2 /* 0x2 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x70,    /* FC64_BIND_CONTEXT */
+            (NDR64_UINT8) 224 /* 0xe0 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* phDrs */      /* parameter phDrs */
+        &__midl_frag17,
+        { 
+        /* phDrs */
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [in], [out], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        0 /* 0x0 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag13_t __midl_frag13 =
+{ 
+/* struct _NDR64_CONTEXT_HANDLE_FORMAT */
+    0x70,    /* FC64_BIND_CONTEXT */
+    (NDR64_UINT8) 160 /* 0xa0 */,
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT8) 0 /* 0x0 */
+};
+
+static const __midl_frag12_t __midl_frag12 =
+{ 
+/* *struct _NDR64_POINTER_FORMAT */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 4 /* 0x4 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag13
+};
+
+static const __midl_frag11_t __midl_frag11 =
+{ 
+/* *DRS_EXTENSIONS */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag6
+};
+
+static const __midl_frag10_t __midl_frag10 =
+{ 
+/* **DRS_EXTENSIONS */
+    0x20,    /* FC64_RP */
+    (NDR64_UINT8) 20 /* 0x14 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag11
+};
+
+static const __midl_frag7_t __midl_frag7 =
+{ 
+/*  */
+    { 
+    /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+        0x41,    /* FC64_CONF_ARRAY */
+        (NDR64_UINT8) 0 /* 0x0 */,
+        { 
+        /* struct _NDR64_CONF_ARRAY_HEADER_FORMAT */
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag698
+    },
+    { 
+    /* struct _NDR64_ARRAY_ELEMENT_INFO */
+        (NDR64_UINT32) 1 /* 0x1 */,
+        &__midl_frag898
+    }
+};
+
+static const __midl_frag6_t __midl_frag6 =
+{ 
+/* DRS_EXTENSIONS */
+    { 
+    /* DRS_EXTENSIONS */
+        0x32,    /* FC64_CONF_STRUCT */
+        (NDR64_UINT8) 3 /* 0x3 */,
+        { 
+        /* DRS_EXTENSIONS */
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+        },
+        (NDR64_UINT8) 0 /* 0x0 */,
+        (NDR64_UINT32) 4 /* 0x4 */,
+        &__midl_frag7
+    }
+};
+
+static const __midl_frag3_t __midl_frag3 =
+{ 
+/* *UUID */
+    0x21,    /* FC64_UP */
+    (NDR64_UINT8) 0 /* 0x0 */,
+    (NDR64_UINT16) 0 /* 0x0 */,
+    &__midl_frag515
+};
+
+static const __midl_frag2_t __midl_frag2 =
+{ 
+/* IDL_DRSBind */
+    { 
+    /* IDL_DRSBind */      /* procedure IDL_DRSBind */
+        (NDR64_UINT32) 23986240 /* 0x16e0040 */,    /* explicit handle */ /* IsIntrepreted, ServerMustSize, ClientMustSize, HasReturn, ServerCorrelation, ClientCorrelation, HasExtensions */
+        (NDR64_UINT32) 48 /* 0x30 */ ,  /* Stack size */
+        (NDR64_UINT32) 72 /* 0x48 */,
+        (NDR64_UINT32) 68 /* 0x44 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 0 /* 0x0 */,
+        (NDR64_UINT16) 5 /* 0x5 */,
+        (NDR64_UINT16) 8 /* 0x8 */
+    },
+    { 
+    /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+        { 
+        /* struct _NDR64_BIND_AND_NOTIFY_EXTENSION */
+            0x72,    /* FC64_BIND_PRIMITIVE */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            0 /* 0x0 */,   /* Stack offset */
+            (NDR64_UINT8) 0 /* 0x0 */,
+            (NDR64_UINT8) 0 /* 0x0 */
+        },
+        (NDR64_UINT16) 0 /* 0x0 */      /* Notify index */
+    },
+    { 
+    /* puuidClientDsa */      /* parameter puuidClientDsa */
+        &__midl_frag3,
+        { 
+        /* puuidClientDsa */
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustFree, [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        8 /* 0x8 */,   /* Stack offset */
+    },
+    { 
+    /* pextClient */      /* parameter pextClient */
+        &__midl_frag11,
+        { 
+        /* pextClient */
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* MustSize, MustFree, [in] */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        16 /* 0x10 */,   /* Stack offset */
+    },
+    { 
+    /* ppextServer */      /* parameter ppextServer */
+        &__midl_frag10,
+        { 
+        /* ppextServer */
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            1
+        },    /* MustSize, MustFree, [out], UseCache */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        24 /* 0x18 */,   /* Stack offset */
+    },
+    { 
+    /* phDrs */      /* parameter phDrs */
+        &__midl_frag13,
+        { 
+        /* phDrs */
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], SimpleRef */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        32 /* 0x20 */,   /* Stack offset */
+    },
+    { 
+    /* ULONG */      /* parameter ULONG */
+        &__midl_frag907,
+        { 
+        /* ULONG */
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (NDR64_UINT16) 0 /* 0x0 */,
+            0
+        },    /* [out], IsReturn, Basetype, ByValue */
+        (NDR64_UINT16) 0 /* 0x0 */,
+        40 /* 0x28 */,   /* Stack offset */
+    }
+};
+
+static const __midl_frag1_t __midl_frag1 =
+(NDR64_UINT32) 0 /* 0x0 */;
+
+
+#include "poppack.h"
+
+
+static const FormatInfoRef drsuapi_Ndr64ProcTable[] =
+    {
+    &__midl_frag2,
+    &__midl_frag15,
+    &__midl_frag19,
+    &__midl_frag32,
+    &__midl_frag141,
+    &__midl_frag150,
+    &__midl_frag161,
+    &__midl_frag170,
+    &__midl_frag179,
+    &__midl_frag210,
+    &__midl_frag240,
+    &__midl_frag278,
+    &__midl_frag303,
+    &__midl_frag328,
+    &__midl_frag347,
+    &__midl_frag363,
+    &__midl_frag378,
+    &__midl_frag452,
+    &__midl_frag520,
+    &__midl_frag528,
+    &__midl_frag661,
+    &__midl_frag690,
+    &__midl_frag710,
+    &__midl_frag718,
+    &__midl_frag737,
+    &__midl_frag760,
+    &__midl_frag774,
+    &__midl_frag790,
+    &__midl_frag807,
+    &__midl_frag829,
+    &__midl_frag848
+    };
+
+
 static const MIDL_STUB_DESC drsuapi_StubDesc = 
     {
     (void *)& drsuapi___RpcClientInterface,
@@ -8041,20 +36091,56 @@ static const MIDL_STUB_DESC drsuapi_StubDesc =
     1, /* -error bounds_check flag */
     0x60001, /* Ndr library version */
     0,
-    0x800025b, /* MIDL Version 8.0.603 */
+    0x801026e, /* MIDL Version 8.1.622 */
     0,
     0,
     0,  /* notify & notify_flag routine table */
-    0x1, /* MIDL flag */
+    0x2000001, /* MIDL flag */
     0, /* cs routines */
-    0,   /* proxy/server info */
+    (void *)& drsuapi_ProxyInfo,   /* proxy/server info */
     0
     };
 
-static const unsigned short dsaop_FormatStringOffsetTable[] =
+static const MIDL_SYNTAX_INFO drsuapi_SyntaxInfo [  2 ] = 
     {
-    1992,
-    2052
+    {
+    {{0x8A885D04,0x1CEB,0x11C9,{0x9F,0xE8,0x08,0x00,0x2B,0x10,0x48,0x60}},{2,0}},
+    0,
+    drsr__MIDL_ProcFormatString.Format,
+    drsuapi_FormatStringOffsetTable,
+    drsr__MIDL_TypeFormatString.Format,
+    0,
+    0,
+    0
+    }
+    ,{
+    {{0x71710533,0xbeba,0x4937,{0x83,0x19,0xb5,0xdb,0xef,0x9c,0xcc,0x36}},{1,0}},
+    0,
+    0 ,
+    (unsigned short *) drsuapi_Ndr64ProcTable,
+    0,
+    0,
+    0,
+    0
+    }
+    };
+
+static const MIDL_STUBLESS_PROXY_INFO drsuapi_ProxyInfo =
+    {
+    &drsuapi_StubDesc,
+    drsr__MIDL_ProcFormatString.Format,
+    drsuapi_FormatStringOffsetTable,
+    (RPC_SYNTAX_IDENTIFIER*)&_RpcTransferSyntax,
+    2,
+    (MIDL_SYNTAX_INFO*)drsuapi_SyntaxInfo
+    
+    };
+
+
+static const FormatInfoRef dsaop_Ndr64ProcTable[] =
+    {
+    &__midl_frag866,
+    &__midl_frag890
     };
 
 
@@ -8072,15 +36158,51 @@ static const MIDL_STUB_DESC dsaop_StubDesc =
     1, /* -error bounds_check flag */
     0x60001, /* Ndr library version */
     0,
-    0x800025b, /* MIDL Version 8.0.603 */
+    0x801026e, /* MIDL Version 8.1.622 */
     0,
     0,
     0,  /* notify & notify_flag routine table */
-    0x1, /* MIDL flag */
+    0x2000001, /* MIDL flag */
     0, /* cs routines */
-    0,   /* proxy/server info */
+    (void *)& dsaop_ProxyInfo,   /* proxy/server info */
     0
     };
+
+static const MIDL_SYNTAX_INFO dsaop_SyntaxInfo [  2 ] = 
+    {
+    {
+    {{0x8A885D04,0x1CEB,0x11C9,{0x9F,0xE8,0x08,0x00,0x2B,0x10,0x48,0x60}},{2,0}},
+    0,
+    drsr__MIDL_ProcFormatString.Format,
+    dsaop_FormatStringOffsetTable,
+    drsr__MIDL_TypeFormatString.Format,
+    0,
+    0,
+    0
+    }
+    ,{
+    {{0x71710533,0xbeba,0x4937,{0x83,0x19,0xb5,0xdb,0xef,0x9c,0xcc,0x36}},{1,0}},
+    0,
+    0 ,
+    (unsigned short *) dsaop_Ndr64ProcTable,
+    0,
+    0,
+    0,
+    0
+    }
+    };
+
+static const MIDL_STUBLESS_PROXY_INFO dsaop_ProxyInfo =
+    {
+    &dsaop_StubDesc,
+    drsr__MIDL_ProcFormatString.Format,
+    dsaop_FormatStringOffsetTable,
+    (RPC_SYNTAX_IDENTIFIER*)&_RpcTransferSyntax,
+    2,
+    (MIDL_SYNTAX_INFO*)dsaop_SyntaxInfo
+    
+    };
+
 #if _MSC_VER >= 1200
 #pragma warning(pop)
 #endif

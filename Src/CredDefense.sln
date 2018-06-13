@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredDefense", "CredDefense\CredDefense.csproj", "{A06EC81A-955C-4AC6-913B-88ACE6DB8915}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\scripts\CredDefenseEventParser.ps1 = ..\scripts\CredDefenseEventParser.ps1
 		..\scripts\ResponderGuard.ps1 = ..\scripts\ResponderGuard.ps1
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EasyPasswordFilterTests", "EasyPasswordFilterTests\EasyPasswordFilterTests.vcxproj", "{3F22913A-E450-4733-9275-6B4D32E57661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,8 +108,21 @@ Global
 		{0BCA513C-5F12-48B6-8288-D3A95EC2994A}.Release|x64.Build.0 = Release|Any CPU
 		{0BCA513C-5F12-48B6-8288-D3A95EC2994A}.Release|x86.ActiveCfg = Release|Any CPU
 		{0BCA513C-5F12-48B6-8288-D3A95EC2994A}.Release|x86.Build.0 = Release|Any CPU
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Debug|x64.ActiveCfg = Debug|x64
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Debug|x64.Build.0 = Debug|x64
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Debug|x86.ActiveCfg = Debug|Win32
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Debug|x86.Build.0 = Debug|Win32
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Release|Any CPU.ActiveCfg = Release|Win32
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Release|x64.ActiveCfg = Release|x64
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Release|x64.Build.0 = Release|x64
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Release|x86.ActiveCfg = Release|Win32
+		{3F22913A-E450-4733-9275-6B4D32E57661}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46F47431-C354-409E-86B4-16D7038462F5}
 	EndGlobalSection
 EndGlobal
