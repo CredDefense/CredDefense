@@ -11,7 +11,7 @@ https://msdn.microsoft.com/en-us/library/windows/desktop/ms721884(v=vs.85).aspx
 # CredDefense
 Credential and Red Teaming Defense for Windows Environments
 
-For an overview on features and useage, please see:
+For an overview on features and usage, please see:
 
 https://www.blackhillsinfosec.com/the-creddefense-toolkit/
 
