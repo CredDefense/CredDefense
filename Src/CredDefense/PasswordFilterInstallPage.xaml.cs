@@ -123,10 +123,10 @@ namespace CredDefense
             {
                 reInit();
             }
-
+           
             string sysDrive = sysPath.Split(':')[0];
             string sysFolder = sysPath.Split(':')[1].Split('\\')[1] + @"\system32";
-            string remoteRootFolder = @"\\" + dcIpAddress + @"\" + sysDrive + @"$\";
+            string remoteRootFolder = @"\\" + dcName + @"\" + sysDrive + @"$\";
             string remoteEpfFolder = remoteRootFolder + @"epf";
             string remoteSysFolder = remoteRootFolder + sysFolder + @"\EasyPasswordFilter.dll";
 
@@ -145,7 +145,8 @@ namespace CredDefense
 
                 foreach (string newPath in Directory.GetFiles(Properties.Settings.Default.EpfFilesPath, "*.*", SearchOption.AllDirectories))
                 {
-                    File.Copy(newPath, newPath.Replace(Properties.Settings.Default.EpfFilesPath, remoteEpfFolder), true);
+
+                    File.Copy(newPath, newPath.Replace(Properties.Settings.Default.EpfFilesPath + "\\", remoteEpfFolder + "\\"), true);
                 }
             }
             catch (Exception ex)
