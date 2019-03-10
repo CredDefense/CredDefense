@@ -76,12 +76,12 @@ namespace CredDefense
                 {
                     if(dcActive == dc.Name)
                     {
-                        string dcIpAddress = dc.IPAddress;
+                        string dcName = dc.Name;
                         try
                         {
-                            string sysPath = pfHelper.getSysPath(dcIpAddress);
+                            string sysPath = pfHelper.getSysPath(dcName);
                             string sysDrive = sysPath.Split(':')[0];
-                            string remoteRootFolder = @"\\" + dcIpAddress + @"\" + sysDrive + @"$\";
+                            string remoteRootFolder = @"\\" + dcName + @"\" + sysDrive + @"$\";
                             string remoteEpfFolder = remoteRootFolder + @"epf";
 
                             if (!Directory.Exists(remoteEpfFolder))
@@ -96,7 +96,7 @@ namespace CredDefense
 
                             foreach (string newPath in Directory.GetFiles(Properties.Settings.Default.EpfFilesPath, "*.*", SearchOption.AllDirectories))
                             {
-                                File.Copy(newPath, newPath.Replace(Properties.Settings.Default.EpfFilesPath, remoteEpfFolder), true);
+                                File.Copy(newPath, newPath.Replace(Properties.Settings.Default.EpfFilesPath + "\\", remoteEpfFolder + "\\"), true);
                             }
                         }
                         catch
