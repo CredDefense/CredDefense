@@ -1,3 +1,10 @@
+# MAINTENANCE NOTICE
+PLEASE NOTE THAT THIS PROJECT IS NOT CURRENTLY BEING MAINTAINED AT THIS TIME
+
+Having a full-time job, working on my PhD, spending time with my wife, and enjoying hobbies in what little time I have left doesn't afford any time for maintaining this and fixing issues. If anybody has pull requests, I will review them and merge as appropriate.
+
+Sorry and I appreciate your understanding.
+
 # CredDefense
 Credential and Red Teaming Defense for Windows Environments
 
