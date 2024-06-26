@@ -227,10 +227,14 @@ Function Invoke-ResponderGuard {
             #Try to receive response, if there is no response move on to next host
             try
             {
-                $rcvbytes = $udpconn.Receive([ref]$ipEP) 
+                $rcvbytes = $udpconn.Receive([ref]$ipEP)
+                $udpconn.Close()
+                $udpconn.Dispose()
             }
             catch
             {
+                $udpconn.Close()
+                $udpconn.Dispose()
                 continue
             }
 
